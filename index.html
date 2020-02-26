@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,200,300,400,500,600&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
@@ -31,7 +34,8 @@
                     </div>
                     <div class="introduction_content">
                         <div class="introduction_content_txt">
-                            <h3>胡同的每項食材，皆採取每日限量，在中央廚房的嚴格把關下，無法呈現滿分的原料，皆會逐一篩選剔除，絕不會出現在店面上，以確保用餐的朋友們，所享用的是當天現切直送的新鮮食材，並且維持一致的高水平，讓喜愛胡同的朋友們，都可以品嘗到一樣的胡同味！</h3>
+                            <h3>胡同的每項食材，皆採取每日限量，在中央廚房的嚴格把關下，無法呈現滿分的原料，皆會逐一篩選剔除，絕不會出現在店面上，以確保用餐的朋友們，所享用的是當天現切直送的新鮮食材，並且維持一致的高水平，讓喜愛胡同的朋友們，都可以品嘗到一樣的胡同味！
+                            </h3>
                         </div>
                         <div class="introduction_content_title">
                             <h2>嚴選食材</h2>
@@ -50,7 +54,8 @@
                             <h2>貼心服務</h2>
                         </div>
                         <div class="introduction_content_txt">
-                            <h3>我們除了堅持提供當天處理的新鮮頂級食材外，親切的態度也是基本服務之一。 重視與食客的互動，點餐前熱心推薦菜色，上菜後詳細指導如何烤肉，並主動閒話家常，讓您有如置身於昔日胡同街坊之間溫馨的氛圍，絕對讓每位踏進胡同的客人有如賓至如歸的感覺。 </h3>
+                            <h3>我們除了堅持提供當天處理的新鮮頂級食材外，親切的態度也是基本服務之一。
+                                重視與食客的互動，點餐前熱心推薦菜色，上菜後詳細指導如何烤肉，並主動閒話家常，讓您有如置身於昔日胡同街坊之間溫馨的氛圍，絕對讓每位踏進胡同的客人有如賓至如歸的感覺。 </h3>
                         </div>
                     </div>
                     <div class="introduction_img">
@@ -61,47 +66,47 @@
         </section>
         <section class="meun">
             <div class="meun_title">
-                <h2></h2>
+                <h2>Meun</h2>
             </div>
             <div class="meun_list_container">
                 <ul>
                     <li>
                         <div class="meun_list">
                             <div class="meun_list_img">
-                                <img src="" alt="">
+                                <img src="./img/meun-list-01.jpg" alt="">
                             </div>
                             <div class="meun_list_txt">
-                                <span></span>
+                                <span>豬肉</span>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div class="meun_list">
                             <div class="meun_list_img">
-                                <img src="" alt="">
+                                <img src="./img/meun-list-02.jpg" alt="">
                             </div>
                             <div class="meun_list_txt">
-                                <span></span>
+                                <span>雞肉</span>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div class="meun_list">
                             <div class="meun_list_img">
-                                <img src="" alt="">
+                                <img src="./img/meun-list-03.jpg" alt="">
                             </div>
                             <div class="meun_list_txt">
-                                <span></span>
+                                <span>牛肉</span>
                             </div>
                         </div>
                     </li>
                     <li>
                         <div class="meun_list">
                             <div class="meun_list_img">
-                                <img src="" alt="">
+                                <img src="./img/meun-list-04.jpg" alt="">
                             </div>
                             <div class="meun_list_txt">
-                                <span></span>
+                                <span>羊肉</span>
                             </div>
                         </div>
                     </li>
@@ -243,6 +248,18 @@
     <footer>
         <div></div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+
+        var height = $(window).height()*2-$('.introduction_img').height()
+        
+        $('.introduction').height(height)
+        console.log($('.introduction_img img').height())
+        console.log($(window).height())
+
+    </script>
 </body>
 
 </html>

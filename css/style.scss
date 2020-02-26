@@ -1,17 +1,3 @@
-body {
-    margin: 0;
-}
-
-h1,h2,h3,h4,h5,h6,p {
-    padding: 0;
-    margin: 0;
-    font-weight: unset;
-}
-
-ul,li {
-    list-style: none;
-}
-
 input,button {
     border: 0;
 
@@ -40,8 +26,6 @@ input,button {
         position: absolute;
         top: 425px;
         right: 805px;
-        // top: 10px;
-        // left: 10px;
 
         .banner_content {
             position: relative;
@@ -97,11 +81,18 @@ input,button {
 
 .introduction {
     width: 100%;
-    height: 2           00vh;
     background-image: url("../img/bg-01.jpg");
     background-size: cover;
     display: flex;
     align-items: center;
+
+    .introduction_float_right {
+        position: absolute;
+    }
+
+    .introduction_float_left {
+        position: absolute;
+    }
 
     .introduction_area {
         width: 100%;
@@ -123,6 +114,7 @@ input,button {
                 width: 50%;
                 display: flex;
                 align-items: center;
+                font-family: "Noto Sans TC" ;
 
                 &:nth-child(1) {
                     justify-content: flex-end;
@@ -162,9 +154,8 @@ input,button {
                     padding: 0 40px;
 
                     h3 {
-                        font-family: 'Noto Sans TC', ;
                         font-size: 20px;
-                        font-weight: 100;
+                        font-weight: 200;
                         line-height: 24px;
                         letter-spacing: 3px;
                     }
@@ -176,4 +167,53 @@ input,button {
         }
 
     }
+}
+
+.meun {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/bg-02.jpg');
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Noto Sans TC";
+    color: #fff;
+
+    .meun_title {
+        text-align:center;
+        font-size: 45px;
+        margin: 30px 0 70px 0;
+    }
+
+    .meun_list_container {
+        width: 1280px;
+        display: flex;
+        
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                width: 50%;
+                display: flex;
+                justify-content: center;
+
+                .meun_list {
+                    font-size: 30px;
+                    text-align:center;
+                    margin: 0 0 20px 0;
+
+                    .meun_list_img img{
+                        box-shadow: 10px 10px 10px rgba(0 ,0 ,0 ,0.5);
+                    }
+
+                    .meun_list_txt {
+                        padding: 20px 0 25px;
+                    }
+                }
+                
+            }
+        }
+    } 
 }

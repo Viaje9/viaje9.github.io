@@ -1,17 +1,3 @@
-body {
-  margin: 0;
-}
-
-h1, h2, h3, h4, h5, h6, p {
-  padding: 0;
-  margin: 0;
-  font-weight: unset;
-}
-
-ul, li {
-  list-style: none;
-}
-
 input, button {
   border: 0;
 }
@@ -102,7 +88,6 @@ input:focus, button:focus {
 
 .introduction {
   width: 100%;
-  height: 2           00vh;
   background-image: url("../img/bg-01.jpg");
   background-size: cover;
   display: -webkit-box;
@@ -111,6 +96,14 @@ input:focus, button:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.introduction .introduction_float_right {
+  position: absolute;
+}
+
+.introduction .introduction_float_left {
+  position: absolute;
 }
 
 .introduction .introduction_area {
@@ -141,6 +134,7 @@ input:focus, button:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: "Noto Sans TC";
 }
 
 .introduction .introduction_area .introduction_container .introduction_content:nth-child(1) {
@@ -186,10 +180,73 @@ input:focus, button:focus {
 }
 
 .introduction .introduction_area .introduction_container .introduction_content .introduction_content_txt h3 {
-  font-family: "Noto Sans TC";
   font-size: 20px;
-  font-weight: 100;
+  font-weight: 200;
   line-height: 24px;
   letter-spacing: 3px;
+}
+
+.meun {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/bg-02.jpg");
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Noto Sans TC";
+  color: #fff;
+}
+
+.meun .meun_title {
+  text-align: center;
+  font-size: 45px;
+  margin: 30px 0 70px 0;
+}
+
+.meun .meun_list_container {
+  width: 1280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.meun .meun_list_container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.meun .meun_list_container ul li {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.meun .meun_list_container ul li .meun_list {
+  font-size: 30px;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.meun .meun_list_container ul li .meun_list .meun_list_img img {
+  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.meun .meun_list_container ul li .meun_list .meun_list_txt {
+  padding: 20px 0 25px;
 }
 /*# sourceMappingURL=style.css.map */
