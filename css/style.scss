@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    padding: 0;
+    margin: 0;
+    font-weight: unset;
+}
+
+ul,li {
+    list-style: none;
+}
+
+input,button {
+    border: 0;
+
+    &:focus{
+        outline: 0;
+    }
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/banner_01.jpg");
+    background-size: cover;
+    position: relative;
+
+    .logo {
+        position: absolute;
+        top: 300px;
+        right: 648px;
+        width: 165px;
+        height: 345px;
+        
+    }
+
+    .banner_container {
+        position: absolute;
+        top: 425px;
+        right: 805px;
+        // top: 10px;
+        // left: 10px;
+
+        .banner_content {
+            position: relative;
+            width: 187px;
+            height: 406px;
+            font-family: DFKai-sb;
+            font-size: 24px;
+            display: flex;
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+
+            span {
+                writing-mode: vertical-rl;
+            }
+            
+            span:nth-child(1) {
+                padding: 90px 0 0 0;
+            }
+    
+            span:nth-child(2) {
+                padding: 0 15px;
+            }
+
+            span:nth-child(3) {
+                padding: 0 0 44px 0;
+            }
+    
+            &::before {
+                content: "";
+                width: 170px;
+                height: 406px;
+                border: solid rgb(247, 147, 30) 1px;
+                position: absolute;
+                top: 22px;
+                right: -5px;
+            }
+
+            &::after {
+                content: "";
+                width: 170px;
+                height: 406px;
+                border: solid rgb(247, 147, 30) 1px;
+                position: absolute;
+                top: 2px;
+                right: 13px;
+            }
+        }
+    }
+    
+}
+
+.introduction {
+    width: 100%;
+    height: 200vh;
+    background-image: url("../img/bg-01.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+
+    .introduction_area {
+        width: 100%;
+        font-family: 'Noto Sans TC', ;
+        .introduction_container {
+            width: 100%;
+            display: flex;
+            color: #fff;
+            
+            .introduction_img {
+                width: 50%;
+
+                img {
+                    width: 100%;
+                } 
+            }
+
+            .introduction_content {
+                width: 50%;
+                display: flex;
+                align-items: center;
+
+                &:nth-child(1) {
+                    justify-content: flex-end;
+                }
+
+                .introduction_content_title {
+                    width: 76px;
+                    height: 180px;
+                    font-size: 30px;
+                    writing-mode: vertical-rl;
+                    margin-bottom: 190px;
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        width: 76px;
+                        height: 215px;
+                        border: solid rgb(247, 147, 30) 1px;
+                        position: absolute;
+                        top: -12px;
+                        right: -19px;
+                    }
+        
+                    &::after {
+                        content: "";
+                        width: 76px;
+                        height: 215px;
+                        border: solid rgb(247, 147, 30) 1px;
+                        position: absolute;
+                        top: -24px;
+                        right: -6px;
+                    }
+                }
+
+                .introduction_content_txt {
+                    width: 480px;
+                    padding: 0 40px;
+
+                    h3 {
+                        font-size: 20px;
+                        font-weight: 100;
+                        line-height: 24px;
+                        letter-spacing: 3px;
+                    }
+                    
+                }
+
+            }
+
+        }
+
+    }
+}

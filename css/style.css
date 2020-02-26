@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0;
+  margin: 0;
+  font-weight: unset;
+}
+
+ul, li {
+  list-style: none;
+}
+
+input, button {
+  border: 0;
+}
+
+input:focus, button:focus {
+  outline: 0;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/banner_01.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+.banner .logo {
+  position: absolute;
+  top: 300px;
+  right: 648px;
+  width: 165px;
+  height: 345px;
+}
+
+.banner .banner_container {
+  position: absolute;
+  top: 425px;
+  right: 805px;
+}
+
+.banner .banner_container .banner_content {
+  position: relative;
+  width: 187px;
+  height: 406px;
+  font-family: DFKai-sb;
+  font-size: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.banner .banner_container .banner_content span {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+}
+
+.banner .banner_container .banner_content span:nth-child(1) {
+  padding: 90px 0 0 0;
+}
+
+.banner .banner_container .banner_content span:nth-child(2) {
+  padding: 0 15px;
+}
+
+.banner .banner_container .banner_content span:nth-child(3) {
+  padding: 0 0 44px 0;
+}
+
+.banner .banner_container .banner_content::before {
+  content: "";
+  width: 170px;
+  height: 406px;
+  border: solid #f7931e 1px;
+  position: absolute;
+  top: 22px;
+  right: -5px;
+}
+
+.banner .banner_container .banner_content::after {
+  content: "";
+  width: 170px;
+  height: 406px;
+  border: solid #f7931e 1px;
+  position: absolute;
+  top: 2px;
+  right: 13px;
+}
+
+.introduction {
+  width: 100%;
+  height: 200vh;
+  background-image: url("../img/bg-01.jpg");
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.introduction .introduction_area {
+  width: 100%;
+  font-family: "Noto Sans TC";
+}
+
+.introduction .introduction_area .introduction_container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+}
+
+.introduction .introduction_area .introduction_container .introduction_img {
+  width: 50%;
+}
+
+.introduction .introduction_area .introduction_container .introduction_img img {
+  width: 100%;
+}
+
+.introduction .introduction_area .introduction_container .introduction_content {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.introduction .introduction_area .introduction_container .introduction_content:nth-child(1) {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.introduction .introduction_area .introduction_container .introduction_content .introduction_content_title {
+  width: 76px;
+  height: 180px;
+  font-size: 30px;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  margin-bottom: 190px;
+  position: relative;
+}
+
+.introduction .introduction_area .introduction_container .introduction_content .introduction_content_title::before {
+  content: "";
+  width: 76px;
+  height: 215px;
+  border: solid #f7931e 1px;
+  position: absolute;
+  top: -12px;
+  right: -19px;
+}
+
+.introduction .introduction_area .introduction_container .introduction_content .introduction_content_title::after {
+  content: "";
+  width: 76px;
+  height: 215px;
+  border: solid #f7931e 1px;
+  position: absolute;
+  top: -24px;
+  right: -6px;
+}
+
+.introduction .introduction_area .introduction_container .introduction_content .introduction_content_txt {
+  width: 480px;
+  padding: 0 40px;
+}
+
+.introduction .introduction_area .introduction_container .introduction_content .introduction_content_txt h3 {
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 24px;
+  letter-spacing: 3px;
+}
+/*# sourceMappingURL=style.css.map */
