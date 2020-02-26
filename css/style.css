@@ -102,7 +102,7 @@ input:focus, button:focus {
 
 .introduction {
   width: 100%;
-  height: 200vh;
+  height: 2           00vh;
   background-image: url("../img/bg-01.jpg");
   background-size: cover;
   display: -webkit-box;
@@ -115,7 +115,6 @@ input:focus, button:focus {
 
 .introduction .introduction_area {
   width: 100%;
-  font-family: "Noto Sans TC";
 }
 
 .introduction .introduction_area .introduction_container {
@@ -187,6 +186,7 @@ input:focus, button:focus {
 }
 
 .introduction .introduction_area .introduction_container .introduction_content .introduction_content_txt h3 {
+  font-family: "Noto Sans TC";
   font-size: 20px;
   font-weight: 100;
   line-height: 24px;
