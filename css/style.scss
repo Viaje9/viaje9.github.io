@@ -5,6 +5,7 @@ html {
 body {
     background-image: url("../img/bg-04.jpg");
     background-size: 100% ;
+    overflow-x: hidden;
 }
 
 input,button {
@@ -424,7 +425,7 @@ a {
 
     .introduction_container {
         width: 100%;
-        overflow: hidden;
+
         .area{
             width: 100%;
             display: flex;
@@ -528,6 +529,7 @@ a {
             flex-direction: column;
             align-items: center;
             position: relative;
+            height: 100%;
 
             .topLeft {
                 width: 150px;
@@ -561,7 +563,7 @@ a {
                 text-align:center;
                 font-family: DFKai-sb;
                 font-size: 32px;
-                margin: 30px 0 70px 0;
+                margin: 30px 0 40px 0;
                 position: relative;
     
                 h2 {
