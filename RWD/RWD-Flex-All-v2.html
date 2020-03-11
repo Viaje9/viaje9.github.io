@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+    }
+    *{
+        box-sizing: border-box;
+    }
+    .all{
+        display: flex;
+    }
+    .navBar{
+        display: flex;
+        width: 366px;
+        height: 100vh;        
+        background-color: teal;
+        flex-direction: column;
+        align-items: center; 
+        padding: 50px;  
+    }
+    .menu-toggle{
+        display: none;
+    }
+    .logo{
+        background-color: turquoise;
+        background-image: url("img/2HA-avatar.jpg");
+        width: 150px;
+        height: 150px;
+        margin-bottom: 50px;
+        box-shadow: 5px 5px 10px rgba(1, 63, 63, 0.7);
+        border-radius: 75px;
+        background-size: cover;
+    }
+    .menu-btn {
+        width: 85px;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+    }
+
+    li {
+        box-shadow: 5px 5px 10px rgba(1, 63, 63, 0.7);
+        border-radius: 6px;
+        list-style: none;
+        padding: 10px 20px;
+        background-color: cadetblue;
+        margin-bottom: 10px;
+    }
+    .conten{
+        width: calc(100% - 366px);
+        height: 100vh;
+        background-color: turquoise;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        width: 965px;
+        height: 570px;
+        display: flex;
+        justify-content: space-between;
+    }
+    #boxA{
+        background-image: url("img/A1.jpg");
+    }
+    #boxB{
+        background-image: url("img/A2.jpg");
+    }
+    #boxC{
+        background-image: url("img/A3.jpg");
+    }
+    .boxStyle{
+        width: calc(33% - 7px);
+        height: 100%;
+        background-color: teal;
+        background-size: cover;
+        
+    }
+    .mask{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(1, 125, 125, 0.8);
+        transition: 0.5s;
+    }
+    .mask:hover{
+        box-shadow: 5px 5px 10px rgba(1, 63, 63, 1);
+        background-color: rgba( 0, 0, 0, 0);
+    }
+
+    .mask:active{
+        background-color: rgba( 0, 0, 0, 0);
+    }
+    @media(max-width: 1330px){
+        .container{
+            width: 800px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #boxA{
+            background-image: url("img/A5.jpg");
+            background-position: center;
+            width: 100%;
+            height: calc(50% - 5px);
+            margin-bottom: 10px;
+
+        }
+        #boxB{
+            width: calc(50% - 5px);
+            height: calc(50% - 5px);
+            margin-right: 10px;
+        }
+        #boxC{
+            width: calc(50% - 5px);
+            height: calc(50% - 5px);
+
+        }
+    }
+    @media(max-width: 1165px){
+        .all{
+            display: block;
+        } 
+        .navBar{
+            box-sizing: border-box;
+            width: 100%;
+            height: 100px;        
+            padding: 0 5%;
+            justify-content: space-between;
+            flex-direction: unset;
+        }
+        .logo{
+            width: 80px;
+            height: 80px;
+            margin-bottom: 0;
+        }
+        .menu-btn {
+            width: unset;
+        }
+        ul {
+            display: unset;
+        }
+
+        li {
+            display: inline-block;
+            margin-bottom: 0;
+            margin: 0 5px;
+        }
+        .conten{
+            width: 100%;
+            min-height: 800px;
+        }
+        .container{
+            width: 700px;
+            height: 800px;
+        }
+    }
+    @media(max-width: 700px){
+        .navBar{
+            height: 80px;        
+            justify-content: unset;
+            position: fixed;
+            background-color: rgb(3, 97, 97);
+        }
+        .menu-toggle{
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: turquoise;
+            margin-right: calc(60% - 110px);
+        }
+        .logo{
+            width: 50px;
+            height: 50px;
+        }
+        .menu-btn {
+            position: fixed;
+            left: -200px;
+            top: 85px;
+            transition: left 1s;  
+        }
+        li {
+            display: inline-block;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .menu-toggle:hover ~ .menu-btn{
+            top: 85px;
+            left: calc(5% - 20px);
+        }
+        .menu-btn:hover{
+            top: 85px;
+            left: calc(5% - 20px);
+        }
+        .conten{
+            width: 100%;
+            height: 150vh;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+        }
+        #boxA{
+            width: 100%;
+            height: 100vh;
+            margin-bottom: 0;
+            background-color: violet;
+        }
+        #boxB{
+            width: 100%;
+            height: 100vh;
+            margin-right: 0;
+        }
+        #boxC{
+            width: 100%;
+            height: 100vh;
+        }
+    }
+</style>
+<body>
+    <div class="all">
+        <div class="navBar">
+            <div class="menu-toggle"></div>
+            <div class="logo"></div>
+            <div class="menu-btn">
+                <ul>
+                    <li><a href="#boxA">AAAA</a></li>
+                    <li><a href="#boxB">BBBB</a></li>
+                    <li><a href="#boxC">CCCC</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="conten">
+            <div class="container">
+                <div id="boxA" class="boxStyle">
+                    <div class="mask"></div>
+                </div>
+                <div id="boxB" class="boxStyle">
+                    <div class="mask"></div>
+                </div>
+                <div id="boxC" class="boxStyle">
+                    <div class="mask"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+a{
+    color: red;
+}
+
+$fist: red;
+$fist-font-size: 30px;
+
+.card {
+    border: 1px solid black;
+    width: 300px;
+    img {
+        width: 100%;
+    }
+    .txt {
+        p {
+            color: $fist;
+            font-size: $fist-font-size;
+        }
+    }
+
+
+
+}
+
+

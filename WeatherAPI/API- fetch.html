@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: blanchedalmond;
+            display: flex;
+            font-family: '微軟正黑體';
+            font-weight: 600;
+            flex-direction: column;
+        }
+        .time{
+            margin: auto;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .weather_card {
+            margin: 5px;
+            width: 300px;
+            background-color: rgb(163, 188, 235);
+            border: black 1px solid;
+            border-radius: 15px;
+        }
+
+        .city {
+            padding: 5px 0 5px 30px;
+            width: 100%;
+            font-size: 22px;
+        }
+
+        .data {
+            padding: 5px 0 5px 30px;
+            width: 100%;
+            font-size: 22px;
+            
+        }
+
+        .weather {
+            padding: 5px 0 5px 30px;
+            width: 100%;
+            font-size: 22px;
+        }
+
+        .weather_container {
+            display: flex;
+        }
+
+        .weather_img {
+            width: 50%;
+            /* background-color: teal; */
+            display: flex;
+
+        }
+
+        .weather_temp {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-around; */
+            width: 50%;
+            font-size: 20px;
+        }
+        .weather_temp span{
+            margin: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="time"></div>
+    <div class="container">
+        <!-- <div class="weather_card">
+            <div class="city">台中市</div>
+            <div class="data">星期六 下午 4:00</div>
+            <div class="weather">多雲時陰</div>
+            <div class="weather_container">
+                <div class="weather_img">
+                    <img src="" alt="">
+                </div>
+                <div class="weather_temp">
+                    27°C
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="box"></div>
+
+    <script>
+        var box = document.querySelector('.container');
+
+
+
+        // fetch("https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/O-A0003-001?Authorization=CWB-EF111722-411D-4F20-969D-EB9CDAEAA9B6&downloadType=WEB&format=JSON")
+        //     .then(res => {
+        //         return res.json();
+        //     })
+        //     .then(result => {
+        //         let city = result.cwbopendata.location;
+        //         city.forEach(index => {
+
+        //             //**************************抓取資料*************************
+        //             cityName = index.parameter[0].parameterValue; //城市名稱
+        //             townName = index.parameter[2].parameterValue; //鄉鎮名稱
+        //             locationName = index.locationName;  //觀測站地點
+        //             locationTemp = index.weatherElement[3].elementValue.value; //觀測站溫度
+        //             time = index.time.obsTime; //觀測時間
+
+
+        //             //**************************重組日期**************************
+        //             var Date = index.time.obsTime.substr(0, 4) + '年' + index.time.obsTime.substr(5, 2) + '月' + index.time.obsTime.substr(8, 2) + '日' + index.time.obsTime.substr(11, 2) + '點' + time.substr(14, 2) + '分';
+
+
+        //             //**************************打包物件**************************
+        //             let weather = {
+        //                 locationName,
+        //                 townName,
+        //                 cityName,
+        //                 locationTemp,
+        //                 Date
+        //             }
+        //             //**************************寫入HTML************************
+        //             box.innerHTML +=
+        //                 `<div class="weather_card">
+        //                 <div class="city">${weather.cityName + ` ` + weather.locationName + ` ` + weather.townName}</div>
+        //                 <div class="data">${weather.Date}</div>
+        //                 <div class="weather">還沒寫</div>
+        //                 <div class="weather_container">
+        //                     <div class="weather_img">
+        //                         <img src="./img/weather_icon/1.png" alt="">
+        //                     </div>
+        //                         <div class="weather_temp">
+        //                             ${weather.locationTemp}°C
+        //                         </div>
+        //                     </div>
+        //                 </div>`
+
+        //             console.log()
+        //         });
+        //         console.log()
+
+        //     });
+
+        var a;
+        // fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-EF111722-411D-4F20-969D-EB9CDAEAA9B6')
+        // .then(res => {
+        //     return res.json();
+        // })
+        // .then(result => {
+        //     let city = result.records.location;
+
+        //     //***************map function********************
+        //     weatherWx = city.map((element) => {
+        //         cityName = element.locationName
+        //         Wx = element.weatherElement[0].time[0].parameter.parameterName
+        //         Min = element.weatherElement[2].time[0].parameter.parameterName
+        //         Max = element.weatherElement[4].time[0].parameter.parameterName
+        //         WxVal = element.weatherElement[0].time[0].parameter.parameterValue
+
+
+
+        //         let weatherWx = {
+        //             cityName,
+        //             Wx,
+        //             Min,
+        //             Max
+
+        //         }
+
+        //         // if (wxVal == 1){
+        //         //     wxVal = './img/weather_icon/1.png';
+        //         // }
+        //         // else if (wxVal == 2||wxVal == 3||wxVal == 4||wxVal == 5||wxVal == 6){
+        //         //     wxVal = './img/weather_icon/2.png'
+        //         // }
+        //         // else if (wxVal == 7){
+        //         //     wxVal = './img/weather_icon/3.png'
+        //         // }
+        //         // else {
+        //         //     wxVal = './img/weather_icon/4.png'
+        //         // }
+
+
+
+        //         box.innerHTML +=
+        //             `<div class="weather_card">
+        //             <div class="city">${weatherWx.Wx}</div>
+        //             <div class="data"></div>
+        //             <div class="weather">還沒寫</div>
+        //             <div class="weather_container">
+        //                 <div class="weather_img">
+        //                     <img src="${wxVal}" alt="">
+        //                 </div>
+        //                     <div class="weather_temp">
+        //                         ${weather.locationTemp}°C
+        //                     </div>
+        //                 </div>
+        //             </div>`
+
+
+        //         a = weatherWx;
+        //         console.log(a)
+        //         // return window.a;
+
+        //     });
+        //     //**********************************************
+
+        //     // console.log(city)
+        // })
+
+
+
+
+
+
+        // console.log(a)
+
+
+
+
+
+        // console.log(weatherWx)
+
+
+        fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-EF111722-411D-4F20-969D-EB9CDAEAA9B6')
+            .then(res => {
+                return res.json();
+            })
+            .then(result => {
+                let city = result.records.location;
+
+                //***************map function********************
+                city.forEach(element => {  //針對陣列 物件無法使用
+                    var cityName = element.locationName
+                    var Wx = element.weatherElement[0].time[0].parameter.parameterName
+                    var Min = element.weatherElement[2].time[0].parameter.parameterName
+                    var Max = element.weatherElement[4].time[0].parameter.parameterName
+                    var WxVal = element.weatherElement[0].time[0].parameter.parameterValue
+
+
+                    if (WxVal == 1) {
+                        WxVal = './img/weather_icon/1.png';
+                    }
+                    else if (WxVal == 2 || WxVal == 3 || WxVal == 4 || WxVal == 5 || WxVal == 6) {
+                        WxVal = './img/weather_icon/2.png'
+                    }
+                    else if (WxVal == 7) {
+                        WxVal = './img/weather_icon/3.png'
+                    }
+                    else {
+                        WxVal = './img/weather_icon/4.png'
+                    }
+                    
+
+        
+                    box.innerHTML +=
+                        `<div class="weather_card">
+                        <div class="city">${cityName}</div>
+                        <div class="data"></div>
+                        <div class="weather">${Wx}</div>
+                        <div class="weather_container">
+                            <div class="weather_img">
+                                <img src="${WxVal}" alt="">
+                            </div>
+                                <div class="weather_temp">
+                                    <span>最高溫度${Max}°C</span>
+                                    <span>最低溫度${Min}°C</span>
+                                </div>
+                            </div>
+                        </div>`
+
+
+
+                });
+
+            })
+        var time = document.querySelector('.time');
+        // var date = new Date();
+        // console.log(date)  標準時間
+        var date = new Date();
+        var Time = date.getFullYear() + '年' +(date.getMonth()+1) + '月' +date.getDate() + '日' +date.getHours() +':' +date.getMinutes();
+        console.log(Time)
+
+        time.innerHTML += `<h1>${Time}</h1>`
+    </script>
+</body>
+
+
+</html>

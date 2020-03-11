@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    html{
+        scroll-behavior: smooth;
+    }
+    body{
+        margin: 0;
+        background-color: antiquewhite;
+    }
+    #all{
+        background-color: green;
+        width: 80%;
+        margin: auto;
+        position: relative;
+    }
+    #logo{
+        position:fixed;
+        width: 150px;
+        height: 150px;
+        /* background-color: white; */
+        border-radius: 5em;
+        background-size: cover;
+        background-image: url("img/2HA-avatar.jpg");
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        top: 20px;
+        left: calc(10% + 20px);
+        
+    }
+    #navBar{
+        position: fixed;
+        top: 65px;
+        right:calc(20px + 10%);
+        /* background-color: aqua; */
+    }
+    .navBarStyle{
+        background-color: greenyellow;
+        margin-left: 20px;
+        font-size: 30px;
+        padding: 5px 40px;
+        border: 0;
+        float: left;
+        transition: .8s;
+        color: slateblue;
+        
+    }
+    /* 全區域的a都會有作用 */
+    a:hover{
+
+    }
+    /*  a底下為.bar-r才會作用 
+        hover為滑鼠懸庭的區塊  */
+    a .navBarStyle:hover{
+        background-color: red;
+        color: green;
+    }
+    /*  active點擊時區塊時 */
+    a .navBarStyle:active{
+        background-color: rgb(38, 0, 255);
+        color: darksalmon;
+    }
+    /* 已訪問過的連結 */
+    a .navBarStyle:visited{
+        color: darkgreen;
+    }
+    #cover-1{
+        background-image: url("img/god.jpg");
+        background-size: cover;
+    }
+    #cover-2{
+        background-image: url("img/b.jpg");
+        background-size: cover;
+    }
+    #cover-3{
+        background-image: url("img/c.jpg");
+        background-size: cover;
+    }
+    .mask{
+        width: 100%;
+        background-color: rgba( 0, 0, 0, .8);
+        padding: calc(25vh - 25px) 0 ;
+    }
+    .btn{
+        width: 100px;
+        height: 50px;
+        margin: auto;
+        background-color: green;
+        
+    }
+    .coverStyle{
+        width: 100%;
+        height: 50vh;
+        padding-top: 50vh;
+    }
+    </style>
+</head>
+<body>
+    <div id="all">
+        <div id="logo"></div>
+        <div id="navBar">
+            <a href="#cover-1">
+                <div class="navBarStyle">a</div>
+            </a>
+            <a href="#cover-2">
+                <div class="navBarStyle">b</div>
+            </a>
+            <a href="#cover-3">
+                <div class="navBarStyle">c</div>
+            </a>
+        </div>
+        <div id="cover-1" class="coverStyle">
+            <div class="mask">
+                <div class="btn"></div>
+            </div>
+        </div>
+        <div id="cover-2" class="coverStyle">
+            <div class="mask">
+                <div class="btn"></div>
+            </div>
+        </div>
+        <div id="cover-3" class="coverStyle">
+            <div class="mask">
+                <div class="btn"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

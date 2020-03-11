@@ -1,0 +1,678 @@
+
+$containerWidth: 1536px;
+
+@mixin Introduction {
+
+    // $LeftLineTop:
+    // $LeftLineRight: 
+}
+
+@mixin rwd {
+    
+    @media (max-width: 960px) {
+            $containerWidth: 100%;
+            width:$containerWidth;
+    }
+    
+    @media (max-width: 1024px) {
+            $containerWidth: 100%;
+            width:$containerWidth;
+    }
+    
+    @media (max-width: 1280px) {
+            $containerWidth: 960px;
+            width:$containerWidth;
+    }
+    
+    @media (max-width: 1460px) {
+            $containerWidth: 1136px;
+            width:$containerWidth;
+    }
+    
+    @media (max-width: 1680px) {
+            $containerWidth: 1336px;
+            width:$containerWidth;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//**********************************************************************
+body {
+    margin: 0;
+    background-color: red($color: #000000);
+    font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    overflow-x:hidden;
+    overflow-y:auto;
+    
+}
+
+h1,h2,h3,h4,h5,h6 {
+    padding: 0;
+    margin: 0;
+    font-size: unset;
+    font-weight: unset;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+.HeaderInner {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    
+    
+    .container {
+        display: flex;
+        width: $containerWidth;
+        @include rwd;
+        height: 48px;
+        align-items: center;
+        margin: auto;
+
+        .Logo {
+            
+            width: 190px;
+
+            a {
+                svg {
+                    width: 16px;
+                }
+            } 
+        }
+    
+        .Navigation {
+            flex: 1;
+            margin-left: auto;
+            padding: 0px 120px 0px 420px;
+
+
+            .toggle {
+                
+                ul{
+                    display: flex;
+                    justify-content: space-between;
+
+                    li {
+                        display: inline-block;
+                    }
+                } 
+            }
+        }
+
+    }
+}
+
+.Introduction {
+    display: flex;
+    background-color: #000000;
+    
+    .container {
+        width: $containerWidth;
+        @include rwd;
+        margin: 145px auto 60px;
+        display: flex;
+
+        .content {
+            width: 416px;
+            
+            .Heading {
+                
+                font-size: 64px;
+                color: rgb(79, 229, 255);
+            }
+
+            .Description {
+                max-width: 352px;
+                
+                margin: 100px 0px 30px;
+                color: rgb(255, 255, 255);
+
+            }
+            
+        }
+
+        .IntroductionImg {
+            display: flex;
+            justify-content: center;
+            flex: 1 1 auto;
+            position: relative;
+
+            .LeftLine {
+                top: -15px;
+                right: 180px;
+                position: absolute;
+                
+            }
+
+            .RightLine {
+                bottom: 155px;
+                left: 180px;
+                position: absolute;
+                
+            }
+        }
+    }
+}
+
+.Platforms {
+    display: flex;
+    width: 100%;
+
+    &::before {
+        content: "";
+        width: 50vw;
+        height: 384px;
+        background-color: rgb(34, 128, 200);
+        position: absolute;
+        z-index: -1;
+    }
+
+    &::after {
+        content: "";
+        width: 50vw;
+        height: 384px;
+        background-color: rgb(95, 207, 99);
+        position: absolute;
+        right: 0;
+        z-index: -1;
+    }
+
+    .container {
+        width: $containerWidth;
+        @include rwd;
+        margin: auto;
+        
+
+        display: flex;
+
+        .card {
+            box-sizing: border-box;
+            width: 25%;
+            height: 384px;
+            
+            display: flex;
+            flex-direction: column;
+        
+            padding: 26px 26px 10px 26px;
+            .imgBox {
+                
+                
+                flex: 1 ;
+            }
+
+            .card-body {
+                height: 140px;
+                
+
+                h2 {
+                    font-size: 32px;
+                    margin-bottom: 20px;
+                }
+                
+                a {
+                    font-weight: 400;
+
+                    img {
+                        margin-right: 16px;
+                    }
+
+                    span {
+                        letter-spacing: 0.1rem;
+                    }
+                }
+            }
+        }
+
+        .color1 {
+            background-color: rgb(37, 142, 222);
+        }
+        
+        .color2 {
+            background-color: rgb(79, 229, 255);
+
+        }
+        .color3 {
+            background-color: rgb(207, 143, 255);
+
+        }
+        .color4 {
+            background-color: rgb(105, 229, 110);
+
+        }
+    }
+}
+
+.EveryDevice {
+    display: flex;
+    height: 768px;
+    width: 100%;
+    
+    .container {
+        width: $containerWidth;
+        @include rwd;
+        margin: auto;
+
+        h2 {
+            font-size: 128px;
+        }
+
+        p {
+            margin: 60px 0px 0px;
+            box-sizing: border-box;
+            max-width: 384px;
+            padding: 0px 16px 0px 24px;
+        }
+    }
+}
+
+.TerraformSphere {
+    width: 100%;
+    background-color: rgb(25, 25, 25);
+
+    .container {
+        display: flex;
+        justify-content: center;
+        @include rwd();
+        margin: auto; 
+        padding: 60px 30px ;
+        position: relative;
+
+        .rect {
+            position: absolute;
+            top: -200px;
+            right: 130px;
+        }
+
+        .line {
+            position: absolute;
+            top: 570px;
+            left: 190px;
+        }
+    }
+}
+
+.TerraformDescription {
+    width: 100%;
+    background-color: rgb(25, 25, 25);
+
+    .Inner {
+        width: $containerWidth;
+        @include rwd;
+        margin: auto;
+        padding: 0 0 50px 0; 
+
+        p {
+            box-sizing: border-box;
+            width: 384px;
+            margin: 0px 0 0 auto;
+            padding: 0px 16px;
+            color: rgb(255, 255, 255);
+        }
+    }
+}
+
+.IntuitivePowerful {
+    display: flex;
+    width: 100%;
+    
+    .container {
+        width: 100%;
+        position: relative;
+        display: flex;
+
+        .txtBox {
+            width: 100%;
+            position: absolute;
+            bottom: 80px;
+            
+            .txt {
+                margin: auto;
+                width: $containerWidth;
+                @include rwd;
+                
+                h2 {
+                    font-size: 128px;
+                    margin: 0px 0px 0px 26px;
+                }
+    
+            }
+        }
+
+        .imgBox {
+            width: 100%;
+            display: flex;
+
+            img {
+                width: 100%;
+            }
+        }
+        
+
+        
+    }
+}
+
+.Clouds {
+    display: flex;
+    width: 100%;
+    min-height: 948px;
+
+    .container {
+        position: relative;
+        width: $containerWidth;
+        @include rwd;
+        margin: 0px auto;
+
+        .txtTop {
+            position: absolute;
+            top: -100px;
+            left: 0px;
+            font-size: 395px;
+        }
+    
+        .txtBtm {
+            position: absolute;
+            top: 140px;
+            right: -30px;
+            font-size: 395px;
+        }
+
+        // .Planes {
+        //     position: absolute;
+        //     top: -240px;
+        //     right: -260px;
+        //     width: 768px;
+
+        //     .solidPlane {
+        //         z-index: 1;
+        //         position: absolute;
+        //         top: -120px;
+        //         left: 2px;
+
+        //     }
+    
+        //     .outlinePlan {
+        //         box-sizing: border-box;
+        //         position: absolute;
+
+        //     }
+        // }
+
+        .line {
+            position: absolute;
+            top: 550px;
+            left: 370px
+        }
+
+        
+    }
+
+    
+
+}
+
+.EngagingImmersive {
+    width: 100%;
+    background-color: rgb(204, 204, 204);
+    min-height: 820px;
+    position: relative;
+
+    .container {
+        
+        width: $containerWidth;
+        @include rwd;
+        margin: 0px auto;
+
+        h2 {
+            padding: 140px 40px 0px 8px;
+            font-size: 128px;
+        }
+
+        p {
+            box-sizing: border-box;
+            max-width: 384px;
+            padding: 0px 16px;
+            margin: 60px 0px 0px;
+        }
+
+        .media {
+            position: absolute;
+            top: 200px;
+            right: 0px;
+            img {
+                max-width: 900px;
+            }
+        }
+    }
+}
+
+.Space {
+    width: 100%;
+    min-height: 768px;
+
+    .container {
+        position: relative;
+        width: $containerWidth;
+        @include rwd;
+        margin: 0px auto;
+    
+        .fluent {
+            position: absolute;
+            top: -95px;
+            left: 340px;
+        }
+        
+        .line {
+            position: absolute;
+            top: 185px;
+            left: 165px;
+        }
+
+        .whiteRect {
+            position: absolute;
+            top: -125px;
+            left: 620px;
+        }
+
+        .witePlane {
+            position: absolute;
+            top: 530px;
+            right: 85px;
+        }
+
+        .lilaRect {
+            position: absolute;
+            top: 270px;
+            right: 220px;
+        }
+    }
+}
+
+.Media {
+    width: 100%;
+    padding: 0px 0px 160px;
+    background-color: rgb(0, 0, 0);
+
+    .container {
+        display: flex;
+        width: $containerWidth;
+        @include rwd;
+        margin: 0px auto;
+
+        .card {
+            width: 25%;
+            height: 384px;
+            display: flex;
+            flex-direction: column;
+
+            p {
+                margin: 0;
+                font-size: 32px;
+                padding: 16px;
+                flex: 1;
+            }
+
+            .Source {
+                display: flex;
+                padding: 16px;
+
+                .icon {
+                    margin-right: 16px;
+                }
+
+                span {
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        .color1 {
+            background-color: black;
+            color: white;
+        }
+
+        .color2 {
+            background-color: rgb(57, 57, 57);
+            color: white;
+        }
+
+        .color3 {
+            background-color: rgb(118, 118, 118);
+        }
+
+        .color4 {
+            background-color: rgb(204, 204, 204);
+        }
+    }
+}
+
+.News {
+    background-color: black;
+    padding: 0px 0px 200px;
+
+    .container {
+        display: flex;
+        width: $containerWidth;
+        @include rwd;
+        margin: 0px auto;
+        color: white;
+        
+
+        .left {
+            font-size: 32px;
+            flex: 1;
+
+            h2 {
+                box-sizing: border-box;
+                width: 575px;
+                padding-left: 16px;
+            }
+        }
+
+        .right {
+            display: flex;
+            box-sizing: border-box;
+            flex: 1;
+            flex-direction: column;
+            padding: 0px 330px 35px 208px;
+
+            
+            a {
+                margin-top: 70px;
+                font-weight: 400;
+
+                img {
+                    margin-right: 16px;
+                }
+
+                span {
+                    letter-spacing: 0.14rem;
+                }
+    
+            }
+        }
+
+        
+    }
+}
+
+.footerInner {
+    background-color: black;
+    height: 48px;
+
+    .container {
+        display: flex;
+        width: $containerWidth;
+        @include rwd;
+        margin: 0px auto;
+        color: white;
+    
+        .logo {
+            width: 190px;
+            svg {
+                width: 20px;
+            }
+
+        }
+        .mid {
+            font-size: 12px;
+            font-weight: 400;
+            flex: 1;
+            padding: 0 100px 0 0;
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+
+                li {
+                    display: inline-block;
+                }
+            }
+        }
+
+        .right {
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+
+                li {
+                    width: 48px;
+                    display: inline-block;
+
+                    svg {
+                        width: 20px;
+                    }
+                }
+                
+                
+            }
+        }
+        
+    }
+}

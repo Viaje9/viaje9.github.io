@@ -1,0 +1,734 @@
+* {
+    box-sizing: border-box;
+}
+
+/*通用class*/
+
+.bg {
+    background-position: center;
+    background-size: cover;
+}
+
+.flex_O {
+    display: flex;
+    flex: 1;
+}
+
+.flex_I {
+    display: flex;
+    flex: 1;
+}
+
+.small_header {
+    margin-top: 37px;
+    line-height: 24px;
+    padding: 1px 12px 2px 0;
+}
+
+.small_text {
+    padding: 2px 12px 0 0;
+}
+
+.img_1779 {
+    display: block;
+    width: 100%;
+}
+
+.img_1084 {
+    display: none;
+    width: 100%;
+}
+
+.img_768 {
+    display: none;
+    width: 100%;
+}
+
+.img_540 {
+    display: none;
+    width: 100%;
+}
+
+.img_0 {
+    display: none;
+    width: 100%;
+}
+
+/******/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-family: 'Segoe UI', SegoeUI, 'Microsoft JhengHei', 微軟正黑體, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, ol, p, ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+}
+a :hover{
+    text-decoration: unset;
+}
+
+.all {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.NavArea {
+    padding: 0 5%;
+}
+
+#NavArea_position {
+    max-width: 1600px;
+    margin: 0 auto;
+    height: 100%;
+    height: 54px;
+    width: 100%;
+    display: flex;
+}
+
+.icon {
+    float: left;
+    width: 137px;
+    height: 100%;
+    margin: 1px 0 0 0;
+    padding: 16px 6px 16px 10px;
+}
+
+.icon>img {
+    margin-top: -3px;
+    max-width: none;
+    width: 108px;
+}
+
+.product_btn {
+    overflow: hidden;
+    height: 100%;
+    white-space: nowrap;
+    padding: 0 1px;
+    margin-right:auto ;
+    /* box-flex: 1; */
+}
+
+.product_btn>ul {
+    padding: 0;
+    list-style: none;
+}
+
+.product_btn>ul>li {
+    display: inline-block;
+}
+
+.product_btn>ul>li>a {
+    border: 1px solid transparent;
+    color: #262626;
+    display: inline-block;
+    margin-top: 1px;
+    padding: 16px 8px 10px;
+    height: 48px;
+    font-size: 13px;
+}
+
+.nav_bar {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+.nav_bar>.icon {
+    display: none;
+}
+.all_microsoft {
+    padding: 13px 20px 19px 15px;
+    /* width: calc(100% - 34px); */
+    border: 1px solid transparent;
+    margin: 1px 25px 0 0;
+    background: #fff;
+    position: relative;
+}
+
+.all_microsoft>span {
+    text-align: left;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.all_microsoft>div {
+    position: absolute;
+    font-size: 12px;
+    right: 28px;
+    bottom: 15px;
+}
+
+
+
+
+
+.nav_btn{
+    display: none;
+    margin: 1px;
+    padding: 6px 0 8px;
+}
+
+.nav_bar:hover{
+    
+}
+
+.search_btn{
+    display: flex;
+    padding: 13px 9px 15px;
+    margin: 0 6px 1px 1px;
+}
+
+.shopping_cart{
+    display: flex;
+    margin: 1px 10px 0 7px;
+    padding: 2px 0 8px;
+}
+
+.login_btn{
+    display: flex;
+    display: flex;
+}
+
+.search_btn_txt {
+    font-size: 13px;
+}
+.shopping_cart_txt {
+    font-size: 13px;
+    width: 54px;
+    height: 46px;
+    line-height: 46px;
+}
+
+.login_btn_txt{
+    font-size: 13px;
+    padding: 1px;
+}
+
+.nav_btn_icon{
+    width: 20px;
+    height: 20px;
+    margin: 7px 0 0;
+    background-image: url("../img/Icon/menu.svg");
+}
+
+.search_btn_icon{
+    width: 16px;
+    height: 16px;
+    margin: 0 0 0 2px;
+    background-image: url("../img/Icon/search.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.shopping_cart_icon{
+    width: 16px;
+    height: 42px;
+    margin: 2px 0 0;
+    /* 這裡圖片一定要加引號!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    background-image: url("../img/Icon/shopping.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.login_btn_icon{
+    width: 32px;
+    height: 32px;
+    background-image: url("../img/Icon/Login.svg");
+    margin: 10px 10px 8px 6px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*main*/
+
+.MainArea {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel_Area {
+    max-width: calc(1600px + 10%);
+    margin: auto;
+    padding: 0 5%;
+    
+}
+#carousel_Area_position{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: #e6e6e6;
+}
+#carousel_img>img {
+    content: "";
+    position: relative;
+    width: 100%;
+    opacity: .95;
+    /* opacity: ; */
+}
+
+#carousel_L {
+    position: absolute;
+    bottom: 0;
+    max-width: 520px;
+    height: 300px;
+    width: 100%;
+    min-width: 50%;
+    z-index: 3;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+}
+
+.carousel_style {
+    position: absolute;
+    bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel_style>h2 {
+    font-size: 46px;
+    line-height: 56px;
+    padding: 37px 0 3px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    overflow: hidden;
+    box-sizing: content-box;
+    max-height: 112px;
+}
+
+#carousel_text {
+    margin: 12px 0 0 0;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+    box-sizing: content-box;
+    max-height: 80px;
+    padding: 0;
+}
+
+#carousel_btn {
+    margin: 12px 0 0 0;
+    padding: 12px 2px 0 0;
+}
+
+#carousel_btn>#left {
+    color: #fff;
+    background: #000;
+    font-size: 15px;
+    padding: 10px 20px 6px 22px;
+    position: relative;
+    border: 2px solid transparent;
+    outline: 1px solid transparent;
+    outline-offset: -3px;
+    max-width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0;
+    line-height: 1.3;
+    white-space: nowrap;
+    transition: all 200ms ease-in-out;
+    box-shadow: 0 4px 8px 0 transparent;
+}
+
+#carousel_btn>#right {
+    color: #000;
+    font-size: 15px;
+    padding: 10px 20px 6px 22px;
+    position: relative;
+    border: 2px solid transparent;
+    outline: 1px solid transparent;
+    outline-offset: -3px;
+    max-width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0;
+    line-height: 1.3;
+    white-space: nowrap;
+    transition: all 200ms ease-in-out;
+    box-shadow: 0 4px 8px 0 transparent;
+}
+
+#carousel_btn>a>span {
+    max-width: 100%;
+    display: inline-block;
+    position: relative;
+    left: 0;
+    text-overflow: clip;
+    overflow: hidden;
+    transition: all 200ms ease-in-out;
+    vertical-align: top;
+    line-height: 18.5px;
+}
+
+/*product Area*/
+
+.product_Area {
+    max-width: calc(1600px + 10%);
+    padding: 0 5%;
+    display: flex;
+}
+
+#product_Area_position {
+    margin: 0 -12px;
+}
+
+.product_position {
+    padding: 0 12px;
+    width: 50%;
+    flex: 1;
+}
+
+.product_style {
+    margin-top: 48px;
+}
+
+.product_style>a {
+    padding: 10px 3px 7px 0;
+    position: relative;
+    border: 2px solid transparent;
+    outline: 1px solid transparent;
+    outline-offset: -3px;
+    margin-left: 0;
+    color: #0067b8;
+    background: transparent;
+    transition: none;
+    white-space: normal;
+    text-align: left;
+    max-width: 100%;
+    display: inline-block;
+    overflow: hidden;
+}
+
+/*Xbox Area*/
+
+.xbox_Area {
+    max-width: calc(1600px + 10%);
+    margin: auto;
+    padding: 0 5%;
+    /* position: relative; */
+}
+
+#xbox_Area_position {
+    display: flex;
+
+    justify-content: center;
+    position: relative;
+    background-color: #e6e6e6;
+    margin: 48px 0 0 0;
+}
+
+#xbox_L {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 88%;
+    height: 300px;
+    max-width: 2048px;
+    z-index: 1;
+    margin: 0 auto;
+    overflow: hidden;
+
+}
+
+.xbox_style {
+    transform: translateY(-50%);
+}
+
+.xbox_style>h2 {
+    font-size: 46px;
+    line-height: 56px;
+    padding: 37px 0 3px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    overflow: hidden;
+    box-sizing: content-box;
+    max-height: 112px;
+    font-weight: 600;
+    opacity: .95;
+}
+
+#xbox_text {
+    margin: 12px 0 0 0;
+}
+
+#xbox_btn {
+    margin: 12px 0 0 0;
+    padding: 12px 2px 0 0;
+}
+
+#xbox_btn>a {
+    color: #fff;
+    background: #000;
+    font-size: 15px;
+    padding: 10px 20px 6px 22px;
+    position: relative;
+    border: 2px solid transparent;
+    outline: 1px solid transparent;
+    outline-offset: -3px;
+    max-width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0;
+    line-height: 1.3;
+    white-space: nowrap;
+    transition: all 200ms ease-in-out;
+    box-shadow: 0 4px 8px 0 transparent;
+}
+
+#xbox_btn>a>span {
+    max-width: 100%;
+    display: inline-block;
+    position: relative;
+    left: 0;
+    text-overflow: clip;
+    overflow: hidden;
+    transition: all 200ms ease-in-out;
+    vertical-align: top;
+    line-height: 18.5px;
+}
+
+/*workspace Area*/
+
+.workplace_Area {
+    max-width: calc(1600px + 10%);
+    padding: 0 5%;
+}
+
+#wp_header {
+    padding: 48px 0 0 0;
+}
+
+#wp_position {
+    margin: -48px -12px 0 -12px;
+    padding: 16px 0 0 0;
+}
+
+.wp_place_position {
+    padding: 0 12px;
+    width: 50%;
+    flex: 1;
+}
+
+.place_style {
+    flex: 1;
+    margin-top: 48px;
+}
+
+.place_style>a {
+    padding: 10px 3px 7px 0;
+    position: relative;
+    border: 2px solid transparent;
+    outline: 1px solid transparent;
+    outline-offset: -3px;
+    margin-left: 0;
+    color: #0067b8;
+    background: transparent;
+    transition: none;
+    white-space: normal;
+    text-align: left;
+    max-width: 100%;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.follow_Area {
+    max-width: calc(1600px + 10%);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+#follow_position {
+    margin-top: 48px;
+    display: flex;
+}
+
+#follow_position>ul {
+    display: flex;
+}
+
+#follow_position>ul>li {
+    list-style: none;
+    border: 2px solid transparent;
+    outline: 0;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    transition: scale .2s ease-in-out;
+}
+
+.footerArea {
+    margin-top: 48px;
+    height: 396px;
+    width: 100%;
+    background-color: gray;
+}
+
+@media (max-width: 1399px) {
+    .img_1779 {
+        display: none;
+    }
+    .img_1084{
+        display: block;
+    }
+    .nav_btn_txt{
+        display: none;
+    }
+    .carousel_style>h2 {
+        font-size: 24px;
+        line-height: 28px;
+        padding: 36px 0 4px;
+        font-weight: 600;
+        max-height: 56px;
+    }
+    .xbox_style>h2 {
+        font-size: 24px;
+        line-height: 28px;
+        padding: 36px 0 4px;
+        font-weight: 600;
+        max-height: 56px;
+    }
+}
+
+@media (max-width: 1083px) {
+    .img_1084{
+        display: none;
+    }
+    .img_768 {
+        display: block;
+    }
+    .padding {
+        padding: 0;
+    }
+    .flex_O {
+        flex-direction: column;
+    }
+    .NavArea {
+        padding: 0;
+    }
+    #NavArea_position {
+        padding: 0 24px;
+    }
+    
+    .carousel_Area {
+        padding: 0;
+    }
+    .product_Area {
+        padding: calc(5% - 12px);
+    }
+    .xbox_Area {
+        padding: 0;
+    }
+    .workplace_Area {
+        padding: calc(5% - 12px);
+    }
+    .carousel_style {
+        bottom: 48px;
+    }
+}
+@media (max-width: 859px) {
+    .product_btn{
+        display: none;
+    }
+    #NavArea_position>.icon{
+        display: none;
+    }
+    .nav_bar {
+        width: 100%;
+        margin-left: unset;
+    }
+    .nav_btn{
+        display: block;
+    }
+
+    .search_btn{
+        margin-right: auto;
+    }
+
+    .all_microsoft{
+        display: none;
+    }
+
+    .nav_bar>.icon{
+        margin: auto;
+        display: block;
+    }
+
+    .shopping_cart{
+        margin-left: auto;
+    }
+
+}
+@media(max-width: 767px){
+    .img_768{
+        display: none;
+    }
+    .img_540 {
+        display: block;
+        width: 100%;
+    }
+    #carousel_Area_position{
+        display: block;
+    }
+    #carousel_L {
+        position: unset;
+        bottom: unset;
+    }
+    #xbox_Area_position{
+        display: block;
+    }
+    #xbox_L {
+        position: unset;
+        bottom: unset;
+        justify-content: center;
+        align-items: flex-end;
+    }
+}
+@media(max-width: 539px){
+    .flex_I {
+        flex-direction: column;
+    }
+    .product_position{
+        width: 100%;
+    }
+    .wp_place_position{
+        width: 100%;
+    }
+    
+}
+
+
+
+/* 
+CSS Entities  
+https://www.w3schools.com/cssref/css_entities.asp
+*/
