@@ -65,7 +65,7 @@ a {
 }
 
 .navbar nav .nav_top {
-  width: 50%;
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,6 +89,7 @@ a {
           align-items: center;
   margin: 0 20px;
   position: relative;
+  width: 12%;
 }
 
 .navbar nav .nav_top li img {
@@ -719,7 +720,6 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow-x: hidden;
   position: relative;
 }
 
@@ -749,6 +749,7 @@ a {
 
 #introduction .introduction_container {
   width: 100%;
+  overflow-x: hidden;
 }
 
 #introduction .introduction_container .area {
@@ -936,6 +937,7 @@ a {
 
 #meun .meun_container {
   width: 80%;
+  border-radius: 20px;
 }
 
 @media (max-width: 960px) {
@@ -982,23 +984,23 @@ a {
 }
 
 #meun .meun_container .meun_border .topLeft {
-  top: 10px;
-  left: 10px;
+  top: 20px;
+  left: 20px;
 }
 
 #meun .meun_container .meun_border .topRight {
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
 }
 
 #meun .meun_container .meun_border .btmLeft {
-  bottom: 10px;
-  left: 10px;
+  bottom: 20px;
+  left: 20px;
 }
 
 #meun .meun_container .meun_border .btmRight {
-  bottom: 10px;
-  right: 10px;
+  bottom: 20px;
+  right: 20px;
 }
 
 #meun .meun_container .meun_border .meun_title {
@@ -1061,6 +1063,7 @@ a {
 }
 
 #meun .meun_container .meun_border .meun_list_swiper .meun_list .meun_list_img img {
+  border-radius: 5px;
   width: 100%;
   -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
           box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
@@ -1159,6 +1162,8 @@ a {
   text-align: center;
   padding: 60px 0;
   font-size: 28px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 @media (max-width: 1280px) {
@@ -1174,6 +1179,8 @@ a {
 }
 
 #meun .meun_container .meun_border .meun_item_swiper .swiper-slide img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   width: 100%;
 }
 
@@ -1362,6 +1369,7 @@ a {
 
 #stronghold .stronghold_container {
   min-width: 70%;
+  border-radius: 30px;
   padding: 30px;
 }
 
@@ -1622,13 +1630,219 @@ a {
   background-color: wheat;
 }
 
+#reservation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 30px 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transition: ease-in 0.3s;
+  transition: ease-in 0.3s;
+}
+
+#reservation .reservation_container {
+  height: 100%;
+  border-radius: 30px;
+  width: 70%;
+  padding: 0 10%;
+  background-image: url("../img/bg-03.jpg");
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#reservation .reservation_container #reservation_off {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  background-color: #f7931e;
+  width: 50px;
+  height: 50px;
+}
+
+#reservation .reservation_container .reservation_title {
+  font-family: DFKai-sb;
+  margin: 30px 0 40px 0;
+  font-size: 32px;
+}
+
+#reservation .reservation_container .reservation_title h2 {
+  position: relative;
+}
+
+#reservation .reservation_container .reservation_title h2::before {
+  content: url("../img/Btm-line.svg");
+  background-size: cover;
+  width: 100%;
+  position: absolute;
+  top: 18px;
+}
+
+#reservation .reservation_container .reservation_rule {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  background-image: url("../img/bg-05.jpg");
+  padding: 20px;
+  color: #000;
+  font-family: "Noto Sans TC";
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 3px;
+  font-weight: 100;
+  border-radius: 5px;
+}
+
+#reservation .reservation_container .reservation_rule p {
+  padding-left: 2em;
+}
+
+#reservation .reservation_container form {
+  width: 100%;
+  padding: 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#reservation .reservation_container form .form_content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#reservation .reservation_container form .reservation_form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#reservation .reservation_container form .reservation_form .form_mid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#reservation .reservation_container form .reservation_form .form_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#reservation .reservation_container form .reservation_form .form_right input {
+  height: 50px;
+}
+
+#reservation .reservation_container form .reservation_form .reservation_txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#reservation .reservation_container form .reservation_form .reservation_txt label {
+  font-family: "Noto Sans TC";
+  font-size: 20px;
+  padding: 10px 10px 10px 0;
+}
+
+#reservation .reservation_container form .reservation_form .reservation_input {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#reservation .reservation_container form .reservation_form .reservation_input input {
+  width: 100%;
+  height: 20px;
+  margin: 10px 0;
+  border-radius: 3px;
+}
+
+#reservation .reservation_container form .reservation_form .form_right input {
+  height: 100px;
+}
+
+#reservation .reservation_container form .reservation_btn {
+  padding: 10px;
+  border: #f7931e solid 1px;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+  border-radius: 3px;
+}
+
+#reservation .reservation_container form .reservation_btn button {
+  position: relative;
+  background-color: unset;
+  font-family: "Noto Sans TC";
+  font-size: 24px;
+  color: #fff;
+  font-weight: 100;
+}
+
+#reservation .reservation_container form .reservation_btn:hover {
+  border: rgba(247, 147, 30, 0.6) solid 1px;
+}
+
 [data-aos="box-shadow"] {
   -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
           box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 [data-aos="box-shadow"].aos-animate {
-  -webkit-box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
-          box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
 }
 /*# sourceMappingURL=style.css.map */
