@@ -10,12 +10,13 @@ $(window).scroll(function () {
      
     }
    
-    console.log($(window).scrollTop()+200) 
 })
 
 $(document).ready(function () {
     $(".hamburger").click(function () {
-        $(".hamburger, .nav_side ul").toggleClass("is-active");
+        console.log('aaa');
+        $(".hamburger").toggleClass("is-active");
+        $(".nav_side .list").toggleClass("is-active");
     });
 
     $('.reservation_link').click(function () {

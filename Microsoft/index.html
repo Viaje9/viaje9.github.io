@@ -4,54 +4,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Microsoft - 官方首頁</title>
+    <link rel="stylesheet" href="./css/style-v2.css">
     <style></style>
 </head>
 
 <body>
     <div class="all">
-        <div class="NavArea">
+        <nav class="NavArea">
             <div id="NavArea_position">
-                <div class="icon">
-                    <img src="./img/Icon/Logo.png" alt="">
-                </div>
-                <div class="product_btn">
-                    <ul>
-                        <li><a href="">Office</a></li>
-                        <li><a href="">Windows</a></li>
-                        <li><a href="">Surface</a></li>
-                        <li><a href="">Xbox</a></li>
-                        <li><a href="">支援</a></li>
-                    </ul>
-                </div>
-                <div class="nav_bar">
-                    <div class="all_microsoft"><span>所有 Microsoft</span>
-                    </div>
-                    
-                    <div class="nav_btn">
-                        <div class="nav_btn_icon"></div>
-                    </div>
-                    
-                    <div class="search_btn">
-                        <div class="search_btn_txt nav_btn_txt">搜索</div>
-                        <div class="search_btn_icon"></div>
-                    </div>
-                    
+                <a href="">
                     <div class="icon">
                         <img src="./img/Icon/Logo.png" alt="">
                     </div>
-                    
-                    <div class="shopping_cart">
+                </a>
+                <div class="product_btn">
+                    <ul>
+                        <li><a class="office" href="">Office</a></li>
+                        <li><a class="windows" href="">Windows</a></li>
+                        <li><a class="surface" href="">Surface</a></li>
+                        <li><a class="xbox" href="">Xbox</a></li>
+                        <li><a class="support" href="">支援</a></li>
+                    </ul>
+                </div>
+                <div class="nav_btn">
+                    <div class="nav_btn_icon"></div>
+                </div>
+                <div class="nav_bar">
+                    <button class="all_microsoft">
+                        <span>所有 Microsoft</span>
+                        <div class="all_microsoft_items">
+                            <!--****************************************-->
+                            <ul>
+                                <li class="nav_left">
+                                    <span>Office</span>
+                                </li>
+                                <li class="nav_left">
+                                    <span>Windows</span>
+                                </li>
+                                <li class="nav_left">
+                                    <span>Surface</span>
+                                </li>
+                                <li class="nav_left">
+                                    <span>Xbox</span>
+                                </li>
+                                <li class="nav_left">
+                                    <span>支援</span>
+                                </li>
+                                <!-- /**********************************-->
+                                <li class="nav_right">
+                                    <span>軟體</span>
+                                    <ul>
+                                        <li>Windows 微軟應用程式</li>
+                                        <li>OneDrive</li>
+                                        <li>Outlook</li>
+                                        <li>Skype</li>
+                                        <li>OneNote</li>
+                                    </ul>
+                                </li>
+                                <li class="nav_right">
+                                    <span>個人電腦和設備</span>
+                                    <ul>
+                                        <li>PCs & tablets</li>
+                                        <li>電腦配件</li>
+                                    </ul>
+                                </li>
+                                <li class="nav_right">
+                                    <span>娛樂</span>
+                                    <ul>
+                                        <li>Xbox 與遊戲</li>
+                                        <li>遊戲</li>
+                                        <li>Windows 遊戲</li>
+                                    </ul>
+                                </li>
+                                <li class="nav_right">
+                                    <span>商務適用</span>
+                                    <ul>
+                                        <li>Microsoft Azure</li>
+                                        <li>Microsoft Dynamics 365</li>
+                                        <li>Microsoft 365</li>
+                                        <li>Microsoft Industry</li>
+                                        <li>資料平台</li>
+                                        <li>Licensing</li>
+                                    </ul>
+                                </li>
+                                <li class="nav_right">
+                                    <span>Developer & IT</span>
+                                    <ul>
+                                        <li>NET</li>
+                                        <li>Visual Studio</li>
+                                        <li>Windows Server</li>
+                                        <li>開發 Windows 應用程式</li>
+                                        <li>文件</li>
+                                    </ul>
+                                </li>
+                                <li class="nav_right">
+                                    <span>其他</span>
+                                    <ul>
+                                        <li>Microsoft Store</li>
+                                        <li>Microsoft Rewards</li>
+                                        <li>免費下載與安全性</li>
+                                        <li>教育</li>
+                                        <li>禮品卡</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </button>
+
+                    <button class="search_btn">
+                        <div class="search_btn_txt nav_btn_txt">搜索</div>
+                        <div class="search_btn_icon"></div>
+                    </button>
+
+                    <a href="">
+                        <div class="icon">
+                            <img src="./img/Icon/Logo.png" alt="">
+                        </div>
+                    </a>
+
+                    <button class="shopping_cart">
                         <div class="shopping_cart_txt nav_btn_txt">購物車</div>
                         <div class="shopping_cart_icon"></div>
-                    </div>
-                    <div class="login_btn"></div>
+                    </button>
+                    <button class="login_btn">
                         <div class="login_btn_txt nav_btn_txt">登入</div>
                         <div class="login_btn_icon"></div>
+                    </button>
                 </div>
             </div>
-        </div>
+        </nav>
         <div class="MainArea">
             <div class="carousel_Area">
                 <div id="carousel_Area_position">
@@ -69,21 +151,22 @@
                                 <p>透過 Office 365 天天探索各種可能性</p>
                             </div>
                             <div id="carousel_btn">
-                                <a id="left" href="https://www.xbox.com/zh-TW/consoles/xbox-one-s">
-                                    <span>最多可供 6 人使用 ＞</span>
+                                <a id="left" href="">
+                                    <span>最多可供 6 人使用</span>
                                 </a>
-                                <a  id="right" href="https://www.xbox.com/zh-TW/consoles/xbox-one-s">
-                                    <span>適合 1 人使用 ＞</span>
+                                <a id="right" href="">
+                                    <span>適合 1 人使用</span>
                                 </a>
                             </div>
                         </div>
+                        <div class="carousel_indicators"></div>
                     </div>
                 </div>
             </div>
             <div class="product_Area">
                 <div id="product_Area_position" class="flex_O">
                     <div id="product_Area_position_L" class="flex_I">
-                        <div class="product_position">
+                        <a class="product_position">
                             <div id="product1" class="product_style">
                                 <img class="img_1779" src="./img/Product/Product1/Product1_1779.webp" alt="">
                                 <img class="img_1084" src="./img/Product/Product1/Product1_1084.webp" alt="">
@@ -94,12 +177,11 @@
                                 <div class="small_text">
                                     <p>透過纖薄、輕巧且優雅的設計、更快的效能和長達 11.5 小時的電池續航力，強而有力地展現自我。</p>
                                 </div>
-                                <a href="https://www.microsoft.com/zh-tw/surface/devices/surface-laptop-3">
-                                    <span>立即選購</span>
-                                </a>
+                                <span>立即選購</span>
+
                             </div>
-                        </div>
-                        <div class="product_position">
+                        </a>
+                        <a class="product_position">
                             <div id="product2" class="product_style">
                                 <img class="img_1779" src="./img/Product/Product2/Product2_1779.webp" alt="">
                                 <img class="img_1084" src="./img/Product/Product2/Product2_1084.webp" alt="">
@@ -110,14 +192,12 @@
                                 <div class="small_text">
                                     <p>極致筆記型電腦的超強效能。</p>
                                 </div>
-                                <a href="https://www.microsoft.com/zh-tw/surface/devices/surface-laptop-3">
-                                    <span>立即選購</span>
-                                </a>
+                                <span>立即選購</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div id="product_Area_position_R" class="flex_I">
-                        <div class="product_position">
+                        <a class="product_position">
                             <div id="product3" class="product_style">
                                 <img class="img_1779" src="./img/Product/Product3/Product3_1779.webp" alt="">
                                 <img class="img_1084" src="./img/Product/Product3/Product3_1084.webp" alt="">
@@ -129,12 +209,10 @@
                                 <div class="small_text">
                                     <p>世界上最強的主機。</p>
                                 </div>
-                                <a href="https://www.microsoft.com/zh-tw/surface/devices/surface-laptop-3">
-                                    <span>立即選購</span>
-                                </a>
+                                <span>立即選購</span>
                             </div>
-                        </div>
-                        <div class="product_position">
+                        </a>
+                        <a class="product_position">
                             <div id="product4" class="product_style">
                                 <img class="img_1779" src="./img/Product/Product4/Product4_1779.webp" alt="">
                                 <img class="img_1084" src="./img/Product/Product4/Product4_1084.webp" alt="">
@@ -145,11 +223,9 @@
                                 <div class="small_text">
                                     <p>Xbox Live Gold 和超過 100 款高品質的主機遊戲和電腦遊戲。 與好友同樂，並探索下一個最愛遊戲。</p>
                                 </div>
-                                <a href="https://www.microsoft.com/zh-tw/surface/devices/surface-laptop-3">
-                                    <span>立即選購</span>
-                                </a>
+                                <span>立即選購</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -170,7 +246,7 @@
                             </div>
                             <div id="xbox_btn">
                                 <a href="https://www.xbox.com/zh-TW/consoles/xbox-one-s">
-                                    <span>了解更多 ＞</span>
+                                    <span>了解更多</span>
                                 </a>
                             </div>
                         </div>
@@ -183,7 +259,7 @@
                 </div>
                 <div id="wp_position" class="flex_O">
                     <div id="wp_position_L" class="flex_I">
-                        <div class="wp_place_position">
+                        <a class="wp_place_position">
                             <div id="wp_place1" class="place_style">
                                 <img class="img_1779" src="./img/workplace/workplace1/workplace1_1779.webp" alt="">
                                 <img class="img_1084" src="./img/workplace/workplace1/workplace1_1084.webp" alt="">
@@ -194,10 +270,10 @@
                                 <div class="small_text">
                                     <p>透過纖變萬化的經典變形平板，從筆記型電腦變成平板電腦或攜帶方便的工作室，以前所未有的方式一起合作。</p>
                                 </div>
-                                <a href=""><span>深入了解</span></a>
+                                <span>深入了解</span>
                             </div>
-                        </div>
-                        <div class="wp_place_position">
+                        </a>
+                        <a class="wp_place_position">
                             <div id="wp_place2" class="place_style">
                                 <img class="img_1779" src="./img/workplace/workplace2/workplace2_1779.webp" alt="">
                                 <img class="img_1084" src="./img/workplace/workplace2/workplace2_1084.webp" alt="">
@@ -208,12 +284,12 @@
                                 <div class="small_text">
                                     <p>不論您是連線或離線，都可隨處存取您的檔案。</p>
                                 </div>
-                                <a href=""><span>立即選購</span></a>
+                                <span>立即選購</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div id="wp_position_R" class="flex_I">
-                        <div class="wp_place_position">
+                        <a class="wp_place_position">
                             <div id="wp_place3" class="place_style">
                                 <img class="img_1779" src="./img/workplace/workplace3/workplace3_1779.webp" alt="">
                                 <img class="img_1084" src="./img/workplace/workplace3/workplace3_1084.webp" alt="">
@@ -222,10 +298,10 @@
                                 <img class="img_0" src="./img/workplace/workplace3/workplace3_0.webp" alt="">
                                 <h3 class="small_header">Windows 10 企業版</h3>
                                 <div class="small_text">下載 IT 專業人員適用的 90 天免費評估版本。</div>
-                                <a href=""><span>立即下載</span></a>
+                                <span>立即下載</span>
                             </div>
-                        </div>
-                        <div class="wp_place_position">
+                        </a>
+                        <a class="wp_place_position">
                             <div id="wp_place4" class="place_style">
                                 <img class="img_1779" src="./img/workplace/workplace4/workplace4_1779.webp" alt="">
                                 <img class="img_1084" src="./img/workplace/workplace4/workplace4_1084.webp" alt="">
@@ -236,9 +312,9 @@
                                 <div class="small_text">
                                     <p>了解 Kubernetes 運作方式，並立即開始雲端原生應用程式開發。</p>
                                 </div>
-                                <a href=""><span>開始使用</span></a>
+                                <span>開始使用</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -254,12 +330,66 @@
         </div>
         <div class="footerArea">
             <div class="footer_nav">
-                <div class="block1 block_style"></div>
-                <div class="block2 block_style"></div>
-                <div class="block3 block_style"></div>
-                <div class="block4 block_style"></div>
-                <div class="block5 block_style"></div>
-                <div class="block6 block_style"></div>
+                <div>
+                    <ul>
+                        
+                        <span>最新動向</span>
+                        <li>Surface Go</li>
+                        <li>Surface Book 2</li>
+                        <li>Surface Pro</li>
+                        <li>Windows 10 應用程式</li>
+                        <li>Office 應用程式</li>
+                    </ul>
+                    <ul>
+                        
+                        <span>Microsoft Store</span>
+                        <li>帳戶設定檔</li>
+                        <li>下載中心</li>
+                        <li>Microsoft Store 支援</li>
+                        <li>退貨/退款</li>
+                        <li>訂單追蹤</li>
+                    </ul>
+                    <ul>
+                        
+                        <span>教育</span>
+                        <li>Microsoft 在教育領域的應用</li>
+                        <li>學生適用的 Office</li>
+                        <li>學校適用的 Office 365</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        
+                        <span>企業</span>
+                        <li>Azure</li>
+                        <li>AppSource</li>
+                        <li>汽車</li>
+                        <li>政府機構</li>
+                        <li>醫療保健</li>
+                        <li>製造</li>
+                        <li>金融服務</li>
+                        <li>零售</li>
+                    </ul>
+                    <ul>
+                        
+                        <span>開發人員</span>
+                        <li>Microsoft Visual Studio</li>
+                        <li>Windows 開發人員中心</li>
+                        <li>開發人員網路</li>
+                        <li>TechNet</li>
+                        <li>Microsoft 開發人員計畫</li>
+                        <li>Channel 9</li>
+                    </ul>
+                    <ul>
+                        
+                        <span>公司</span>
+                        <li>人才招募</li>
+                        <li>公司新聞</li>
+                        <li>Microsoft 隱私權</li>
+                        <li>投資者</li>
+                        <li>安全性</li>
+                    </ul>
+                </div>
             </div>
             <div class="copyright"></div>
         </div>
