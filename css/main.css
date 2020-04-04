@@ -1,0 +1,25 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans TC";
+}
+
+main {
+  padding-top: 76px;
+}
+
+main .banner {
+  position: relative;
+}
+
+main .banner img {
+  width: 100%;
+}
+
+main .banner .banner_overlay {
+  position: absolute;
+  top: 0;
+}
+/*# sourceMappingURL=main.css.map */

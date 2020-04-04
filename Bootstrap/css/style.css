@@ -15,4 +15,11 @@ a {
   color: red;
   font-size: 30px;
 }
+
+#parallax {
+  height: 100vh;
+  background-image: url("../img/omg.JPG");
+  background-size: cover;
+  background-attachment: fixed;
+}
 /*# sourceMappingURL=style.css.map */

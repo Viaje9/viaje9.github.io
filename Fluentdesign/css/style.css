@@ -1677,6 +1677,10 @@ a {
   }
 }
 
+.News .container .right p {
+  line-height: 1.5;
+}
+
 .News .container .right a {
   margin-top: 70px;
   font-weight: 400;

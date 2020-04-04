@@ -1,6 +1,11 @@
 * {
     box-sizing: border-box;
 }
+button{
+    border: 0;
+    background-color: unset;
+    font-family: 'Segoe UI', SegoeUI, 'Microsoft JhengHei', 微軟正黑體, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 /*通用class*/
 
@@ -54,6 +59,7 @@
     width: 100%;
 }
 
+
 /******/
 
 body {
@@ -66,6 +72,15 @@ body {
 h1, h2, h3, h4, h5, h6, ol, p, ul {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+  }
+
+li {
+    list-style: none;
 }
 
 a {
@@ -83,6 +98,7 @@ a :hover{
 
 .NavArea {
     padding: 0 5%;
+    margin: 0 0 1px;
 }
 
 #NavArea_position {
@@ -100,12 +116,58 @@ a :hover{
     height: 100%;
     margin: 1px 0 0 0;
     padding: 16px 6px 16px 10px;
+    
 }
+
+a:focus{
+    outline: black dashed 1px;
+    
+}
+
+a:focus::after{
+    content: "";
+    border-bottom:2px solid black;
+    position: absolute;
+    bottom: 9px;
+    left: 6px;
+}
+.office:focus::after{
+    width: 36px;
+}
+
+.windows:focus::after{
+    width: 55px;
+}
+
+.surface:focus::after{
+    width: 44px;
+}
+
+.xbox:focus::after{
+    width: 32px;
+}
+
+.support:focus::after{
+    width: 29px;
+}
+
 
 .icon>img {
     margin-top: -3px;
     max-width: none;
     width: 108px;
+}
+
+button:focus{
+    outline: black dashed 1px;   
+}
+
+button:focus::after{
+    content: "";
+    border-bottom:2px solid black;
+    position: absolute;
+    bottom: 15px;
+    left: 16px;
 }
 
 .product_btn {
@@ -134,30 +196,111 @@ a :hover{
     padding: 16px 8px 10px;
     height: 48px;
     font-size: 13px;
+    position: relative;
 }
+
+.product_btn>ul>li>a:hover::after{
+    content: "";
+    border-bottom:2px solid black;
+    position: absolute;
+    bottom: 9px;
+    left: 6px;
+}
+
+.office:hover::after{
+    width: 36px;
+}
+
+.windows:hover::after{
+    width: 55px;
+}
+
+.surface:hover::after{
+    width: 44px;
+}
+
+.xbox:hover::after{
+    width: 32px;
+}
+
+.support:hover::after{
+    width: 29px;
+}
+
 
 .nav_bar {
     margin-left: auto;
     display: flex;
     align-items: center;
 }
-.nav_bar>.icon {
+.nav_bar>a>.icon {
     display: none;
 }
 .all_microsoft {
-    padding: 13px 20px 19px 15px;
+    padding: 13px 23px 19px 15px;
     /* width: calc(100% - 34px); */
     border: 1px solid transparent;
-    margin: 1px 25px 0 0;
+    margin: 1px 9px 0 0;
     background: #fff;
     position: relative;
 }
+
+.nav_bar button:hover::after{
+    content: "";
+    border-bottom:2px solid black;
+    position: absolute;
+    
+}
+
+.all_microsoft:hover::after{
+    bottom: 15px;
+    left: 15px;
+    width: 84px;
+}
+
+.search_btn:hover::after{
+    bottom: 12px;
+    left: 8px;
+    width: 28px;
+}
+
+.shopping_cart:hover::after{
+    bottom: 17px;
+    left: 15px;
+    width: 42px;
+}
+
+.login_btn:hover::after{
+    bottom: 16px;
+    left: 6px;
+    width: 27px;
+}
+
+
+.all_microsoft_items{
+    display: none;
+}
+
+/* .all_microsoft:hover .all_microsoft_items{
+    display: block;
+    position: absolute;
+    top:45px;
+    z-index: 5;
+    margin: auto;
+} */
 
 .all_microsoft>span {
     text-align: left;
     display: inline-block;
     font-size: 13px;
 }
+
+.all_microsoft>span::after {
+    content: url("../img/Icon/down-arrow.svg");
+    position: relative;
+    left: 5px;
+}
+
 
 .all_microsoft>div {
     position: absolute;
@@ -166,60 +309,104 @@ a :hover{
     bottom: 15px;
 }
 
+/**********toggle***************/
+/* .all_microsoft_items>ul{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #e6e6e6;
+    width: 1230px;
+    justify-content: space-between;
+}
+.nav_left{
+    display: none;
+}
+.nav_right{
+    padding: 10px;
+    display: inline-block;
+}
+.nav_right>ul{
+    padding: 5px 0 5px ;
+}
+.nav_right>ul>li{
+    padding: 5px 0 10px;
+} */
 
-
-
+/**********toggle***************/
 
 .nav_btn{
     display: none;
     margin: 1px;
     padding: 6px 0 8px;
 }
+/* *************hover********** */
+/* .nav_btn:hover~.nav_bar .all_microsoft .all_microsoft_items{
+    display: block;
+    position: absolute;
+    z-index: 5;
+    top: 54px;
+    left: 0;
+} */
 
-.nav_bar:hover{
-    
+/* .nav_btn:hover~.nav_bar .all_microsoft .all_microsoft_items .nav_left{
+    display: block;
+    padding: 10%;
 }
+.nav_btn:hover~.nav_bar .all_microsoft .all_microsoft_items ul{
+    width: 100%;
+    flex-direction: column;
+}
+.nav_btn:hover~.nav_bar .all_microsoft .all_microsoft_items .nav_right ul{
+    display: none;
+} */
 
-.search_btn{
+
+/* *************hover********** */
+.search_btn {
+    position: relative;
     display: flex;
     padding: 13px 9px 15px;
-    margin: 0 6px 1px 1px;
+    margin: 0 5px 1px 1px;
 }
 
-.shopping_cart{
+.shopping_cart {
+    position: relative;
     display: flex;
     margin: 1px 10px 0 7px;
-    padding: 2px 0 8px;
+    padding: 2px 0 5px;
 }
 
-.login_btn{
+.login_btn {
+    position: relative;
     display: flex;
     display: flex;
 }
 
 .search_btn_txt {
     font-size: 13px;
+    margin: 0 4px 0 0;
 }
 .shopping_cart_txt {
     font-size: 13px;
     width: 54px;
     height: 46px;
     line-height: 46px;
+    margin: 0 3px 0 9px;
 }
 
-.login_btn_txt{
+.login_btn_txt {
+    line-height: 46px;
     font-size: 13px;
-    padding: 1px;
+    padding: 1px 12px 1px 1px ;
 }
 
-.nav_btn_icon{
+.nav_btn_icon {
     width: 20px;
     height: 20px;
     margin: 7px 0 0;
     background-image: url("../img/Icon/menu.svg");
 }
 
-.search_btn_icon{
+.search_btn_icon {
     width: 16px;
     height: 16px;
     margin: 0 0 0 2px;
@@ -229,10 +416,10 @@ a :hover{
     background-position: center;
 }
 
-.shopping_cart_icon{
+.shopping_cart_icon {
     width: 16px;
     height: 42px;
-    margin: 2px 0 0;
+    margin: 2px 3px 0 0;
     /* 這裡圖片一定要加引號!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
     background-image: url("../img/Icon/shopping.svg");
     background-size: contain;
@@ -240,11 +427,11 @@ a :hover{
     background-position: center;
 }
 
-.login_btn_icon{
+.login_btn_icon {
     width: 32px;
     height: 32px;
     background-image: url("../img/Icon/Login.svg");
-    margin: 10px 10px 8px 6px;
+    margin: 10px 3px 8px 0;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -265,7 +452,7 @@ a :hover{
     padding: 0 5%;
     
 }
-#carousel_Area_position{
+#carousel_Area_position {
     display: flex;
     justify-content: center;
     position: relative;
@@ -329,10 +516,10 @@ a :hover{
 }
 
 #carousel_btn>#left {
+    padding: 10px 20px 6px 18px;
     color: #fff;
     background: #000;
     font-size: 15px;
-    padding: 10px 20px 6px 22px;
     position: relative;
     border: 2px solid transparent;
     outline: 1px solid transparent;
@@ -348,12 +535,20 @@ a :hover{
     white-space: nowrap;
     transition: all 200ms ease-in-out;
     box-shadow: 0 4px 8px 0 transparent;
+    margin-right: 54px;
+}
+
+#carousel_btn>#left>span {
+    padding: 0 17px 3px 7px;
+}
+
+#carousel_btn>#right>span {
+    padding: 0 17px 8px 7px;
 }
 
 #carousel_btn>#right {
     color: #000;
     font-size: 15px;
-    padding: 10px 20px 6px 22px;
     position: relative;
     border: 2px solid transparent;
     outline: 1px solid transparent;
@@ -369,6 +564,11 @@ a :hover{
     white-space: nowrap;
     transition: all 200ms ease-in-out;
     box-shadow: 0 4px 8px 0 transparent;
+    margin-right: 42px;
+}
+
+#carousel_btn>a {
+    position: relative;
 }
 
 #carousel_btn>a>span {
@@ -381,6 +581,52 @@ a :hover{
     transition: all 200ms ease-in-out;
     vertical-align: top;
     line-height: 18.5px;
+}
+
+#carousel_btn>#left>span::after {
+    content: url("../img/Icon/next-white.png");
+    position: absolute;
+    top: 1px;
+    right: 2px;
+    transition: all 200ms ease-in-out;
+}
+
+#carousel_btn>#left:hover>span {
+    padding: 0 20px 3px 4px; 
+}
+
+#carousel_btn>#left:hover>span::after {
+    right: -1px;
+}
+
+#carousel_btn>#left:hover>span::before {
+    content: "";
+    position: absolute;
+    border-bottom: 2px white solid;
+    width: 121px;
+    bottom: 0;
+    left: 3px;
+}
+
+#carousel_btn>#right>span::after {
+    content: url("../img/Icon/next-black.png");
+    position: absolute;
+    top: 1px;
+    right: 2px;
+    transition: all 200ms ease-in-out;
+}
+
+#carousel_btn>#right:hover>span::after {
+    right: -1px;
+}
+
+#carousel_btn>#right:hover>span::before {
+    content: "";
+    position: absolute;
+    border-bottom: 2px black solid;
+    width: 89px;
+    bottom: 4px;
+    left: 7px;
 }
 
 /*product Area*/
@@ -400,13 +646,17 @@ a :hover{
     width: 50%;
     flex: 1;
 }
+.product_position:hover {
+    opacity: 0.9;
+}
 
 .product_style {
     margin-top: 48px;
+    position: relative;
 }
 
-.product_style>a {
-    padding: 10px 3px 7px 0;
+.product_style>span {
+    padding: 10px 40px 7px 0;
     position: relative;
     border: 2px solid transparent;
     outline: 1px solid transparent;
@@ -420,6 +670,27 @@ a :hover{
     max-width: 100%;
     display: inline-block;
     overflow: hidden;
+    font-weight: 600;
+
+}
+
+.product_style>span::after {
+    content: url("../img/Icon/next-blue.png");
+    position: absolute;
+    bottom: 4px;
+    right: 20px;
+    transition: 0.3s;    
+}
+
+.product_style>span:hover::after {
+    right: 15px; 
+}
+.product_style>span:hover::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    width: 61px;
+    border-bottom: solid 2px #0067b8;
 }
 
 /*Xbox Area*/
@@ -485,7 +756,6 @@ a :hover{
     color: #fff;
     background: #000;
     font-size: 15px;
-    padding: 10px 20px 6px 22px;
     position: relative;
     border: 2px solid transparent;
     outline: 1px solid transparent;
@@ -504,16 +774,43 @@ a :hover{
     box-shadow: 0 4px 8px 0 transparent;
 }
 
+
+
 #xbox_btn>a>span {
+    padding: 10px 30px 6px 22px;
     max-width: 100%;
     display: inline-block;
     position: relative;
     left: 0;
     text-overflow: clip;
     overflow: hidden;
-    transition: all 200ms ease-in-out;
     vertical-align: top;
     line-height: 18.5px;
+}
+
+#xbox_btn>a>span::after {
+    content: url("../img/Icon/next-white.png");
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    transition: all 200ms ease-in-out;
+}
+
+#xbox_btn>a:hover>span {
+    padding: 10px 35px 6px 17px;
+}
+
+#xbox_btn>a:hover>span::after {
+    right: 5px;
+}
+
+#xbox_btn>a:hover>span::before {
+    content: "";
+    position: absolute;
+    border-bottom: 2px white solid;
+    width: 61px;
+    bottom: 0;
+    left: 16px;
 }
 
 /*workspace Area*/
@@ -538,13 +835,18 @@ a :hover{
     flex: 1;
 }
 
+.wp_place_position:hover{
+    opacity: 0.9;
+}
+
 .place_style {
     flex: 1;
     margin-top: 48px;
+    position: relative;
 }
 
-.place_style>a {
-    padding: 10px 3px 7px 0;
+.place_style>span {
+    padding: 10px 40px 7px 0;
     position: relative;
     border: 2px solid transparent;
     outline: 1px solid transparent;
@@ -558,6 +860,26 @@ a :hover{
     max-width: 100%;
     display: inline-block;
     overflow: hidden;
+    font-weight: 600;
+}
+
+.place_style>span::after {
+    content: url("../img/Icon/next-blue.png");
+    position: absolute;
+    right: 20px;
+    bottom: 4px;
+    transition: 0.3s;    
+}
+
+.place_style>span:hover::after {
+    right: 15px;
+}
+.place_style>span:hover::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    width: 61px;
+    border-bottom: solid 2px #0067b8;
 }
 
 .follow_Area {
@@ -588,21 +910,73 @@ a :hover{
 
 .footerArea {
     margin-top: 48px;
-    height: 396px;
     width: 100%;
-    background-color: gray;
+    background-color: rgb(242, 242, 242);
+    padding: 0 5%;
+}
+
+.footer_nav {
+    margin: auto;
+    max-width: 1600px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer_nav ul {
+    color: rgba(0,0,0,0.7);
+    padding: 36px 0 4px;
+    flex: 1;
+}
+.footer_nav ul li {
+    font-size: 12px;
+    padding: 8px;
+}
+
+.footer_nav ul>span {
+    
+    padding: 8px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.footer_nav div {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_nav ul li:hover {
+    text-decoration: underline;
+}
+
+.footer_nav ul li:hover span {
+    text-decoration: none;
 }
 
 @media (max-width: 1399px) {
     .img_1779 {
         display: none;
     }
-    .img_1084{
+
+    .img_1084 {
         display: block;
     }
-    .nav_btn_txt{
+
+    .nav_btn_txt {
         display: none;
     }
+
+    .search_btn:hover::after {
+        display: none;
+    }
+    
+    .shopping_cart:hover::after {
+        display: none;
+    }
+    
+    .login_btn:hover::after {
+        display: none;
+    }
+
     .carousel_style>h2 {
         font-size: 24px;
         line-height: 28px;
@@ -610,6 +984,7 @@ a :hover{
         font-weight: 600;
         max-height: 56px;
     }
+
     .xbox_style>h2 {
         font-size: 24px;
         line-height: 28px;
@@ -619,8 +994,19 @@ a :hover{
     }
 }
 
+/* @media (max-width: 1229px){
+    .all_microsoft_items>ul{
+        width: 1025px;
+    }
+}
+@media (max-width: 1024px){
+    .all_microsoft_items>ul{
+        width: 820px;
+    }
+} */
+
 @media (max-width: 1083px) {
-    .img_1084{
+    .img_1084 {
         display: none;
     }
     .img_768 {
@@ -643,67 +1029,98 @@ a :hover{
         padding: 0;
     }
     .product_Area {
-        padding: calc(5% - 12px);
+        padding: 0 calc(5% - 12px);
     }
     .xbox_Area {
         padding: 0;
     }
     .workplace_Area {
-        padding: calc(5% - 12px);
+        padding: 0 calc(5% - 12px);
     }
     .carousel_style {
         bottom: 48px;
     }
+    .footer_nav {
+        flex-wrap: wrap;
+    }
+    .footer_nav div {
+        width: 100%;
+        display: flex;
+    }
+
 }
 @media (max-width: 859px) {
-    .product_btn{
+    #NavArea_position {
+        padding: 0;
+    }
+    .product_btn {
         display: none;
     }
-    #NavArea_position>.icon{
+    #NavArea_position>a>.icon {
         display: none;
     }
     .nav_bar {
         width: 100%;
         margin-left: unset;
     }
-    .nav_btn{
+    .nav_btn {
         display: block;
     }
 
-    .search_btn{
+    .search_btn {
         margin-right: auto;
     }
 
-    .all_microsoft{
+    .all_microsoft {
         display: none;
     }
-
-    .nav_bar>.icon{
+    .all_microsoft {
+        padding: 0;
+        border: 0;
+        margin: 0;
+    }
+    .nav_bar>a>.icon {
         margin: auto;
         display: block;
     }
 
-    .shopping_cart{
+    .shopping_cart {
         margin-left: auto;
     }
 
+    .login_btn_icon {
+        margin: 10px 9px 8px 0;
+    }
+
+    .shopping_cart_icon {
+        margin: 2px 16px 0 0;
+    }
+
+    .nav_btn {
+        padding: 6px 14px 8px;
+    }
+
+    .search_btn {
+        padding: 13px 24px 15px 9px;
+    }
+
 }
-@media(max-width: 767px){
-    .img_768{
+@media(max-width: 767px) {
+    .img_768 {
         display: none;
     }
     .img_540 {
         display: block;
         width: 100%;
     }
-    #carousel_Area_position{
+    #carousel_Area_position {
         display: block;
     }
     #carousel_L {
         position: unset;
         bottom: unset;
     }
-    #xbox_Area_position{
+    #xbox_Area_position {
         display: block;
     }
     #xbox_L {
@@ -713,15 +1130,20 @@ a :hover{
         align-items: flex-end;
     }
 }
-@media(max-width: 539px){
+@media(max-width: 539px) {
     .flex_I {
         flex-direction: column;
     }
-    .product_position{
+    .product_position {
         width: 100%;
     }
-    .wp_place_position{
+    .wp_place_position {
         width: 100%;
+    }
+    .footer_nav div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
     }
     
 }
