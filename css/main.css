@@ -6,6 +6,10 @@ body {
   font-family: "Noto Sans TC";
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 main {
   padding-top: 76px;
 }
