@@ -1,0 +1,929 @@
+@import _uniform-v2
+
+
+html    
+    scroll-behavior: smooth
+body
+    background-image: url("../img/bg-04.jpg")
+    background-size: 100%
+    #navBar
+        @media (max-width: 992px) 
+            position: fixed
+            top: 0
+            width: 100%
+            z-index: 5
+        nav 
+            background-image: url("../img/menuBg.jpg")
+            height: $padding*2
+            display: flex
+            align-items: center
+            justify-content: center
+            @media (max-width: 992px) 
+                justify-content: flex-start
+            .hamburger 
+                display: none
+                @media (max-width: 992px) 
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    flex-direction: column
+                    padding: 0 14px
+                    height: 50px
+                    .line 
+                        width: 40px
+                        height: 2px
+                        border-radius: 1em
+                        background-color: rgb(247, 147, 30)
+                        display: block
+                        margin: 5px auto
+                        transition: all 0.5s ease-in-out
+            #hamburger.is-active .line:nth-child(2) 
+                opacity: 0
+            #hamburger.is-active .line:nth-child(1) 
+                transform: translateY(13px) rotate(45deg)
+            #hamburger.is-active .line:nth-child(3) 
+                transform: translateY(-13px) rotate(-45deg)
+            .logo 
+                display: none
+                @media (max-width: 992px) 
+                    display: block
+                    position: fixed
+                    $widht: 65px
+                    width: $widht
+                    left: calc(50% - #{$widht/2})
+            .nav_top 
+                display: flex
+                justify-content: center
+                align-items: center
+                @media (max-width: 992px) 
+                    display: none
+                li 
+                    font-family: DFKai-sb
+                    color: $fontColorLight
+                    padding: 0 $padding/2
+                    a
+                        h4 
+                            font-weight: 300
+                            transition: 0.3s
+                            &:hover
+                                color: $mainColor 
+                        svg 
+                            width: 20px
+                            margin-bottom: .5rem
+                            fill: $fontColorLight
+                            transition: 0.3s
+                            &:hover
+                                fill: $mainColor 
+            #hamburger.is-active ~ .nav_side .list 
+                left: 0
+            .nav_side 
+                .icon_hamburger
+                    position: fixed
+                    top: -50%
+                    left: 0
+                    transition: all 1s ease-in-out
+                    width: 3%
+                    z-index: 6
+                    @media (max-width: 1280px)
+                        width: 5%
+                    @media (max-width: 992px)
+                        display: none
+                    &.is-active
+                        top: 25%
+                    &:hover ~ ul
+                        top: 19%
+                        left: -5px 
+                .list 
+                    position: fixed
+                    top: 19%
+                    left: -25%
+                    padding: 10px 30px 10px 3%
+                    background-image: url("../img/menuBg.jpg")
+                    transition: all 0.9s ease-in-out
+                    z-index: 5
+                    
+                    @media (max-width: 1280px)
+                        padding: 10px 30px 10px 5%
+                    @media (max-width: 768px)
+                        display: flex
+                        flex-direction: column
+                        align-items: center
+                        box-sizing: border-box
+                        width: 100%
+                        top: 64px
+                        left: -100%
+                        padding: 10px 30px 10px 30px
+                        li
+                            width: 150px
+                            margin: 10px  
+                    &:hover
+                        left: -5px
+                    li
+                        margin: 25px 20px
+                        @media (max-width: 768px)
+                            display: flex
+                            justify-content: center    
+                        @media (max-width: 570px)
+                            margin: 10px 20px
+
+                             
+                        h4 
+                            position: relative
+                            font-family: DFKai-sb
+                            color: $fontColorLight
+                            @media (max-width: 768px)
+                                text-align: center
+                            &:hover::after
+                                content: url("../img/Btm-line.svg")
+                                background-size: cover
+                                width: 100%
+                                left: 0
+                                position: absolute
+                                top: 15px
+                
+    main
+        @media (max-width: 992px) 
+            padding: $padding*2 0     
+    #banner
+        z-index: -1
+        position: relative
+        font-family: DFKai-sb
+        zoom: 1
+        .banner_img
+            box-shadow: 30px 0 30px rgba(0, 0, 0, 0.3), -30px 0 30px rgba(0, 0, 0, 0.3)
+            
+        .logo
+            position: absolute
+            top: 27%
+            right: 541px
+            width: 8%
+            @media (max-width: 1365px)
+                top: 461px
+                right: 775px
+                width: 11%
+            
+        .banner_container
+            position: absolute
+            top: 400px
+            right: 745px
+            @media (max-width: 1365px)
+                display: none
+            .banner_content
+                color: $fontColorLight
+                padding: 20px
+                position: relative
+                writing-mode: vertical-rl
+                text-align: center
+                &::before
+                    position: absolute
+                    content: ""
+                    width: calc(100% + 10px)
+                    height: calc(100% + 10px)
+                    border: solid $mainColor 1px
+                    bottom: 0
+                    right: 0
+                &::after
+                    position: absolute
+                    content: ""
+                    width: calc(100% + 10px)
+                    height: calc(100% + 10px)
+                    border: solid $mainColor 1px
+                    top: 0
+                    left: 0
+                p 
+                    margin: 0
+                    font-size: 20px
+                p:nth-child(1)
+                    text-align: left 
+                p:nth-child(2) 
+                    padding: 0 10px 32px 10px
+                p:nth-child(3) 
+                    text-align: right
+                    padding: 95px 0 0 0
+    #news
+        padding: $padding*4 0 
+        @media (max-width: 768px)
+            padding: $padding 0 
+        display: flex
+        justify-content: center
+        .news_container
+            width: 80%
+            @media (max-width: 1536px)
+                width: 85%
+            @media (max-width: 768px)
+                width: 100% 
+            .news_title 
+                display: flex
+                justify-content: center
+                padding: 0 0 $padding*4
+                h2 
+                    +ContrinerTitle()
+                @media (max-width: 768px)
+                    padding: 0 0 $padding*2  
+                @media (max-width: 570px)
+                    padding: 0 
+
+            .news_content
+                .news_swiper
+                    padding: $padding*2 $padding
+                    @media (max-width: 1366px)
+                        padding: $padding*2 $padding/2
+                    .swiper-slide
+                        display: flex
+                        justify-content: center
+                        .news_card
+                            position: relative
+                            width: 250px
+                            color: $fontColorLight
+                            font-family: "Noto Sans TC"
+                            @media (max-width: 570px)
+                                width: 180px
+                            &::before
+                                position: absolute
+                                content: ""
+                                width: calc( 100% + #{$padding/2} )
+                                height: calc( 100% + #{$padding/2} )
+                                border: solid $mainColor 1px
+                                bottom: 0
+                                right: 0
+                                box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.3)
+                                transition: 0.3s
+                            &::after
+                                position: absolute
+                                content: ""
+                                width: calc( 100% + #{$padding/2} )
+                                height: calc( 100% + #{$padding/2} )
+                                border: solid $mainColor 1px
+                                top: 0
+                                left: 0
+                                box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.3)
+                                transition: 0.3s
+                            &:hover
+                                &::before
+                                    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0)
+                                    width: 100%
+                                    height: 100%
+                                &::after
+                                    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0)
+                                    width: 100%
+                                    height: 100%
+                                & .news_content .news_btm .news_readMore span
+                                    border: solid $mainColor 1px
+                            .news_poster
+                                
+                            .news_content
+                                padding: 16px 0
+                                span 
+                                    font-weight: 300
+                                    padding: 0 8px 0
+                                .news_btm
+                                    display: flex
+                                    .news_txt
+                                        flex: 0 0 50%
+                                        max-width: 50%
+                                        p 
+                                            font-size: 16px
+                                            text-overflow: ellipsis
+                                            -webkit-line-clamp: 2
+                                            -webkit-box-orient: vertical
+                                            display: -webkit-box
+                                            line-height: 20px
+                                            overflow: hidden
+                                            padding: 8px 8px 0
+                                            font-weight: 100
+                                            @media (max-width: 570px)
+                                                font-size: 13px
+                                    .news_readMore
+                                        flex: 0 0 50%
+                                        max-width: 50%
+                                        background-color: unset
+                                        border: none
+                                        span
+                                            border: solid $fontColorLight 1px
+                                            color: $fontColorLight
+                                            transition: 0.3s 
+                                            padding: 8px 8px 8px
+                                            @media (max-width: 570px)
+                                                font-size: 13px
+                    .swiper-button-next, .swiper-button-prev
+                        width: $padding*2
+                        @media (max-width: 570px)
+                            width: $padding*1.5
+                        &::after
+                            content: ""                          
+    #introduction
+        position: relative
+        .introduction_float_right
+            width: $padding*3
+            position: absolute
+            top: $padding*2
+            right: 0
+            @media (max-width: 1280px)
+                display: none
+        .introduction_float_left
+            width: $padding*3
+            position: absolute
+            bottom: $padding*2
+            left: 0
+            @media (max-width: 1280px)
+                display: none
+        .introduction_container
+            padding: $padding*8 0
+            overflow: hidden
+            @media (max-width: 768px)
+                padding: $padding*2 0
+            .area
+                display: flex 
+                @media (max-width: 1280px)
+                    flex-wrap: wrap
+                .introduction_img
+                    flex: 0 0 50%
+                    max-width: 50%
+                    @media (max-width: 1280px)
+                        flex: 0 0 100%
+                        max-width: 100%
+                        padding: 0 $padding*4
+                    @media (max-width: 768px)
+                        padding: 0 
+                .introduction_content_txt
+                    display: flex
+                    align-items: center
+                    flex: 0 0 35%
+                    max-width: 35%
+                    @media (max-width: 1280px)
+                        order: 2
+                        flex: 0 0 80%
+                        max-width: 80%
+                    @media (max-width: 768px)
+                        flex: 0 0 75%
+                        max-width: 75%
+                    @media (max-width: 570px)
+                        flex: 0 0 100%
+                        max-width: 100%
+                    p 
+                        font-family: "Noto Sans TC"
+                        font-size: 20px
+                        font-weight: 300
+                        color: $fontColorLight
+                        letter-spacing: 3px
+                        @media (max-width: 570px)
+                            font-size: 16px 
+                            letter-spacing: 2px
+                            font-weight: 100
+                .introduction_content_title
+                    display: flex
+                    align-items: center
+                    flex: 0 0 15%
+                    max-width: 15%
+                    margin-bottom: $padding*5 
+                    @media (max-width: 1280px)
+                        order: 1
+                        flex: 0 0 20%
+                        max-width: 20%
+                        justify-content: flex-end
+                        margin: $padding*2 0
+                    @media (max-width: 768px)
+                        flex: 0 0 25%
+                        max-width: 25%
+                    @media (max-width: 570px)
+                        flex: 0 0 100%
+                        max-width: 100%
+                        margin: $padding 0
+                        
+
+                    h2 
+                        +AreaTitle(32px)
+                        @media (max-width: 570px) 
+                            +AreaTitle(24px)
+                            
+                            
+            .area:nth-child(1)
+                .introduction_content_txt
+                    padding: 0 $padding*2 0 $padding*4
+                    @media (max-width: 1536px)
+                        padding: 0 $padding*1 0 $padding*3
+            .area:nth-child(2)
+                .introduction_img
+                    order: 2
+                    @media (max-width: 1280px)
+                        order: 0
+                .introduction_content_txt
+                    order: 1
+                    padding: 0 $padding*4 0 $padding*2
+                    @media (max-width: 1536px)
+                        padding: 0 $padding*3 0 $padding*1
+                .introduction_content_title
+                    justify-content: flex-end
+                    order: 0
+            .area:nth-child(1),
+            .area:nth-child(2)
+                .introduction_img 
+                    @media (max-width: 570px)
+                        order: 1
+                .introduction_content_txt
+                    @media (max-width: 1280px)
+                        padding: 0 $padding*4 0 $padding
+                    @media (max-width: 768px)
+                        padding: 0 $padding*2 0 0
+                    @media (max-width: 570px)
+                        padding: $padding
+                .introduction_content_title
+                    @media (max-width: 1280px)
+                        padding: 0 $padding 0 0
+                    @media (max-width: 992px)
+                        padding: 0 
+                    @media (max-width: 768px)
+                        justify-content: center
+                    @media (max-width: 570px)
+                        order: 0
+
+    #meun
+        font-family: "Noto Sans TC"
+        color: $fontColorLight
+        padding: $padding*2 0
+        $radius: 10px
+        display: flex
+        justify-content: center
+        .meun_container
+            width: 1140px
+            @media (max-width: 1366px)
+                width: 1024px
+            @media (max-width: 1280px)
+                width: 960px
+            @media (max-width: 992px)
+                width: 100%
+            
+            .meun_border
+                width: 100%
+                position: relative
+                display: flex
+                align-items: center
+                flex-direction: column
+                .topLeft,
+                .topRight,
+                .btmLeft,
+                .btmRight
+                    width: $padding*3
+                    position: absolute
+                    @media (max-width: 768px)
+                        width: $padding*2
+                .topLeft 
+                    top: $padding
+                    left: $padding
+                    @media (max-width: 768px)
+                        top: $padding/2
+                        left: $padding/2
+                .topRight 
+                    top: $padding
+                    right: $padding
+                    @media (max-width: 768px)
+                        top: $padding/2
+                        right: $padding/2
+                .btmLeft 
+                    bottom: $padding
+                    left: $padding
+                    @media (max-width: 768px)
+                        bottom: $padding/2
+                        left: $padding/2
+                .btmRight 
+                    bottom: $padding
+                    right: $padding
+                    @media (max-width: 768px)
+                        bottom: $padding/2
+                        right: $padding/2
+                .meun_title 
+                    display: flex
+                    justify-content: center
+                    padding: $padding*2 0 0
+                    @media (max-width: 570px)
+                        padding: $padding 0 0
+                    h2 
+                        +ContrinerTitle()     
+                .meun_lists
+                    
+                    padding-top: $padding*2
+                    width: 80%
+                    @media (max-width: 570px)
+                        width: 100%
+                    .meun_list_swiper
+                        padding: 0 $padding
+                        .swiper-slide
+                            display: flex
+                            justify-content: center
+                            .meun_list
+                                width: $padding*4
+                                .meun_list_img
+                                    img 
+                                        border-radius: 5px
+                                        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3)
+                                        transition: 0.3s
+                                .meun_list_txt
+                                    h4
+                                        text-align: center
+                                        font-weight: 200
+                                        padding-top: 10px
+                                        transition: 0.3s
+                                        font-size: 20px
+                                &:hover
+                                    .meun_list_img
+                                        img 
+                                            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.0)
+                                    .meun_list_txt
+                                        h4
+                                            color: $mainColor
+                        .swiper-button-next, 
+                        .swiper-button-prev
+                            top: 30%
+                            width: $padding/2
+                            @media (max-width: 570px)
+                                display: none
+                            &::after
+                                content: ""            
+                .meun_items
+                    width: 80%
+                    padding: 5px 0
+                    margin: $padding*2 0 $padding*4 
+                    border: 1px $mainColor solid
+                    @media (max-width: 570px)
+                        width: 100%
+                        margin: $padding 0 $padding*4 
+                        border: unset
+                    .swiper-wrapper
+                        .swiper-slide
+                            .meun_item
+                                img 
+                                    border-top-left-radius: $radius
+                                    border-top-right-radius: $radius
+                                .meun_item_txt
+                                    border-bottom-left-radius: $radius
+                                    border-bottom-right-radius: $radius
+                                    background-image: url("../img/bg-05.jpg")
+                                    h4
+                                        text-align: center
+                                        font-weight: 200
+                                        padding: 10px 0
+                                        color: $fontColorDark
+                                        margin: 0
+                                        font-size: 20px
+                                        @media (max-width: 570px)
+                                            padding: 5px 0
+                            .swiper-slide-shadow-left,
+                            .swiper-slide-shadow-right 
+                                border-radius: $radius
+                    .swiper-button-next, 
+                    .swiper-button-prev
+                        width: $padding/1.5
+                        @media (max-width: 570px)
+                                display: none
+                        &::after
+                            content: ""
+    #philosophy
+        position: relative
+        padding: $padding*4 0
+        display: flex
+        justify-content: center
+        @media (max-width: 768px)
+            padding: $padding 0 
+        .philosophy_float_top
+            position: absolute
+            top: $padding*2
+            right: 0
+            width: $padding*3
+            @media (max-width: 1280px)
+                display: none
+        .philosophy_float_mid
+            position: absolute
+            top: calc( 50% - #{$padding} ) 
+            left: 0
+            width: $padding*2
+            @media (max-width: 1280px)
+                display: none
+        .philosophy_float_btm
+            position: absolute
+            bottom: $padding*2
+            right: 0
+            width: $padding*7   
+            @media (max-width: 1280px)
+                display: none            
+        .philosophy_container
+            overflow: hidden
+            width: 1140px
+            @media (max-width: 1366px)
+                width: 1024px
+            @media (max-width: 1280px)
+                width: 960px
+            @media (max-width: 992px)
+                width: 100%
+            .area 
+                display: flex
+                flex-wrap: wrap
+                .philosophy_img
+                    flex: 0 0 40%
+                    max-width: 40%
+                    @media (max-width: 992px)
+                        flex: 0 0 100%
+                        max-width: 100%
+                        padding: 0 $padding*4
+                    @media (max-width: 768px)
+                        padding: 0 
+                .philosophy_content_title
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    flex: 0 0 15%
+                    max-width: 15%
+                    @media (max-width: 992px)
+                        flex: 0 0 25%
+                        max-width: 25%
+                        justify-content: flex-end
+                        margin: $padding*2 0
+                    @media (max-width: 570px)
+                        flex: 0 0 100%
+                        max-width: 100%   
+                        margin: $padding 0
+                    h2
+                        +AreaTitle(32px)
+                        margin: 0
+                        @media (max-width: 570px)
+                            +AreaTitle(24px)
+                .philosophy_content_txt
+                    display: flex
+                    align-items: center
+                    flex: 0 0 45%
+                    max-width: 45%
+                    padding: 0 $padding*3 0 0
+                    @media (max-width: 1280px)
+                        padding: 0 $padding 0 0
+                    @media (max-width: 992px)
+                        flex: 0 0 75%
+                        max-width: 75%
+                        padding: 0 $padding*4 0 $padding*1 
+                    @media (max-width: 570px)
+                        flex: 0 0 100%
+                        max-width: 100%
+                    p 
+                        font-family: "Noto Sans TC"
+                        font-size: 20px
+                        color: $fontColorLight
+                        letter-spacing: 3px
+                        font-weight: 300
+                        @media (max-width: 570px)
+                            font-size: 16px 
+                            letter-spacing: 2px
+                            font-weight: 100
+            .area:nth-child(2)
+                .philosophy_img
+                    order: 2
+                    @media (max-width: 992px)
+                        order: 0
+                .philosophy_content_title
+                    padding: 0 0 0 $padding*2
+                    order: 0
+                    @media (max-width: 1280px)
+                        padding: 0 
+                .philosophy_content_txt
+                    padding: 0 $padding*2 0 $padding 
+                    order: 1
+                    @media (max-width: 1280px)
+                        padding: 0 $padding 0 0
+            .area:nth-child(1),
+            .area:nth-child(2),
+            .area:nth-child(3),
+                .philosophy_img
+                    @media (max-width: 570px)
+                        order: 1
+
+                .philosophy_content_title
+                    @media (max-width: 768px)
+                        justify-content: center
+                    @media (max-width: 570px)
+                        order: 0
+                .philosophy_content_txt
+                    @media (max-width: 992px)
+                        padding: 0 $padding*4 0 $padding 
+                    @media (max-width: 768px)
+                        padding: 0 $padding*2 0 0 
+                    @media (max-width: 570px)
+                        order: 2
+                        padding: $padding 
+    #stronghold
+        display: flex 
+        justify-content: center
+        padding: $padding*4 0  
+        @media (max-width: 768px)
+            padding: $padding*2 0  
+         
+        .stronghold_container
+            width: 1140px
+            padding: $padding*2 15px
+            @media (max-width: 1366px)
+                width: 1024px
+            @media (max-width: 1280px)
+                width: 960px
+            @media (max-width: 992px)
+                width: 100%
+            @media (max-width: 570px)
+                padding: $padding 15px 
+            .stronghold_title
+                display: flex 
+                justify-content: center
+                padding-bottom: $padding*2 
+                @media (max-width: 1280px) 
+                    padding-bottom: $padding
+                h2 
+                    +ContrinerTitle()
+            .stronghold_form 
+                display: flex
+                justify-content: space-around
+                padding-bottom: $padding*2
+                @media (max-width: 992px)
+                    padding-bottom: $padding
+                @media (max-width: 570px)
+                    padding-bottom: $padding/2
+                select
+                    font-size: 20px
+                    font-family: "Noto Sans TC"
+                    width: 40%
+                    border-radius: 5px
+                    background-image: url("../img/bg-05.jpg")
+                    option
+                        font-size: 16px
+
+            .stronghold_content 
+                display: flex
+                @media (max-width: 992px)
+                    flex-wrap: wrap
+
+                .stronghold_information 
+                    flex: 0 0 40%
+                    max-width: 40%
+                    color: $fontColorLight
+                    font-family: "Noto Sans TC" 
+                    @media (max-width: 1280px) 
+                        padding: $padding/2 0
+                    @media (max-width: 992px)
+                        order: 1
+                        flex: 0 0 100%
+                        max-width: 100%
+                        padding: 0 $padding*2
+                    @media (max-width: 570px)
+                        padding: 0 $padding/4
+                    .stronghold_information_content
+                        width: 100%
+                        span 
+                            font-weight: 300
+                            letter-spacing: 2px
+                        .stroe_address 
+                            display: flex
+                            padding: 10px 0
+                            span:nth-child(1) 
+                                margin-right: 10px
+                                white-space: nowrap
+                        .business_hours 
+                            display: flex
+                            padding: 10px 0
+                            line-height: 1.5
+                            span:nth-child(1) 
+                                margin-right: 10px
+                                white-space: nowrap
+                        .contact_number 
+                            display: flex
+                            padding: 10px 0
+                            span:nth-child(1) 
+                                margin-right: 10px
+                                white-space: nowrap
+                .stronghold_name
+                    align-self: center
+                    flex: 0 0 20%
+                    max-width: 20%
+                    display: flex 
+                    justify-content: center 
+                    @media (max-width: 1280px) 
+                        padding: $padding/2 0
+                    @media (max-width: 992px)
+                        order: 0
+                        flex: 0 0 100%
+                        max-width: 100%
+                    div
+                        h1 
+                            +AreaTitle(65px)
+                            @media (max-width: 992px)
+                                +AreaTitle(48px)
+                                writing-mode: horizontal-tb
+                            @media (max-width: 768px)
+                                +AreaTitle(32px)
+                                writing-mode: horizontal-tb
+                            @media (max-width: 570px)
+                                +AreaTitle(24px)
+                                writing-mode: horizontal-tb
+                .stronghold_map
+                    flex: 0 0 40%
+                    max-width: 40%
+                    height: $padding*16
+                    @media (max-width: 1280px) 
+                        padding: $padding/2 0
+                        height: $padding*12
+                    @media (max-width: 992px)
+                        order: 2
+                        flex: 0 0 100%
+                        max-width: 100%
+                        padding: 0 $padding*2
+                    @media (max-width: 570px)
+                        padding: 0 $padding/4
+                        height: $padding*8
+                    .stronghold_map_content 
+                        height: 100%  
+    #reservation
+        display: none
+        position: fixed
+        top: 64px
+        left: 0
+        width: 100%
+        z-index: 5   
+        @media (max-width: 1024px)
+            z-index: 20
+            top: 0  
+
+        .reservation_container
+            font-family: "Noto Sans TC"
+            position: relative
+            margin: auto
+            width: 1140px
+            border-radius: 20px
+            padding: 0 $padding      
+            background-image: url("../img/bg-03.jpg")
+            @media (max-width: 1280px)
+                width: 960px
+            @media (max-width: 1024px)
+                width: 100%
+                height: 100vh
+                border-radius: 0
+                
+            #reservation_off
+                position: absolute
+                right: 5%
+                top: 5%
+                background-color: rgb(247, 147, 30)
+                width: 50px
+                height: 50px
+                border-radius: 50%  
+            .reservation_title
+                padding: $padding 0
+                text-align: center 
+                h2 
+                    +ContrinerTitle()
+            .reservation_rule
+                box-sizing: border-box
+                width: 100%
+                background-image: url("../img/bg-05.jpg")
+                padding: 20px
+                color: #000
+                line-height: 25px
+                letter-spacing: 3px
+                font-weight: 100
+                border-radius: 5px
+                font-size: 16px
+                @media (max-width: 1024px) 
+                    display: none
+                p 
+                    margin: 0
+                    padding-left: 2em
+            form 
+                padding: $padding 0
+                color: $fontColorLight
+                .reservation_form
+                    font-weight: 100
+                    display: flex
+                    justify-content: space-between
+                    @media (max-width: 768px)
+                        flex-direction: column 
+                        align-items: center
+                    .form_content
+                        flex: 1  
+                        display: flex 
+                        flex-direction: column 
+                        align-items: center
+                        input
+                            margin: 10px
+                            padding: 3px
+                            border-radius: 3px
+                            border: 0
+                            &::placeholder
+                                font-size: 16px
+                                color: $fontColorDark
+   
+                .reservation_btn
+                    padding: $padding 0
+                    text-align: center             
+    footer 
+        text-align: center
+        span 
+            display: block
+            color: #fff
+
+@media ( max-width:  375px)
+    span
+        font-size: 13px
+      
+
+

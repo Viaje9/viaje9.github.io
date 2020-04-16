@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style-v1.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,200,300,400,500,600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 </head>
 
@@ -16,7 +18,12 @@
     <header>
         <section class="navbar">
             <nav>
-                <ul>
+                <div class="hamburger" id="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+                <ul class="nav_top">
                     <li>
                         <a href="#meun">
                             <img src="./img/introduction-img.svg" alt="">
@@ -28,7 +35,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a class="reservation_link">
                             <img src="./img/booking-img.svg" alt="">
                         </a>
                     </li>
@@ -43,13 +50,50 @@
                         <img src="" alt="">
                     </a>
                 </div>
+                <button class="nav_side">
+                    
+                    <div class="icon_hamburger">
+                        <img src="./img/Logo.svg" alt="">
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <a href="#meun">
+                                <img src="./img/introduction-img.svg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#stronghold">
+                                <img src="./img/stronghold-img.svg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="reservation_link">
+                                <img src="./img/booking-img.svg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#news">
+                                <img src="./img/news-img.svg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="facebook">
+                        <a href="">
+                            <img src="" alt="">
+                        </a>
+                    </div>
+                </button>
             </nav>
         </section>
     </header>
     <main>
         <section id="banner">
             <div class="banner_img">
-                <img src="./img/banner_1.jpg" alt="">
+                <picture>
+
+                    <source media="(min-width: 578px)" srcset="./img/banner_1.jpg" />
+                    <img src="./img/banner_01.jpg" style="height:100%" alt="" />
+                </picture>
             </div>
             <div class="logo">
                 <img src="./img/Logo.svg" alt="">
@@ -62,46 +106,189 @@
                 </div>
             </div>
         </section>
+        <section id="news">
+            <div class="news_container">
+                <div class="news_title">
+                    <h2>胡同消息</h2>
+                </div>
+                <div class="news_cards">
+                    <div class="swiper-container news_swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="">
+                                    <div class="news_card">
+                                        <div class="news_poster">
+                                            <img src="./img/news-poster-01.jpg" alt="">
+                                        </div>
+                                        <div class="news_content">
+                                            <div class="news_content_left">
+                                                <div class="news_content_title">
+                                                    <h2>新春營業公告</h2>
+                                                </div>
+                                                <div class="news_date">
+                                                    <span>2020/01/26</span>
+                                                </div>
+                                                <div class="news_txt">
+                                                    <p>
+                                                        🐹鼠年行大運 ㊗️鼠錢吉祥
+
+                                                        胡同燒肉 台灣各分號店
+                                                        農曆春節期間營業時間公告 📣📣📣
+
+                                                        🏮春節期間午餐特別營業時間🏮
+                                                        春節1/23、大年初三1/27、大年初四1/28、
+                                                        大年初五1/29
+
+                                                        ⏰PM12:00~PM2:00 (PM1:00為最晚入席時間）
+                                                        台北👉衚同燒肉夜食-4️⃣號店
+                                                        台中👉瑚同燒肉夜食-6️⃣號店
+                                                        新竹👉箶同燒肉夜食-7️⃣號店
+                                                        高雄👉湖同燒肉夜食-8️⃣號店
+                                                        桃園👉楜同燒肉夜食-9️⃣號店
+                                                        台南👉糊同燒肉夜食-1️⃣1️⃣號店
+                                                        期待您的光臨☺️☺️☺️
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="news_content_right">
+                                                <button class="news_readMore">read more</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="">
+                                    <div class="news_card">
+                                        <div class="news_poster">
+                                            <img src="./img/news-poster-01.jpg" alt="">
+                                        </div>
+                                        <div class="news_content">
+                                            <div class="news_content_left">
+                                                <div class="news_content_title">
+                                                    <h2>新春營業公告</h2>
+                                                </div>
+                                                <div class="news_date">
+                                                    <span>2020/01/26</span>
+                                                </div>
+                                                <div class="news_txt">
+                                                    <p>
+                                                        🐹鼠年行大運 ㊗️鼠錢吉祥
+
+                                                        胡同燒肉 台灣各分號店
+                                                        農曆春節期間營業時間公告 📣📣📣
+
+                                                        🏮春節期間午餐特別營業時間🏮
+                                                        春節1/23、大年初三1/27、大年初四1/28、
+                                                        大年初五1/29
+
+                                                        ⏰PM12:00~PM2:00 (PM1:00為最晚入席時間）
+                                                        台北👉衚同燒肉夜食-4️⃣號店
+                                                        台中👉瑚同燒肉夜食-6️⃣號店
+                                                        新竹👉箶同燒肉夜食-7️⃣號店
+                                                        高雄👉湖同燒肉夜食-8️⃣號店
+                                                        桃園👉楜同燒肉夜食-9️⃣號店
+                                                        台南👉糊同燒肉夜食-1️⃣1️⃣號店
+                                                        期待您的光臨☺️☺️☺️
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="news_content_right">
+                                                <button class="news_readMore">read more</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="">
+                                    <div class="news_card">
+                                        <div class="news_poster">
+                                            <img src="./img/news-poster-01.jpg" alt="">
+                                        </div>
+                                        <div class="news_content">
+                                            <div class="news_content_left">
+                                                <div class="news_content_title">
+                                                    <h2>新春營業公告</h2>
+                                                </div>
+                                                <div class="news_date">
+                                                    <span>2020/01/26</span>
+                                                </div>
+                                                <div class="news_txt">
+                                                    <p>
+                                                        🐹鼠年行大運 ㊗️鼠錢吉祥
+
+                                                        胡同燒肉 台灣各分號店
+                                                        農曆春節期間營業時間公告 📣📣📣
+
+                                                        🏮春節期間午餐特別營業時間🏮
+                                                        春節1/23、大年初三1/27、大年初四1/28、
+                                                        大年初五1/29
+
+                                                        ⏰PM12:00~PM2:00 (PM1:00為最晚入席時間）
+                                                        台北👉衚同燒肉夜食-4️⃣號店
+                                                        台中👉瑚同燒肉夜食-6️⃣號店
+                                                        新竹👉箶同燒肉夜食-7️⃣號店
+                                                        高雄👉湖同燒肉夜食-8️⃣號店
+                                                        桃園👉楜同燒肉夜食-9️⃣號店
+                                                        台南👉糊同燒肉夜食-1️⃣1️⃣號店
+                                                        期待您的光臨☺️☺️☺️
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="news_content_right">
+                                                <button class="news_readMore">read more</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="introduction">
+            <div class="introduction_float_right lax" data-lax-translate-y="750 -100, 1600 100">
+                <img src="./img/float_introduction_right.png" alt="">
+            </div>
+            <div class="introduction_float_left lax" data-lax-translate-y="1500 -250, 2100 -100">
+                <img src="./img/float_introduction_left.png" alt="">
+            </div>
             <div class="introduction_container">
                 <div class="introduction_top area">
-                    <div class="introduction_img">
+                    <div class="introduction_img" data-aos="fade-right" data-aos-offset="500" data-aos-duration="1000">
                         <img src="./img/introduction-01.jpg" alt="">
                     </div>
-                    <div class="introduction_content_top">
-                        <div class="introduction_content_txt">
+                    <div class="introduction_content">
+                        <div class="introduction_content_txt" data-aos="fade-down" data-aos-duration="1000">
                             <h3>胡同的每項食材，皆採取每日限量，在中央廚房的嚴格把關下，無法呈現滿分的原料，皆會逐一篩選剔除，絕不會出現在店面上，以確保用餐的朋友們，所享用的是當天現切直送的新鮮食材，並且維持一致的高水平，讓喜愛胡同的朋友們，都可以品嘗到一樣的胡同味！
                             </h3>
                         </div>
-                        <div class="introduction_content_title">
+                        <div class="introduction_content_title" data-aos="flip-left" data-aos-duration="1000">
                             <h2>嚴選食材</h2>
                         </div>
                     </div>
                 </div>
-                <div class="introduction_float_right">
-                    <img src="" alt="">
-                </div>
-                <div class="introduction_float_left">
-                    <img src="" alt="">
-                </div>
                 <div class="introduction_btm area">
-                    <div class="introduction_content_btm">
-                        <div class="introduction_content_title">
+                    <div class="introduction_content">
+                        <div class="introduction_content_title" data-aos="flip-left" data-aos-duration="1000">
                             <h2>貼心服務</h2>
                         </div>
-                        <div class="introduction_content_txt">
-                            <h3>我們除了堅持提供當天處理的新鮮頂級食材外，親切的態度也是基本服務之一。重視與食客的互動，點餐前熱心推薦菜色，上菜後詳細指導如何烤肉，並主動閒話家常，讓您有如置身於昔日胡同街坊之間溫馨的氛圍，絕對讓每位踏進胡同的客人有如賓至如歸的感覺。 </h3>
+                        <div class="introduction_content_txt" data-aos="fade-down" data-aos-duration="1000">
+                            <h3>我們除了堅持提供當天處理的新鮮頂級食材外，親切的態度也是基本服務之一。重視與食客的互動，點餐前熱心推薦菜色，上菜後詳細指導如何烤肉，並主動閒話家常，讓您有如置身於昔日胡同街坊之間溫馨的氛圍，絕對讓每位踏進胡同的客人有如賓至如歸的感覺。
+                            </h3>
                         </div>
                     </div>
-                    <div class="introduction_img">
+                    <div class="introduction_img" data-aos="fade-left" data-aos-offset="400" data-aos-duration="1000">
                         <img src="./img/introduction-02.jpg" alt="">
                     </div>
                 </div>
             </div>
         </section>
         <section id="meun">
-            <div class="meun_container">
-                <div class="meun_border">
+            <div class="meun_container" data-aos="box-shadow" data-aos-offset="400" data-aos-duration="1000">
+                <div class="meun_border" data-aos="zoom-in" data-aos-duration="1000">
                     <div class="topLeft">
                         <img src="./img/border-TopLeft.svg" alt="">
                     </div>
@@ -114,52 +301,114 @@
                     <div class="btmRight">
                         <img src="./img/border-BtmRight.svg" alt="">
                     </div>
+                    <div class="meun_title">
+                        <h2>胡同美食</h2>
+                    </div>
+                    <div class="swiper-container meun_list_swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="meun_list">
+                                    <a href="">
+                                        <div class="meun_list_img">
+                                            <img src="./img/meun-list/meun-list-01.jpg" alt="">
+                                        </div>
+                                        <div class="meun_list_txt">
+                                            <span>豬肉</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="meun_list">
+                                    <a href="">
+                                        <div class="meun_list_img">
+                                            <img src="./img/meun-list/meun-list-02.jpg" alt="">
+                                        </div>
+                                        <div class="meun_list_txt">
+                                            <span>雞肉</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="meun_list">
+                                    <a href="">
+                                        <div class="meun_list_img">
+                                            <img src="./img/meun-list/meun-list-03.jpg" alt="">
+                                        </div>
+                                        <div class="meun_list_txt">
+                                            <span>牛肉</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="meun_list">
+                                    <a href="">
+                                        <div class="meun_list_img">
+                                            <img src="./img/meun-list/meun-list-04.jpg" alt="">
+                                        </div>
+                                        <div class="meun_list_txt">
+                                            <span>羊肉</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-container meun_item_swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="meun_list">
+                                    <a href="">
+                                        <div class="meun_list_img">
+                                            <img src="./img/meun-list/meun-list-01.jpg" alt="">
+                                        </div>
+                                        <div class="meun_list_txt">
+                                            <span>豬肉</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="meun_list">
+                                    <a href="">
+                                        <div class="meun_list_img">
+                                            <img src="./img/meun-list/meun-list-02.jpg" alt="">
+                                        </div>
+                                        <div class="meun_list_txt">
+                                            <span>雞肉</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="meun_list">
+                                    <a href="">
+                                        <div class="meun_list_img">
+                                            <img src="./img/meun-list/meun-list-03.jpg" alt="">
+                                        </div>
+                                        <div class="meun_list_txt">
+                                            <span>牛肉</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="meun_list">
+                                    <a href="">
+                                        <div class="meun_list_img">
+                                            <img src="./img/meun-list/meun-list-04.jpg" alt="">
+                                        </div>
+                                        <div class="meun_list_txt">
+                                            <span>羊肉</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="meun_title">
-                    <h2>Meun</h2>
-                </div>
-                <ul>
-                    <li>
-                        <div class="meun_list">
-                            <div class="meun_list_img">
-                                <img src="./img/meun-list-01.jpg" alt="">
-                            </div>
-                            <div class="meun_list_txt">
-                                <span>豬肉</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="meun_list">
-                            <div class="meun_list_img">
-                                <img src="./img/meun-list-02.jpg" alt="">
-                            </div>
-                            <div class="meun_list_txt">
-                                <span>雞肉</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="meun_list">
-                            <div class="meun_list_img">
-                                <img src="./img/meun-list-03.jpg" alt="">
-                            </div>
-                            <div class="meun_list_txt">
-                                <span>牛肉</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="meun_list">
-                            <div class="meun_list_img">
-                                <img src="./img/meun-list-04.jpg" alt="">
-                            </div>
-                            <div class="meun_list_txt">
-                                <span>羊肉</span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
             </div>
         </section>
         <section id="philosophy">
@@ -167,11 +416,11 @@
             <div class="philosophy_float_mid"></div>
             <div class="philosophy_float_btm"></div>
             <div class="philosophy_container">
-                <div class="philosophy_first area">
-                    <div class="philosophy_img">
+                <div class="philosophy_first area ">
+                    <div class="philosophy_img" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="400">
                         <img src="./img/philosophy-01.jpg" alt="">
                     </div>
-                    <div class="philosophy_content">
+                    <div class="philosophy_content" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="400">
                         <div class="philosophy_content_title">
                             <h2>良心事業</h2>
                         </div>
@@ -182,23 +431,24 @@
 
                 </div>
                 <div class="philosophy_second area">
-                    <div class="philosophy_content">
+                    <div class="philosophy_content" data-aos="fade-right" data-aos-duration="1000"
+                        data-aos-offset="400">
                         <div class="philosophy_content_title">
                             <h2>幸福企業</h2>
                         </div>
                         <div class="philosophy_content_txt">
                             <h3>胡同是一個大家庭，進了胡同門就是一家人，除了給每位客人有回家用餐的感覺外，更讓所有在胡同裡上班的伙伴彼此互相關心扶持，胡同就是大家最好的避風港。</h3>
-                        </div>   
+                        </div>
                     </div>
-                    <div class="philosophy_img">
+                    <div class="philosophy_img" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="400">
                         <img src="./img/philosophy-02.jpg" alt="">
                     </div>
                 </div>
                 <div class="philosophy_third area">
-                    <div class="philosophy_img">
+                    <div class="philosophy_img" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="400">
                         <img src="./img/philosophy-03.jpg" alt="">
                     </div>
-                    <div class="philosophy_content">
+                    <div class="philosophy_content" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="400">
                         <div class="philosophy_content_title">
                             <h2>永續經營</h2>
                         </div>
@@ -209,17 +459,23 @@
                 </div>
             </div>
         </section>
-        <section id="stronghold">
-            <div class="stronghold_container">
+        <section id="stronghold" data-aos="zoom-in" data-aos-duration="2000">
+            <div class="stronghold_container" data-aos="box-shadow" data-aos-duration="1000">
                 <div class="stronghold_top">
                     <div class="stronghold_title">
                         <img src="./img/stronghold-title.svg" alt="">
                     </div>
-                    <div class="stronghold_city">
-                        <input type="text">
-                    </div>
-                    <div class="stronghold_town">
-                        <input type="text">
+                    <div class="stronghold_dropdowns">
+                        <form>
+                            <select class="stronghold_city" name="stronghold_city">
+                                <!-- 　<option value="Taipei">台北</option> -->
+                            </select>
+                        </form>
+                        <form>
+                            <select class="stronghold_town" name="stronghold_town">
+                                　
+                            </select>
+                        </form>
                     </div>
                 </div>
                 <div class="stronghold_btm">
@@ -234,12 +490,13 @@
                             </div>
                             <div class="business_hours">
                                 <span>營業時間</span>
-                                <span>星期一~星期四：PM05:30~AM00:00 <br>
+                                <span>周一~周四：PM05:30~AM00:00 <br>
                                     (PM10:30為最晚入席時間) <br>
-                                    星期五~星期日：PM05:30~AM00:30 <br>
+                                    周五~周日：PM05:30~AM00:30 <br>
                                     (PM11:00為最晚入席時間) <br>
-                                    週六、日午餐時段：PM12:00~PM2:30 <br>
-                                    (PM1:30為最晚入席時間)</span>
+                                    週六、日：PM12:00~PM2:30 <br>
+                                    (PM1:30為最晚入席時間)
+                                </span>
                             </div>
                             <div class="contact_number">
                                 <span>聯絡電話</span>
@@ -251,163 +508,101 @@
                     <div class="stronghold_name">
                         <h2>胡同一號店</h2>
                     </div>
-                    <div class="stronghold_map"></div>
+                    <div class="stronghold_map">
+                        <div class="stronghold_map_content">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14458.876217137793!2d121.5500864!3d25.0436067!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd27b90320d61cf97!2z6IOh5ZCM54eS6IKJ5LiA6Jmf5bqX!5e0!3m2!1szh-TW!2stw!4v1584107000038!5m2!1szh-TW!2stw"
+                                width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""
+                                aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <section id="news">
-            <div class="meun_border"></div>
-            <div class="topLeft">
-                <img src="./img/border-TopLeft.svg" alt="">
-            </div>
-            <div class="topRight">
-                <img src="./img/border-TopRight.svg" alt="">
-            </div>
-            <div class="btmLeft">
-                <img src="./img/border-BtmLeft.svg" alt="">
-            </div>
-            <div class="btmRight">
-                <img src="./img/border-BtmRight.svg" alt="">
-            </div>
-            </div>
-            <div class="news_container">
-                <div class="news_title">
-                    <h2>動態公告</h2>
+        <section id="reservation">
+            <div class="reservation_container">
+                <div id="reservation_off">
                 </div>
-                <div class="news_cards">
-                    <div class="news_card">
-                        <div class="news_poster">
-                            <img src="./img/news-poster-01.jpg" alt="">
-                        </div>
-                        <div class="news_content">
-                            <div class="news_content_left">
-                                <div class="news_content_title">
-                                    <h2>新春營業公告</h2>
-                                </div>
-                                <div class="news_date">
-                                    <span>2020/01/26</span>
-                                </div>
-                                <div class="news_txt">
-                                    <p>
-                                        🐹鼠年行大運 ㊗️鼠錢吉祥
-
-                                        胡同燒肉 台灣各分號店
-                                        農曆春節期間營業時間公告 📣📣📣
-
-                                        🏮春節期間午餐特別營業時間🏮
-                                        春節1/23、大年初三1/27、大年初四1/28、
-                                        大年初五1/29
-
-                                        ⏰PM12:00~PM2:00 (PM1:00為最晚入席時間）
-                                        台北👉衚同燒肉夜食-4️⃣號店
-                                        台中👉瑚同燒肉夜食-6️⃣號店
-                                        新竹👉箶同燒肉夜食-7️⃣號店
-                                        高雄👉湖同燒肉夜食-8️⃣號店
-                                        桃園👉楜同燒肉夜食-9️⃣號店
-                                        台南👉糊同燒肉夜食-1️⃣1️⃣號店
-                                        期待您的光臨☺️☺️☺️
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="news_content_right">
-                                <button class="news_readMore">read more</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news_card">
-                        <div class="news_poster">
-                            <img src="./img/news-poster-01.jpg" alt="">
-                        </div>
-                        <div class="news_content">
-                            <div class="news_content_left">
-                                <div class="news_content_title">
-                                    <h2>新春營業公告</h2>
-                                </div>
-                                <div class="news_date">
-                                    <span>2020/01/26</span>
-                                </div>
-                                <div class="news_txt">
-                                    <p>
-                                        🐹鼠年行大運 ㊗️鼠錢吉祥
-
-                                        胡同燒肉 台灣各分號店
-                                        農曆春節期間營業時間公告 📣📣📣
-
-                                        🏮春節期間午餐特別營業時間🏮
-                                        春節1/23、大年初三1/27、大年初四1/28、
-                                        大年初五1/29
-
-                                        ⏰PM12:00~PM2:00 (PM1:00為最晚入席時間）
-                                        台北👉衚同燒肉夜食-4️⃣號店
-                                        台中👉瑚同燒肉夜食-6️⃣號店
-                                        新竹👉箶同燒肉夜食-7️⃣號店
-                                        高雄👉湖同燒肉夜食-8️⃣號店
-                                        桃園👉楜同燒肉夜食-9️⃣號店
-                                        台南👉糊同燒肉夜食-1️⃣1️⃣號店
-                                        期待您的光臨☺️☺️☺️
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="news_content_right">
-                                <button class="news_readMore">read more</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news_card">
-                        <div class="news_poster">
-                            <img src="./img/news-poster-01.jpg" alt="">
-                        </div>
-                        <div class="news_content">
-                            <div class="news_content_left">
-                                <div class="news_content_title">
-                                    <h2>新春營業公告</h2>
-                                </div>
-                                <div class="news_date">
-                                    <span>2020/01/26</span>
-                                </div>
-                                <div class="news_txt">
-                                    <p>
-                                        🐹鼠年行大運 ㊗️鼠錢吉祥
-
-                                        胡同燒肉 台灣各分號店
-                                        農曆春節期間營業時間公告 📣📣📣
-
-                                        🏮春節期間午餐特別營業時間🏮
-                                        春節1/23、大年初三1/27、大年初四1/28、
-                                        大年初五1/29
-
-                                        ⏰PM12:00~PM2:00 (PM1:00為最晚入席時間）
-                                        台北👉衚同燒肉夜食-4️⃣號店
-                                        台中👉瑚同燒肉夜食-6️⃣號店
-                                        新竹👉箶同燒肉夜食-7️⃣號店
-                                        高雄👉湖同燒肉夜食-8️⃣號店
-                                        桃園👉楜同燒肉夜食-9️⃣號店
-                                        台南👉糊同燒肉夜食-1️⃣1️⃣號店
-                                        期待您的光臨☺️☺️☺️
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="news_content_right">
-                                <button class="news_readMore">read more</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="reservation_title">
+                    <h2>
+                        線上訂位
+                    </h2>
                 </div>
+                <div class="reservation_rule">
+                    <span>訂位說明</span>
+                    <p>已預約訂位之座位將保留 10 分鐘為原則，超過 10 分鐘未到者，將取消該訂位權益，開放現場待位客人入座！不便之處，敬請見諒！</p>
+                    <p>建議您提早3～7天前預約用餐，以免向隅。</p>
+                    <span>方式一：電話訂位</span>
+                    <p>於營業時間內，請參照各分號店的聯絡電話，直接撥打電話至各分號店預約，將有專人接聽為您服務！</p>
+                    <p>週一至週五早上 9:00 至下午 3:30 非營業時間，訂位電話統一由「電話訂位中心」接聽、安排用餐相關事宜。</p>
+                    <p>(「電話訂位中心」週六、日、國定例假日期間暫時停止服務) </p>
+                    <span>方式二：線上訂位 </span>
+                    <p>請直接將您欲用餐的詳細資訊填入下列表單。 </p>
+                    <p>訂位資料送出後，將由「訂位中心」統一安排用餐相關事宜。 </p>
+                    <p>透過此網路線上之訂位，需由各分號店之服務人員親自回電再次確認訂位或 Email 回覆確認訂位成功方才生效！</p>
+                     <p>切勿留下訊息後自行前往用餐！</p>
+                    <p>訂位中心當天收集訂位資訊，截止時間為下午3:30，在3:30之後留言預約訂位，將視為隔日留言。 </p>
+                    <p>若無法選取的日期，表示網路預約名額已滿，建議您選擇其它分號店！</p>
+                    <p>胡同燒肉在全台灣的門市全部都是直營店，不論食材、服務都是一樣的，品質有保障！</p>
+                    <span>※此訂位系統，目前僅開放台灣、香港地區使用</span>
+                    </div>
+                <form action="">
+                    <div class="reservation_form">
+                        <div class="form_left form_content">
+                            <div class="reservation_txt">
+                                <label for="stronghold_number">用餐分店號</label>
+                                <label for="date">用餐日期</label>
+                                <label for="name">訂位者名稱</label>
+                                <label for="phone">聯絡電話</label>
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="reservation_input">
+                                <input type="text" id="stronghold_number">
+                                <input type="text" id="date">
+                                <input type="text" id="name">
+                                <input type="text" id="phone">
+                                <input type="text" id="email">
+                            </div>
+                        </div>
+                        <div class="form_mid form_content">
+                            <div class="reservation_txt ">
+                                <label for="quantity">用餐人數</label>
+                                <label for="time">用餐時間</label>
+                                <label for="sex">性別</label>
+                            </div>
+                            <div class="reservation_input">
+                                <input type="text" id="quantity">
+                                <input type="text" id="time">
+                                <input type="text" id="sex">
+                            </div>
+                        </div>
+                        <div class="form_right form_content">
+                            <div class="reservation_txt ">
+                                <label for="question">其他需求</label>
+                            </div>
+                            <div class="reservation_input">
+                                <input type="text" id="question">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reservation_btn">
+                        <button>送出表單</button>
+                    </div>
+                </form>
             </div>
         </section>
     </main>
     <footer>
-        <div></div>
+        <div>僅供學習用途，如有侵權請來信告知。</div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script>
-        $(window).scroll(function () {
-            console.log($(window).height());
-            console.log($(window).width());
-        })
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="./js/main.js"></script>
+
 </body>
 
 </html>

@@ -1,0 +1,84 @@
+// Color
+$mainColor: #f7931e
+$fontColorLight: #ffffff
+$fontColorDark: #000000
+
+// size
+$h1: 65px
+
+$h2: 32px
+$h3: 24px
+$h4: 20px
+$h5: 16px
+$span: 14px
+$padding: 32px
+
+@media (max-width: 1024px)
+    $h1: 30px
+    $h2: 32px
+    $h3: 24px
+    $h4: 20px
+    $h5: 16px
+    $span: 14px
+    $padding: 32px
+h1 
+    font-size: $h1
+h2 
+    font-size: $h2
+h3 
+    font-size: $h3
+h4 
+    font-size: $h4
+h5 
+    font-size: $h5
+span 
+    font-size: $span
+
+li 
+    list-style: none
+ul 
+    margin: 0
+
+a 
+    color: unset
+    &:hover
+        color: unset
+        text-decoration: none
+
+@mixin Title($fontSize,$fontColor)
+    position: relative
+    color: $fontColor
+    font-family: DFKai-sb
+    &::before 
+        content: url("../img/Btm-line.svg")
+        background-size: cover
+        width: 100%
+        position: absolute
+        top: $fontSize/2
+
+@mixin border($fontSize)
+    position: relative
+    
+    &::before
+        position: absolute
+        content: ""
+        width: calc( 100% + #{$fontSize/2} )
+        height: calc( 100% + #{$fontSize/2} )
+        border: solid $mainColor 1px
+        bottom: 0
+        right: 0
+    &::after
+        position: absolute
+        content: ""
+        width: calc( 100% + #{$fontSize/2} )
+        height: calc( 100% + #{$fontSize/2} )
+        border: solid $mainColor 1px
+        top: 0
+        left: 0
+
+[data-aos="box-shadow"] 
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0)
+    border-radius: 20px
+    &.aos-animate 
+        box-shadow: 0 0 60px rgba(0, 0, 0, 0.8)
+

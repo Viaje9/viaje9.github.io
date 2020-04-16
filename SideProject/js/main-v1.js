@@ -18,9 +18,6 @@ $(window).resize(function() {
 });
 
 $(document).ready(function () {
-    let zoom = $(this).width() / 1920  
-    $('#banner').css('zoom', zoom );
-
     $(".hamburger").click(function () {
         $(".hamburger").toggleClass("is-active");
         $(".nav_side .list").toggleClass("is-active");
@@ -57,17 +54,12 @@ window.onload = function () {
 var swiper_news = new Swiper('.news_swiper', {
     slidesPerView: 1,
     loop: true,
-    // centeredSlides: true,
     breakpoints: {
         961: {
-            slidesPerView: 2,
-            spaceBetween: -40,
-        },
-        1367: {
             slidesPerView: 3,
+            spaceBetweenSlides: 30
         },
     },
-
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -82,7 +74,7 @@ var swiper_meun_list = new Swiper('.meun_list_swiper', {
         prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-        1200: {
+        961: {
             slidesPerView: 4,
         },
 
@@ -91,6 +83,42 @@ var swiper_meun_list = new Swiper('.meun_list_swiper', {
         },
     }
 });
+
+// var swiper_meun_item = new Swiper('.meun_item_swiper', {
+//     // slidesPerView: 3,
+//     loop: true,
+//     effect: 'coverflow',
+//     // grabCursor: true,
+//     centeredSlides: true,
+//     slidesPerView: 'auto',
+//     loopedSlides: 3,
+//     navigation: {
+//         nextEl: '.swiper-button-next',
+//         prevEl: '.swiper-button-prev',
+//     },
+//     coverflowEffect: {
+//         rotate: 0,
+//         stretch: 0,
+//         depth: 400,
+//         modifier: 1,
+//         slideShadows: true,
+
+//     },
+
+//     breakpoints: {
+
+//         577: {
+//             coverflowEffect: {
+//                 rotate: 0,
+//                 stretch: 0,
+//                 depth: 300,
+//                 modifier: 1,
+//                 slideShadows: true,
+
+//             },
+//         },
+//     }
+// });
 
 var swiper_meun_item = new Swiper('.meun_item_swiper', {
     loop: true,
@@ -104,6 +132,8 @@ var swiper_meun_item = new Swiper('.meun_item_swiper', {
         modifier: 1,
         slideShadows: true,
     },
+    grabCursor: true,
+    parallax: true,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

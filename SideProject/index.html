@@ -1,88 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,200,300,400,500,600&display=swap"
-        rel="stylesheet">
+    <title>胡同Gyen</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,200,300,400,500,600&display=swap">
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="./css/main-v2.css">
 </head>
 
 <body>
     <header>
-        <section class="navbar">
+        <section id="navBar">
             <nav>
                 <div class="hamburger" id="hamburger">
                     <span class="line"></span>
                     <span class="line"></span>
                     <span class="line"></span>
                 </div>
+                <div class="logo">
+                    <a href="#">
+                        <img src="./img/nav_Logo.png" alt="胡同燒肉">
+                    </a>
+                </div>
                 <ul class="nav_top">
                     <li>
+                        <a href="#news">
+                            <h4>
+                                胡同消息
+                            </h4>
+                        </a>
+                    </li>
+                    <li>
                         <a href="#meun">
-                            <img src="./img/introduction-img.svg" alt="">
+                            <h4>
+                                胡同美食
+                            </h4>
                         </a>
                     </li>
                     <li>
                         <a href="#stronghold">
-                            <img src="./img/stronghold-img.svg" alt="">
+                            <h4>
+                                胡同據點
+                            </h4>
                         </a>
                     </li>
                     <li>
                         <a class="reservation_link">
-                            <img src="./img/booking-img.svg" alt="">
+                            <h4>
+                                線上訂位
+                            </h4>
                         </a>
                     </li>
                     <li>
-                        <a href="#news">
-                            <img src="./img/news-img.svg" alt="">
+                        <a href="#">
+                            <h4>
+                                胡同商城
+                            </h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path class="cls-1"
+                                    d="M21.19,0H2.81A2.81,2.81,0,0,0,0,2.81V21.19A2.81,2.81,0,0,0,2.81,24H21.19A2.81,2.81,0,0,0,24,21.19V2.81A2.81,2.81,0,0,0,21.19,0Zm.93,21.19a.94.94,0,0,1-.93.94H15.66V15.28h3L19,12.37H15.66V9.23a1.37,1.37,0,0,1,1.4-1.4h2.11V5.11a20.14,20.14,0,0,0-2.11-.19,4.3,4.3,0,0,0-3,1.27,4.22,4.22,0,0,0-1.31,3.05v3.13H9.7v2.91h3.05v6.85H2.81a1,1,0,0,1-.94-.94V2.81a1,1,0,0,1,.94-.94H21.19a.94.94,0,0,1,.93.94Z" />
+                            </svg>
                         </a>
                     </li>
                 </ul>
-                <div class="facebook">
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
-                </div>
-                <button class="nav_side">
-                    
+                <div class="nav_side">
+
                     <div class="icon_hamburger">
-                        <img src="./img/Logo.svg" alt="">
+                        <img src="./img/Logo.svg" alt="胡同燒肉">
                     </div>
                     <ul class="list">
                         <li>
+                            <a href="#news">
+                                <h4>
+                                    胡同消息
+                                </h4>
+                            </a>
+                        </li>
+                        <li>
                             <a href="#meun">
-                                <img src="./img/introduction-img.svg" alt="">
+                                <h4>
+                                    胡同美食
+                                </h4>
                             </a>
                         </li>
                         <li>
                             <a href="#stronghold">
-                                <img src="./img/stronghold-img.svg" alt="">
+                                <h4>
+                                    胡同據點
+                                </h4>
                             </a>
                         </li>
                         <li>
-                            <a class="reservation_link">
-                                <img src="./img/booking-img.svg" alt="">
+                            <div class="reservation_link">
+                                <h4>
+                                    線上訂位
+                                </h4>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <h4>
+                                    胡同商城
+                                </h4>
                             </a>
                         </li>
                         <li>
-                            <a href="#news">
-                                <img src="./img/news-img.svg" alt="">
+                            <a href="#">
+                                <h4>
+                                    FaceBook
+                                </h4>
                             </a>
                         </li>
                     </ul>
-                    <div class="facebook">
-                        <a href="">
-                            <img src="" alt="">
-                        </a>
-                    </div>
-                </button>
+                </div>
             </nav>
         </section>
     </header>
@@ -90,19 +131,18 @@
         <section id="banner">
             <div class="banner_img">
                 <picture>
-
-                    <source media="(min-width: 578px)" srcset="./img/banner_1.jpg" />
-                    <img src="./img/banner_01.jpg" style="height:100%" alt="" />
+                    <source media="(min-width: 1366px)" srcset="./img/banner.jpg" />
+                    <img src="./img/banner_01.jpg" style="height:100%" alt="胡同精神" />
                 </picture>
             </div>
             <div class="logo">
-                <img src="./img/Logo.svg" alt="">
+                <img src="./img/Logo.svg" alt="胡同燒肉">
             </div>
             <div class="banner_container">
                 <div class="banner_content">
-                    <span>也象徵胡同給顧客的感受</span>
-                    <span>窄巷之間的濃厚人情味</span>
-                    <span>胡同乃是窄巷的特有稱呼</span>
+                    <p>胡同乃是窄巷的特有稱呼</p>
+                    <p>窄巷之間的濃厚人情味</p>
+                    <p>也象徵胡同給顧客的感受</p>
                 </div>
             </div>
         </section>
@@ -111,23 +151,23 @@
                 <div class="news_title">
                     <h2>胡同消息</h2>
                 </div>
-                <div class="news_cards">
+                <div class="news_content">
                     <div class="swiper-container news_swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <a href="">
-                                    <div class="news_card">
+                                <div class="news_card">
+                                    <a href="">
                                         <div class="news_poster">
-                                            <img src="./img/news-poster-01.jpg" alt="">
+                                            <img src="./img/news-poster-01.jpg" alt="標題">
                                         </div>
                                         <div class="news_content">
-                                            <div class="news_content_left">
-                                                <div class="news_content_title">
-                                                    <h2>新春營業公告</h2>
-                                                </div>
-                                                <div class="news_date">
-                                                    <span>2020/01/26</span>
-                                                </div>
+                                            <div class="news_content_title">
+                                                <span>新春營業公告</span>
+                                            </div>
+                                            <div class="news_date">
+                                                <span>2020/01/26</span>
+                                            </div>
+                                            <div class="news_btm">
                                                 <div class="news_txt">
                                                     <p>
                                                         🐹鼠年行大運 ㊗️鼠錢吉祥
@@ -149,28 +189,30 @@
                                                         期待您的光臨☺️☺️☺️
                                                     </p>
                                                 </div>
-                                            </div>
-                                            <div class="news_content_right">
-                                                <button class="news_readMore">read more</button>
+                                                <button class="news_readMore">
+                                                    <span>
+                                                        read more
+                                                    </span>
+                                                </button>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
                             </div>
                             <div class="swiper-slide">
-                                <a href="">
-                                    <div class="news_card">
+                                <div class="news_card">
+                                    <a href="">
                                         <div class="news_poster">
-                                            <img src="./img/news-poster-01.jpg" alt="">
+                                            <img src="./img/news-poster-01.jpg" alt="標題">
                                         </div>
                                         <div class="news_content">
-                                            <div class="news_content_left">
-                                                <div class="news_content_title">
-                                                    <h2>新春營業公告</h2>
-                                                </div>
-                                                <div class="news_date">
-                                                    <span>2020/01/26</span>
-                                                </div>
+                                            <div class="news_content_title">
+                                                <span>新春營業公告</span>
+                                            </div>
+                                            <div class="news_date">
+                                                <span>2020/01/26</span>
+                                            </div>
+                                            <div class="news_btm">
                                                 <div class="news_txt">
                                                     <p>
                                                         🐹鼠年行大運 ㊗️鼠錢吉祥
@@ -192,28 +234,30 @@
                                                         期待您的光臨☺️☺️☺️
                                                     </p>
                                                 </div>
-                                            </div>
-                                            <div class="news_content_right">
-                                                <button class="news_readMore">read more</button>
+                                                <button class="news_readMore">
+                                                    <span>
+                                                        read more
+                                                    </span>
+                                                </button>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
                             </div>
                             <div class="swiper-slide">
-                                <a href="">
-                                    <div class="news_card">
+                                <div class="news_card">
+                                    <a href="">
                                         <div class="news_poster">
-                                            <img src="./img/news-poster-01.jpg" alt="">
+                                            <img src="./img/news-poster-01.jpg" alt="標題">
                                         </div>
                                         <div class="news_content">
-                                            <div class="news_content_left">
-                                                <div class="news_content_title">
-                                                    <h2>新春營業公告</h2>
-                                                </div>
-                                                <div class="news_date">
-                                                    <span>2020/01/26</span>
-                                                </div>
+                                            <div class="news_content_title">
+                                                <span>新春營業公告</span>
+                                            </div>
+                                            <div class="news_date">
+                                                <span>2020/01/26</span>
+                                            </div>
+                                            <div class="news_btm">
                                                 <div class="news_txt">
                                                     <p>
                                                         🐹鼠年行大運 ㊗️鼠錢吉祥
@@ -235,18 +279,25 @@
                                                         期待您的光臨☺️☺️☺️
                                                     </p>
                                                 </div>
-                                            </div>
-                                            <div class="news_content_right">
-                                                <button class="news_readMore">read more</button>
+                                                <button class="news_readMore">
+                                                    <span>
+                                                        read more
+                                                    </span>
+                                                </button>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
                             </div>
+                        </div>
+                        <div class="swiper-button-next">
+                            <img src="./img/SVG/next_radius_icon.svg" alt="">
+                        </div>
+                        <div class="swiper-button-prev">
+                            <img src="./img/SVG/prev_radius_icon.svg" alt="">
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
         <section id="introduction">
             <div class="introduction_float_right lax" data-lax-translate-y="750 -100, 1600 100">
@@ -256,32 +307,32 @@
                 <img src="./img/float_introduction_left.png" alt="">
             </div>
             <div class="introduction_container">
-                <div class="introduction_top area">
+                <div class="area">
                     <div class="introduction_img" data-aos="fade-right" data-aos-offset="500" data-aos-duration="1000">
-                        <img src="./img/introduction-01.jpg" alt="">
+                        <img src="./img/introduction-01.jpg" alt="嚴選食材">
                     </div>
-                    <div class="introduction_content">
-                        <div class="introduction_content_txt" data-aos="fade-down" data-aos-duration="1000">
-                            <h3>胡同的每項食材，皆採取每日限量，在中央廚房的嚴格把關下，無法呈現滿分的原料，皆會逐一篩選剔除，絕不會出現在店面上，以確保用餐的朋友們，所享用的是當天現切直送的新鮮食材，並且維持一致的高水平，讓喜愛胡同的朋友們，都可以品嘗到一樣的胡同味！
-                            </h3>
-                        </div>
-                        <div class="introduction_content_title" data-aos="flip-left" data-aos-duration="1000">
-                            <h2>嚴選食材</h2>
-                        </div>
+                    <div class="introduction_content_txt" data-aos="fade-down" data-aos-duration="1000">
+                        <p>胡同的每項食材，皆採取每日限量，在中央廚房的嚴格把關下，無法呈現滿分的原料，皆會逐一篩選剔除，絕不會出現在店面上，以確保用餐的朋友們，所享用的是當天現切直送的新鮮食材，並且維持一致的高水平，讓喜愛胡同的朋友們，都可以品嘗到一樣的胡同味！
+                        </p>
+                    </div>
+                    <div class="introduction_content_title">
+                        <h2 class="m-0" data-aos="flip-left" data-aos-duration="1000">
+                            嚴選食材
+                        </h2>
                     </div>
                 </div>
-                <div class="introduction_btm area">
-                    <div class="introduction_content">
-                        <div class="introduction_content_title" data-aos="flip-left" data-aos-duration="1000">
-                            <h2>貼心服務</h2>
-                        </div>
-                        <div class="introduction_content_txt" data-aos="fade-down" data-aos-duration="1000">
-                            <h3>我們除了堅持提供當天處理的新鮮頂級食材外，親切的態度也是基本服務之一。重視與食客的互動，點餐前熱心推薦菜色，上菜後詳細指導如何烤肉，並主動閒話家常，讓您有如置身於昔日胡同街坊之間溫馨的氛圍，絕對讓每位踏進胡同的客人有如賓至如歸的感覺。
-                            </h3>
-                        </div>
-                    </div>
+                <div class="area">
                     <div class="introduction_img" data-aos="fade-left" data-aos-offset="400" data-aos-duration="1000">
-                        <img src="./img/introduction-02.jpg" alt="">
+                        <img src="./img/introduction-02.jpg" alt="貼心服務">
+                    </div>
+                    <div class="introduction_content_txt" data-aos="fade-down" data-aos-duration="1000">
+                        <p>我們除了堅持提供當天處理的新鮮頂級食材外，親切的態度也是基本服務之一。重視與食客的互動，點餐前熱心推薦菜色，上菜後詳細指導如何烤肉，並主動閒話家常，讓您有如置身於昔日胡同街坊之間溫馨的氛圍，絕對讓每位踏進胡同的客人有如賓至如歸的感覺。
+                        </p>
+                    </div>
+                    <div class="introduction_content_title">
+                        <h2 class="m-0" data-aos="flip-left" data-aos-duration="1000">
+                            貼心服務
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -304,184 +355,200 @@
                     <div class="meun_title">
                         <h2>胡同美食</h2>
                     </div>
-                    <div class="swiper-container meun_list_swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="meun_list">
-                                    <a href="">
-                                        <div class="meun_list_img">
-                                            <img src="./img/meun-list/meun-list-01.jpg" alt="">
-                                        </div>
-                                        <div class="meun_list_txt">
-                                            <span>豬肉</span>
-                                        </div>
-                                    </a>
+                    <div class="meun_lists">
+                        <div class="swiper-container meun_list_swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="meun_list">
+                                        <a href="">
+                                            <div class="meun_list_img">
+                                                <img src="./img/meun-list/meun-list-01.jpg" alt="豬肉">
+                                            </div>
+                                            <div class="meun_list_txt">
+                                                <h4>豬肉</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="meun_list">
+                                        <a href="">
+                                            <div class="meun_list_img">
+                                                <img src="./img/meun-list/meun-list-02.jpg" alt="雞肉">
+                                            </div>
+                                            <div class="meun_list_txt">
+                                                <h4>雞肉</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="meun_list">
+                                        <a href="">
+                                            <div class="meun_list_img">
+                                                <img src="./img/meun-list/meun-list-03.jpg" alt="牛肉">
+                                            </div>
+                                            <div class="meun_list_txt">
+                                                <h4>牛肉</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="meun_list">
+                                        <a href="">
+                                            <div class="meun_list_img">
+                                                <img src="./img/meun-list/meun-list-04.jpg" alt="羊肉">
+                                            </div>
+                                            <div class="meun_list_txt">
+                                                <h4>羊肉</h4>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="meun_list">
-                                    <a href="">
-                                        <div class="meun_list_img">
-                                            <img src="./img/meun-list/meun-list-02.jpg" alt="">
-                                        </div>
-                                        <div class="meun_list_txt">
-                                            <span>雞肉</span>
-                                        </div>
-                                    </a>
-                                </div>
+                            <div class="swiper-button-next">
+                                <img src="./img/SVG/next_icon.svg" alt="">
                             </div>
-                            <div class="swiper-slide">
-                                <div class="meun_list">
-                                    <a href="">
-                                        <div class="meun_list_img">
-                                            <img src="./img/meun-list/meun-list-03.jpg" alt="">
-                                        </div>
-                                        <div class="meun_list_txt">
-                                            <span>牛肉</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="meun_list">
-                                    <a href="">
-                                        <div class="meun_list_img">
-                                            <img src="./img/meun-list/meun-list-04.jpg" alt="">
-                                        </div>
-                                        <div class="meun_list_txt">
-                                            <span>羊肉</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-container meun_item_swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="meun_list">
-                                    <a href="">
-                                        <div class="meun_list_img">
-                                            <img src="./img/meun-list/meun-list-01.jpg" alt="">
-                                        </div>
-                                        <div class="meun_list_txt">
-                                            <span>豬肉</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="meun_list">
-                                    <a href="">
-                                        <div class="meun_list_img">
-                                            <img src="./img/meun-list/meun-list-02.jpg" alt="">
-                                        </div>
-                                        <div class="meun_list_txt">
-                                            <span>雞肉</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="meun_list">
-                                    <a href="">
-                                        <div class="meun_list_img">
-                                            <img src="./img/meun-list/meun-list-03.jpg" alt="">
-                                        </div>
-                                        <div class="meun_list_txt">
-                                            <span>牛肉</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="meun_list">
-                                    <a href="">
-                                        <div class="meun_list_img">
-                                            <img src="./img/meun-list/meun-list-04.jpg" alt="">
-                                        </div>
-                                        <div class="meun_list_txt">
-                                            <span>羊肉</span>
-                                        </div>
-                                    </a>
-                                </div>
+                            <div class="swiper-button-prev">
+                                <img src="./img/SVG/prev_icon.svg" alt="">
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        <section id="philosophy">
-            <div class="philosophy_float_top"></div>
-            <div class="philosophy_float_mid"></div>
-            <div class="philosophy_float_btm"></div>
-            <div class="philosophy_container">
-                <div class="philosophy_first area ">
-                    <div class="philosophy_img" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="400">
-                        <img src="./img/philosophy-01.jpg" alt="">
-                    </div>
-                    <div class="philosophy_content" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="400">
-                        <div class="philosophy_content_title">
-                            <h2>良心事業</h2>
-                        </div>
-                        <div class="philosophy_content_txt">
-                            <h3>吃得安心、吃出健康，以最堅持的態度，提供顧客最衛生、最頂級的食材，為您的健康嚴格把關。『吃出健康從胡同開始！』</h3>
+                    <div class="meun_items">
+                        <div class="swiper-container meun_item_swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="meun_item">
+                                        <a href="">
+                                            <div class="meun_item_img">
+                                                <img src="./img/meun-list/meun-list-01.jpg" alt="豬肉">
+                                            </div>
+                                            <div class="meun_item_txt">
+                                                <h4>豬肉</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="meun_item">
+                                        <a href="">
+                                            <div class="meun_item_img">
+                                                <img src="./img/meun-list/meun-list-02.jpg" alt="雞肉">
+                                            </div>
+                                            <div class="meun_item_txt">
+                                                <h4>雞肉</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="meun_item">
+                                        <a href="">
+                                            <div class="meun_item_img">
+                                                <img src="./img/meun-list/meun-list-03.jpg" alt="牛肉">
+                                            </div>
+                                            <div class="meun_item_txt">
+                                                <h4>牛肉</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="meun_item">
+                                        <a href="">
+                                            <div class="meun_item_img">
+                                                <img src="./img/meun-list/meun-list-04.jpg" alt="羊肉">
+                                            </div>
+                                            <div class="meun_item_txt">
+                                                <h4>羊肉</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next">
+                                <img src="./img/SVG/next_icon.svg" alt="">
+                            </div>
+                            <div class="swiper-button-prev">
+                                <img src="./img/SVG/prev_icon.svg" alt="">
+                            </div>
                         </div>
                     </div>
 
                 </div>
-                <div class="philosophy_second area">
-                    <div class="philosophy_content" data-aos="fade-right" data-aos-duration="1000"
-                        data-aos-offset="400">
-                        <div class="philosophy_content_title">
-                            <h2>幸福企業</h2>
-                        </div>
-                        <div class="philosophy_content_txt">
-                            <h3>胡同是一個大家庭，進了胡同門就是一家人，除了給每位客人有回家用餐的感覺外，更讓所有在胡同裡上班的伙伴彼此互相關心扶持，胡同就是大家最好的避風港。</h3>
-                        </div>
+            </div>
+        </section>
+        <section id="philosophy">
+            <div class="philosophy_float_top">
+                <img src="./img/float/float_service_top.png" alt="">
+            </div>
+            <div class="philosophy_float_mid">
+                <img src="./img/float/float_service_mid.png" alt="">
+            </div>
+            <div class="philosophy_float_btm">
+                <img src="./img/float/float_service_btm.png" alt="">
+            </div>
+            <div class="philosophy_container">
+                <div class="area">
+                    <div class="philosophy_img">
+                        <img src="./img/philosophy-01.jpg" alt="良心事業">
                     </div>
-                    <div class="philosophy_img" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="400">
-                        <img src="./img/philosophy-02.jpg" alt="">
+                    <div class="philosophy_content_title">
+                        <h2>良心事業</h2>
+                    </div>
+                    <div class="philosophy_content_txt">
+                        <p>吃得安心、吃出健康，以最堅持的態度，提供顧客最衛生、最頂級的食材，為您的健康嚴格把關。『吃出健康從胡同開始！』</p>
                     </div>
                 </div>
-                <div class="philosophy_third area">
-                    <div class="philosophy_img" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="400">
-                        <img src="./img/philosophy-03.jpg" alt="">
+                <div class="area">
+                    <div class="philosophy_img">
+                        <img src="./img/philosophy-02.jpg" alt="幸福企業">
                     </div>
-                    <div class="philosophy_content" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="400">
-                        <div class="philosophy_content_title">
-                            <h2>永續經營</h2>
-                        </div>
-                        <div class="philosophy_content_txt">
-                            <h3>人與人之間的橋樑是心，而不是華麗的外表！在胡同，每一件東西背後都有著存在的意義與故事，堅持、用心、熱情、創新，是胡同想傳達的訊息與概念，勇敢去夢，並努力把夢想實現！</h3>
-                        </div>
+                    <div class="philosophy_content_title">
+                        <h2>幸福企業</h2>
+                    </div>
+                    <div class="philosophy_content_txt">
+                        <p>胡同是一個大家庭，進了胡同門就是一家人，除了給每位客人有回家用餐的感覺外，更讓所有在胡同裡上班的伙伴彼此互相關心扶持，胡同就是大家最好的避風港。</p>
+                    </div>
+
+                </div>
+                <div class="area">
+                    <div class="philosophy_img">
+                        <img src="./img/philosophy-03.jpg" alt="永續經營">
+                    </div>
+                    <div class="philosophy_content_title">
+                        <h2>永續經營</h2>
+                    </div>
+                    <div class="philosophy_content_txt">
+                        <p>人與人之間的橋樑是心，而不是華麗的外表！在胡同，每一件東西背後都有著存在的意義與故事，堅持、用心、熱情、創新，是胡同想傳達的訊息與概念，勇敢去夢，並努力把夢想實現！</p>
                     </div>
                 </div>
             </div>
         </section>
         <section id="stronghold" data-aos="zoom-in" data-aos-duration="2000">
             <div class="stronghold_container" data-aos="box-shadow" data-aos-duration="1000">
-                <div class="stronghold_top">
-                    <div class="stronghold_title">
-                        <img src="./img/stronghold-title.svg" alt="">
-                    </div>
-                    <div class="stronghold_dropdowns">
-                        <form>
-                            <select class="stronghold_city" name="stronghold_city">
-                                <!-- 　<option value="Taipei">台北</option> -->
-                            </select>
-                        </form>
-                        <form>
-                            <select class="stronghold_town" name="stronghold_town">
-                                　
-                            </select>
-                        </form>
-                    </div>
+                <div class="stronghold_title">
+                    <h2>胡同店鋪</h2>
                 </div>
-                <div class="stronghold_btm">
+                <form class="stronghold_form">
+                    <select class="stronghold_city">
+                        <option selected>地區</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <select class="stronghold_town">
+                        <option selected>店名</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </form>
+                <div class="stronghold_content">
                     <div class="stronghold_information">
                         <div class="stronghold_information_img">
-                            <img src="./img/stronghold-01.jpg" alt="">
+                            <img src="./img/stronghold-01.jpg" alt="胡同十二號店">
                         </div>
                         <div class="stronghold_information_content">
                             <div class="stroe_address">
@@ -495,7 +562,7 @@
                                     周五~周日：PM05:30~AM00:30 <br>
                                     (PM11:00為最晚入席時間) <br>
                                     週六、日：PM12:00~PM2:30 <br>
-                                    (PM1:30為最晚入席時間)
+                                    (PM1:30為最晚入席時間) <br>
                                 </span>
                             </div>
                             <div class="contact_number">
@@ -506,14 +573,17 @@
                         </div>
                     </div>
                     <div class="stronghold_name">
-                        <h2>胡同一號店</h2>
+                        <div>
+                            <h1>胡同十二號店</h1>
+                        </div>
                     </div>
                     <div class="stronghold_map">
                         <div class="stronghold_map_content">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14458.876217137793!2d121.5500864!3d25.0436067!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd27b90320d61cf97!2z6IOh5ZCM54eS6IKJ5LiA6Jmf5bqX!5e0!3m2!1szh-TW!2stw!4v1584107000038!5m2!1szh-TW!2stw"
                                 width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""
-                                aria-hidden="false" tabindex="0"></iframe>
+                                aria-hidden="false" tabindex="0">
+                            </iframe>
                         </div>
                     </div>
                 </div>
@@ -532,57 +602,32 @@
                     <span>訂位說明</span>
                     <p>已預約訂位之座位將保留 10 分鐘為原則，超過 10 分鐘未到者，將取消該訂位權益，開放現場待位客人入座！不便之處，敬請見諒！</p>
                     <p>建議您提早3～7天前預約用餐，以免向隅。</p>
-                    <span>方式一：電話訂位</span>
-                    <p>於營業時間內，請參照各分號店的聯絡電話，直接撥打電話至各分號店預約，將有專人接聽為您服務！</p>
-                    <p>週一至週五早上 9:00 至下午 3:30 非營業時間，訂位電話統一由「電話訂位中心」接聽、安排用餐相關事宜。</p>
-                    <p>(「電話訂位中心」週六、日、國定例假日期間暫時停止服務) </p>
-                    <span>方式二：線上訂位 </span>
+                    <span>線上訂位 </span>
                     <p>請直接將您欲用餐的詳細資訊填入下列表單。 </p>
                     <p>訂位資料送出後，將由「訂位中心」統一安排用餐相關事宜。 </p>
                     <p>透過此網路線上之訂位，需由各分號店之服務人員親自回電再次確認訂位或 Email 回覆確認訂位成功方才生效！</p>
-                     <p>切勿留下訊息後自行前往用餐！</p>
+                    <p>切勿留下訊息後自行前往用餐！</p>
                     <p>訂位中心當天收集訂位資訊，截止時間為下午3:30，在3:30之後留言預約訂位，將視為隔日留言。 </p>
                     <p>若無法選取的日期，表示網路預約名額已滿，建議您選擇其它分號店！</p>
                     <p>胡同燒肉在全台灣的門市全部都是直營店，不論食材、服務都是一樣的，品質有保障！</p>
                     <span>※此訂位系統，目前僅開放台灣、香港地區使用</span>
-                    </div>
+                </div>
                 <form action="">
                     <div class="reservation_form">
                         <div class="form_left form_content">
-                            <div class="reservation_txt">
-                                <label for="stronghold_number">用餐分店號</label>
-                                <label for="date">用餐日期</label>
-                                <label for="name">訂位者名稱</label>
-                                <label for="phone">聯絡電話</label>
-                                <label for="email">Email</label>
-                            </div>
-                            <div class="reservation_input">
-                                <input type="text" id="stronghold_number">
-                                <input type="text" id="date">
-                                <input type="text" id="name">
-                                <input type="text" id="phone">
-                                <input type="text" id="email">
-                            </div>
+                            <input type="text" placeholder="用餐分店號" id="stronghold_number">
+                            <input type="text" placeholder="用餐日期" id="date">
+                            <input type="text" placeholder="大名" id="name">
+                            <input type="text" placeholder="聯絡電話" id="phone">
+                            <input type="text" placeholder="Email" id="email">
                         </div>
                         <div class="form_mid form_content">
-                            <div class="reservation_txt ">
-                                <label for="quantity">用餐人數</label>
-                                <label for="time">用餐時間</label>
-                                <label for="sex">性別</label>
-                            </div>
-                            <div class="reservation_input">
-                                <input type="text" id="quantity">
-                                <input type="text" id="time">
-                                <input type="text" id="sex">
-                            </div>
+                            <input type="text" placeholder="用餐人數" id="quantity">
+                            <input type="text" placeholder="用餐時間" id="time">
+                            <input type="text" placeholder="性別" id="sex">
                         </div>
                         <div class="form_right form_content">
-                            <div class="reservation_txt ">
-                                <label for="question">其他需求</label>
-                            </div>
-                            <div class="reservation_input">
-                                <input type="text" id="question">
-                            </div>
+                            <input type="text" placeholder="其他需求" id="question">
                         </div>
                     </div>
                     <div class="reservation_btn">
@@ -593,16 +638,22 @@
         </section>
     </main>
     <footer>
-        <div>僅供學習用途，如有侵權請來信告知。</div>
+        <span>僅供學習用途，如有侵權請來信告知。</span>
+        <span>Copyright©2020 All rights reserved</span>
     </footer>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-    <script src="./js/main.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+    <script src="./node_modules/aos/dist/aos.js"></script>
+    <script src="./js/main-v3.js"></script>
 </body>
 
 </html>

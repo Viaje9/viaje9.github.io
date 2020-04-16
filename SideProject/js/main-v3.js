@@ -1,24 +1,30 @@
-$(window).scroll(function () {
 
-    if ($('#banner').height() > $(window).scrollTop()) {
-        $(".icon_hamburger").removeClass("is-active");
-
-    }
-    else if ($('#banner').height() < $(window).scrollTop()) {
-
-        $(".icon_hamburger").addClass("is-active");
-
-    }
-
-})
 
 $(window).resize(function() {
     let zoom = $(this).width() / 1920  
     $('#banner').css('zoom', zoom );
+
+  
 });
+
+
 
 $(document).ready(function () {
     let zoom = $(this).width() / 1920  
+
+    $(window).scroll(function () {
+        if ($('#banner').height()*zoom > $(window).scrollTop()) {
+            $(".icon_hamburger").removeClass("is-active");
+    
+        }
+        else if ($('#banner').height()*zoom < $(window).scrollTop()) {
+    
+            $(".icon_hamburger").addClass("is-active");
+    
+        }
+        
+    })
+
     $('#banner').css('zoom', zoom );
 
     $(".hamburger").click(function () {
@@ -27,21 +33,26 @@ $(document).ready(function () {
     });
 
     $('.reservation_link').click(function () {
-        $('#reservation').css('transform', 'scale(1)');
+        $('#reservation').css('display', 'block');
 
     });
     $('#reservation_off').click(function () {
-        $('#reservation').css('transform', 'scale(0 ,1)');
+        $('#reservation').css('display', 'none');
     });
+
+    
 
 });
 
-console.log($(window).height());
 
 
-
-
-AOS.init();
+AOS.init({
+    disable: function() {
+        var maxWidth = 768;
+        return window.innerWidth < maxWidth;
+    }
+    
+});
 
 window.onload = function () {
     lax.setup() // init
@@ -94,9 +105,10 @@ var swiper_meun_list = new Swiper('.meun_list_swiper', {
 
 var swiper_meun_item = new Swiper('.meun_item_swiper', {
     loop: true,
-    slidesPerView: 2,
+    slidesPerView: 1.5,
     centeredSlides: true,
     effect: 'coverflow',
+    spaceBetween: 0,
     coverflowEffect: {
         rotate: 50,
         stretch: 0,
@@ -109,3 +121,6 @@ var swiper_meun_item = new Swiper('.meun_item_swiper', {
         prevEl: '.swiper-button-prev',
     },
 });
+
+console.log();
+ 
