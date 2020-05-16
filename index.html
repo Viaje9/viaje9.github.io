@@ -214,11 +214,13 @@
         
         $(document).ready(function () {
             let width = $(window).width();
-            document.getElementById('width').innerHTML = width;
+            let height = $(window).height();
+            document.getElementById('width').innerText = `寬:${width}，高:${height}`;
         });
         $(window).resize(function () {
             let width = $(window).width();
-            document.getElementById('width').innerHTML = width; 
+            let height = $(window).height();
+            document.getElementById('width').innerText = `寬:${width}，高:${height}`;
         });
         
     </script>
