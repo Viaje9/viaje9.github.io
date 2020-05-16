@@ -75,13 +75,7 @@
                             <div class="row mb-2">
                                 <div class="col-12">
                                     <p class="card-text">
-                                        scroll-behavior
-                                        <br>
-                                        平滑捲動
-                                        <br>
-                                        background-attachment
-                                        <br>
-                                        固定背景圖片
+
                                     </p>
                                 </div>
                             </div>
@@ -99,9 +93,7 @@
                             <div class="row mb-2">
                                 <div class="col-12">
                                     <p class="card-text">
-                                        @media 根據寬度做變動
-                                        <br>
-                                        hover 滑鼠懸停時
+
                                     </p>
                                 </div>
                             </div>
@@ -119,9 +111,7 @@
                             <div class="row mb-2">
                                 <div class="col-12">
                                     <p class="card-text">
-                                        This is a wider card with supporting text below as a natural
-                                        lead-in to
-                                        additional content. This content is a little bit longer.
+                                       
                                     </p>
                                 </div>
                             </div>
@@ -139,9 +129,7 @@
                             <div class="row mb-2">
                                 <div class="col-12">
                                     <p class="card-text">
-                                        This is a wider card with supporting text below as a natural
-                                        lead-in to
-                                        additional content. This content is a little bit longer.
+                                        
                                     </p>
                                 </div>
                             </div>
@@ -159,13 +147,11 @@
                             <div class="row mb-2">
                                 <div class="col-12">
                                     <p class="card-text">
-                                        This is a wider card with supporting text below as a natural
-                                        lead-in to
-                                        additional content. This content is a little bit longer.
+                                        
                                     </p>
                                 </div>
                             </div>
-                            <a href="https://viaje9.github.io/FluentDesign/">
+                            <a href="https://viaje9.github.io/Fluentdesign/">
                                 查看作品
                             </a>
                         </div>
@@ -179,9 +165,7 @@
                             <div class="row mb-2">
                                 <div class="col-12">
                                     <p class="card-text">
-                                        This is a wider card with supporting text below as a natural
-                                        lead-in to
-                                        additional content. This content is a little bit longer.
+                                        快速開發
                                     </p>
                                 </div>
                             </div>
@@ -199,9 +183,7 @@
                             <div class="row mb-2">
                                 <div class="col-12">
                                     <p class="card-text">
-                                        This is a wider card with supporting text below as a natural
-                                        lead-in to
-                                        additional content. This content is a little bit longer.
+                                        獨立完成
                                     </p>
                                 </div>
                             </div>
@@ -214,7 +196,7 @@
             </div>
         </div>
     </main>
-
+    <footer id="width"></footer>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -228,8 +210,17 @@
         crossorigin="anonymous"></script>
     <script>
         console.log($(window).height());
-
-
+        
+        
+        $(document).ready(function () {
+            let width = $(window).width();
+            document.getElementById('width').innerHTML = width;
+        });
+        $(window).resize(function () {
+            let width = $(window).width();
+            document.getElementById('width').innerHTML = width; 
+        });
+        
     </script>
 </body>
 
