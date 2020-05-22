@@ -19,54 +19,28 @@
                 <li class="nav-item p-1">
                     <a class="nav-link" href="#">
                         <h4>
-                            關於我
+                            職訓局
                         </h4>
                     </a>
                 </li>
-                <li class="nav-item p-1">
+                <!-- <li class="nav-item p-1">
                     <a class="nav-link" href="#">
                         <h4>
-                            Skill
+                            JS練習題
                         </h4>
                     </a>
-                </li>
-                <li class="nav-item dropdown p-1">
-                    <h4>
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            作品集
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#VTC">職訓局</a>
-
-                        </div>
-                    </h4>
-                </li>
-                <li class="nav-item p-1">
-                    <a class="nav-link" href="#">
-                        <h4>
-                            未來展望
-                        </h4>
-                    </a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </nav>
     <main>
-        <div class="container-fluid">
-            <div class="row d-flex justify-content-center">
-                <div class="banner d-flex justify-content-center">
-                    <img src="./img/banner.jpg">
-                    <div class="banner_overlay">
-                        <h5>關於我</h5>
-                        <p>1月30日</p>
-                        <p>更新中...</p>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="container">
             <div id="VTC" class="row">
+                <div class="col-12">
+                    <div class="title">
+                        <h2>職訓局</h2>
+                    </div>
+                </div>
                 <div class="col-6">
                     <div class="card mb-3">
                         <img src="./img/parallax.jpg" class="card-img-top" alt="...">
@@ -165,7 +139,7 @@
                             <div class="row mb-2">
                                 <div class="col-12">
                                     <p class="card-text">
-                                        快速開發
+                                        
                                     </p>
                                 </div>
                             </div>
@@ -183,7 +157,7 @@
                             <div class="row mb-2">
                                 <div class="col-12">
                                     <p class="card-text">
-                                        獨立完成
+                                        
                                     </p>
                                 </div>
                             </div>
@@ -194,6 +168,15 @@
                     </div>
                 </div>
             </div>
+            <!-- <div id="JS_Exercise" class="row">
+                <div class="col-12">
+                    <div class="title">
+                        <h2>
+                            JS練習題
+                        </h2>
+                    </div>
+                </div>
+            </div> -->
         </div>
     </main>
     <footer id="width"></footer>
@@ -212,16 +195,16 @@
         console.log($(window).height());
         
         
-        $(document).ready(function () {
-            let width = $(window).width();
-            let height = $(window).height();
-            document.getElementById('width').innerText = `寬:${width}，高:${height}`;
-        });
-        $(window).resize(function () {
-            let width = $(window).width();
-            let height = $(window).height();
-            document.getElementById('width').innerText = `寬:${width}，高:${height}`;
-        });
+        // $(document).ready(function () {
+        //     let width = $(window).width();
+        //     let height = $(window).height();
+        //     document.getElementById('width').innerText = `寬:${width}，高:${height}`;
+        // });
+        // $(window).resize(function () {
+        //     let width = $(window).width();
+        //     let height = $(window).height();
+        //     document.getElementById('width').innerText = `寬:${width}，高:${height}`;
+        // });
         
     </script>
 </body>

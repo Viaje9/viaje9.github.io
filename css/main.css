@@ -11,19 +11,10 @@ body::-webkit-scrollbar {
 }
 
 main {
-  padding-top: 76px;
+  padding-top: 100px;
 }
 
-main .banner {
-  position: relative;
-}
-
-main .banner img {
-  width: 100%;
-}
-
-main .banner .banner_overlay {
-  position: absolute;
-  top: 0;
+main .title h2 {
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
