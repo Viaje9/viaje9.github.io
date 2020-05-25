@@ -10,7 +10,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-main {
+main #VTC, main #JS_Exercise {
   padding-top: 100px;
 }
 

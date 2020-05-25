@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*CSS*/
+        body {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 600px;
+            height: 600px;
+            /* border: #000 1px solid; */
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .box {
+            width: 200px;
+            outline: #000 1px solid;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <form name='form' id='form'>
+            <label for="number">請輸入正整數</label>
+            <input id="number" type="number">
+            <button type='button' name='submit' onclick="submitNumber()">送出</button>
+        </form>
+    </div>
+    <div class="container">
+    </div>
+
+    <script>
+        let container = document.querySelector('.container');
+        let numberVal = document.querySelector('#number');
+
+        function submitNumber() {
+            let n = numberVal.value
+
+            if (n <= 0 || !(parseInt(n) == parseFloat(n)))
+                alert("請輸入正整數");
+            else {
+                container.innerHTML = ``;
+                for (let i = 0; i < n; i++) {
+                    container.innerHTML += `<div class="box"></div>`;
+                }
+                let box = document.querySelectorAll('.box');
+                box.forEach((element, j) => {
+                    ++j;
+                    if (j % 2 == 0) {
+                        element.style.backgroundColor = '#000';
+                        element.style.color = '#fff';
+                    }
+
+                    for (let i = 1; i <= n; i++) {
+                        console.log(j + ' x ' + i + ' = ' + j * i)
+                        element.innerHTML += `${j}x${i}=${j * i}<br>`
+                    }
+                });
+
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

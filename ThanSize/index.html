@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        form div {
+            padding: 5px 0;
+        }
+
+        #result {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>比大小</h1>
+    <form id="gambling">
+        <div>
+            <label>請輸入數字1~10</label>
+            <input name="num" type="number">
+        </div>
+        <div>
+            <label>比大比小</label>
+            <input type="radio" name="size" value="0">大
+            <input type="radio" name="size" value="1">小
+        </div>
+        <div>
+            <label>賭注</label>
+            <input type="radio" name="bet" value="100">100
+            <input type="radio" name="bet" value="500">500
+            <input type="radio" name="bet" value="1000">1000
+        </div>
+        <div>
+            <button type='button' onclick="opening()">開盤</button>
+        </div>
+    </form>
+    <div id="tips"></div>
+    <div id="result"></div>
+    <script>
+
+        function getRandom(x) {
+            return Math.floor(Math.random() * x) + 1;
+        }
+
+        function getRadio(x) {
+            for (let i = 0; i < x.length; i++) {
+                if (x[i].checked) {
+                    return x[i].value
+                }
+            }
+        }
+
+        function opening() {
+            let gambling = document.getElementById("gambling");
+            let result = document.getElementById("result");
+            let tips = document.getElementById("tips");
+            let num = gambling.num.value;
+            let n = getRandom(10);
+            let size = getRadio(gambling.size);
+            let bet = getRadio(gambling.bet);
+
+
+            if (num > 10 || num <= 0 || !(parseInt(num) == parseFloat(num)))
+                alert("請輸入整數1~10");
+            else if (size === undefined)
+                alert("請選擇大小");
+            else if (bet === undefined)
+                alert("請下注");
+            else {
+                tips.innerHTML =``; 
+                result.innerHTML = '';
+                tips.innerHTML += `<h3>你選的數字為${num}</h3>
+                                <h3>電腦的數字為${n}</h3>
+                                <h3>賭注大小為${bet}</h3>`;
+                if (size === "0") {
+                    result.innerHTML += `<h3>這次比大，</h3>`;
+                    if (n < num)
+                        result.innerHTML += `<h3>你贏了${bet}</h3>`;
+                    else if (n > num)
+                        result.innerHTML += `<h3>你輸了${bet}</h3>`;
+                    else if (n == num)
+                        result.innerHTML += `<h3>平手</h3>`;
+
+                }
+                else if (size === "1") {
+                    result.innerHTML += `<h3>這次比小，</h3>`;
+                    if (n > num)
+                        result.innerHTML += `<h3>你贏了${bet}</h3>`;
+                    else if (n < num)
+                        result.innerHTML += `<h3>你輸了${bet}</h3>`;
+                    else if (n == num)
+                        result.innerHTML += `<h3>平手</h3>`;
+
+                }
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
