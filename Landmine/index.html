@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+    }
+
+    .a2 {
+        width: 800px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .box {
+        box-sizing: border-box;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        background-color: blanchedalmond;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<body>
+
+    <nav>
+        <h1>踩地雷</h1>
+        <div>
+            <!-- <label>地雷大小</label>
+            <input type="number">
+            <label>地雷數量</label>
+            <input type="number"> -->
+            <button onclick="start()">開始</button>
+            <!-- <button>重新開始</button> -->
+
+        </div>
+        <!-- <div>
+            <label>安全區塊</label>
+            <span id="count"></span>
+        </div> -->
+    </nav>
+    <div class="container">
+        <div class="a2">
+            <div class="box" data-id="11"></div>
+            <div class="box" data-id="12"></div>
+            <div class="box" data-id="13"></div>
+            <div class="box" data-id="14"></div>
+            <div class="box" data-id="15"></div>
+            <div class="box" data-id="16"></div>
+            <div class="box" data-id="17"></div>
+            <div class="box" data-id="18"></div>
+            <div class="box" data-id="21"></div>
+            <div class="box" data-id="22"></div>
+            <div class="box" data-id="23"></div>
+            <div class="box" data-id="24"></div>
+            <div class="box" data-id="25"></div>
+            <div class="box" data-id="26"></div>
+            <div class="box" data-id="27"></div>
+            <div class="box" data-id="28"></div>
+            <div class="box" data-id="31"></div>
+            <div class="box" data-id="32"></div>
+            <div class="box" data-id="33"></div>
+            <div class="box" data-id="34"></div>
+            <div class="box" data-id="35"></div>
+            <div class="box" data-id="36"></div>
+            <div class="box" data-id="37"></div>
+            <div class="box" data-id="38"></div>
+            <div class="box" data-id="41"></div>
+            <div class="box" data-id="42"></div>
+            <div class="box" data-id="43"></div>
+            <div class="box" data-id="44"></div>
+            <div class="box" data-id="45"></div>
+            <div class="box" data-id="46"></div>
+            <div class="box" data-id="47"></div>
+            <div class="box" data-id="48"></div>
+            <div class="box" data-id="51"></div>
+            <div class="box" data-id="52"></div>
+            <div class="box" data-id="53"></div>
+            <div class="box" data-id="54"></div>
+            <div class="box" data-id="55"></div>
+            <div class="box" data-id="56"></div>
+            <div class="box" data-id="57"></div>
+            <div class="box" data-id="58"></div>
+            <div class="box" data-id="61"></div>
+            <div class="box" data-id="62"></div>
+            <div class="box" data-id="63"></div>
+            <div class="box" data-id="64"></div>
+            <div class="box" data-id="65"></div>
+            <div class="box" data-id="66"></div>
+            <div class="box" data-id="67"></div>
+            <div class="box" data-id="68"></div>
+            <div class="box" data-id="71"></div>
+            <div class="box" data-id="72"></div>
+            <div class="box" data-id="73"></div>
+            <div class="box" data-id="74"></div>
+            <div class="box" data-id="75"></div>
+            <div class="box" data-id="76"></div>
+            <div class="box" data-id="77"></div>
+            <div class="box" data-id="78"></div>
+            <div class="box" data-id="81"></div>
+            <div class="box" data-id="82"></div>
+            <div class="box" data-id="83"></div>
+            <div class="box" data-id="84"></div>
+            <div class="box" data-id="85"></div>
+            <div class="box" data-id="86"></div>
+            <div class="box" data-id="87"></div>
+            <div class="box" data-id="88"></div>
+        </div>
+    </div>
+
+
+    <script>
+        function start() {
+            let rows = 8;
+            let cols = 8;
+            let data = new Array;
+            let bombs = 10;
+            let clickCount = 0;
+            let id = document.querySelectorAll('.box');
+            let coord, x, y, delay, time1, time2;
+
+
+            for (let i = 0; i <= rows + 1; i++) {
+                data.push([])
+                for (let j = 0; j <= cols + 1; j++) {
+                    if (i == 0 || j == 0 || i == rows + 1 || j == cols + 1) {
+                        data[i].push(-8)//邊界
+                    }
+                    else {
+                        data[i].push(-1)//未踩地雷
+                    }
+                }
+            }
+
+            id.forEach((e, i) => {
+
+                e.onmousedown = function () {
+                    let time = new Date();
+                    time1 = time.getTime()
+                }
+                e.onmouseup = function () {
+                    let time = new Date();
+                    time2 = time.getTime()
+                    if ((time2 - time1) / 1000 < 1) {
+                        coord = this.dataset.id;
+                        coordTemp = coord.split('');
+                        x = parseInt(coordTemp[0]);
+                        y = parseInt(coordTemp[1]);
+
+                        if ((clickCount == 0 && data[x][y] == 99) || clickCount == 0) {
+                            getBom(rows, cols, bombs, data, [x, y])
+                            step_on(x, y, data)
+                            clickCount++
+                        } else if (clickCount > 0) {
+                            if (data[x][y] == 99)
+                                alert('lose')
+                            else
+                                step_on(x, y, data)
+                            clickCount++
+                        }
+                    } else {
+                        this.innerText = '旗'
+                    }
+
+                }
+            })
+        }
+
+        function step_on(x, y, data) {
+            let count = 0;
+            for (let i = -1; i <= 1; i++) {
+                for (let j = -1; j <= 1; j++) {
+                    if (data[i + x][j + y] == 99)
+                        count = count + 1;
+                }
+            }
+            if (count == 0) {
+                data[x][y] = 0;
+                document.querySelector(`[data-id="${x}${y}"]`).innerText = count
+                for (let j = -1; j <= 1; j++) {
+                    for (let i = -1; i <= 1; i++) {
+                        if (data[i + x][j + y] == -1)
+                            step_on(i + x, j + y, data);
+                    }
+                }
+            }
+            else {
+                data[x][y] = count;
+                document.querySelector(`[data-id="${x}${y}"]`).innerText = count
+            }
+
+            return count
+        }
+
+        function getBom(rows, cols, qty, data, coord) {
+            let rand = new Array;
+            for (let i = -1; i <= 1; i++) {
+                for (let j = -1; j <= 1; j++) {
+                    tempX = coord[0] + i;
+                    tempY = coord[1] + j;
+                    rand.push([tempX, tempY]);
+                }
+            }
+            for (let n = 0; n < qty; n++) {
+                let temp1, temp2, c;
+                do {
+                    temp1 = Math.floor(Math.random() * rows) + 1;
+                    temp2 = Math.floor(Math.random() * cols) + 1;
+                    c = rand.filter(i => { return i[0] == temp1 && i[1] == temp2 });
+                } while (c.length != 0)
+                rand.push([temp1, temp2]);
+
+            }
+            for (let i = 0; i < 9; i++)
+                rand[i].shift();
+
+
+            rand.forEach(a => {
+                data[a[0]][a[1]] = 99
+            })
+            return data
+        }
+
+    </script>
+    <!-- <script>
+        let test = new Array;
+
+        for (let i = -1; i <= 1; i++) {
+            for (let j = -1; j <= 1; j++) {
+                test.push('a');
+            }
+        }
+
+        console.log(test);
+        
+        for (let n = 0; n < 10; n++) {
+            test.push(n);
+        }
+
+        console.log(test);
+
+
+    </script> -->
+</body>
+
+</html>
