@@ -164,7 +164,9 @@
             id.forEach((e, i) => {
 
                 e.onmousedown = function () {
+                    // let time = new Date();
                     btnNum = event.button
+                    // time1 = time.getTime()
                     if (btnNum == 2) {
                         this.innerText = '旗'
                     } else if (btnNum == 0) {
@@ -186,6 +188,31 @@
                         }
                     }
                 }
+                // e.onmouseup = function () {
+                //     let time = new Date();
+                //     time2 = time.getTime()
+                //     if ((time2 - time1) / 1000 < 1) {
+                //         coord = this.dataset.id;
+                //         coordTemp = coord.split('');
+                //         x = parseInt(coordTemp[0]);
+                //         y = parseInt(coordTemp[1]);
+
+                //         if ((clickCount == 0 && data[x][y] == 99) || clickCount == 0) {
+                //             getBom(rows, cols, bombs, data, [x, y])
+                //             step_on(x, y, data)
+                //             clickCount++
+                //         } else if (clickCount > 0) {
+                //             if (data[x][y] == 99)
+                //                 alert('lose')
+                //             else
+                //                 step_on(x, y, data)
+                //             clickCount++
+                //         }
+                //     } else {
+                //         this.innerText = '旗'
+                //     }
+
+                // }
             })
         }
 
