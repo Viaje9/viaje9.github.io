@@ -162,7 +162,6 @@
             }
 
             id.forEach((e, i) => {
-
                 e.onmousedown = function () {
                     btnNum = event.button
                     if (btnNum == 2) {
@@ -232,11 +231,9 @@
                     c = rand.filter(i => { return i[0] == temp1 && i[1] == temp2 });
                 } while (c.length != 0)
                 rand.push([temp1, temp2]);
-
             }
             for (let i = 0; i < 9; i++)
                 rand[i].shift();
-
 
             rand.forEach(a => {
                 data[a[0]][a[1]] = 99
