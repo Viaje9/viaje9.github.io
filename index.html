@@ -266,10 +266,17 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <span id="device"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
-    <footer id="width"></footer>
+    <!-- <footer id="width"></footer> -->
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -285,11 +292,11 @@
         console.log($(window).height());
 
 
-        // $(document).ready(function () {
-        //     let width = $(window).width();
-        //     let height = $(window).height();
-        //     document.getElementById('width').innerText = `寬:${width}，高:${height}`;
-        // });
+        $(document).ready(function () {
+            let width = $(window).width();
+            let height = $(window).height();
+            document.getElementById('device').innerText = `寬:${width}，高:${height}`;
+        });
         // $(window).resize(function () {
         //     let width = $(window).width();
         //     let height = $(window).height();
