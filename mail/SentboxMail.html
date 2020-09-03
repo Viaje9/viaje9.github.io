@@ -1,0 +1,55 @@
+<body>
+    <div ng-controller="SentboxMailController">
+        <div class="search">
+            <ul>
+                <li>
+                    <label>收件人：</label>
+                    <input type="text" ng-model="Recievers">
+                </li>
+                
+                <li>
+                    <label>主旨：</label>
+                    <input type="text" ng-model="Subject">
+                </li>
+                <li>
+                    <label>寄件人：</label>
+                    <input type="text" ng-model="Sender">
+                </li>
+                <li>
+                    <label>日期：</label>
+                    <select ng-model="searchDate" ng-options="item.number as item.range for item in dateNum">
+                    </select>
+                </li>
+                <li>
+                    <button class="btn btn-primary" ng-click='search()'>搜索</button>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <!-- <th scope="col">checkBox</th> -->
+                        <th>收件人</th>
+                        <th>主旨</th>
+                        <th>寄件人</th>
+                        <th>寄件日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in data">
+                        <!-- <td>1</td> -->
+                        <td>
+                            <a href="" class="Recievers" ng-repeat="item in item.Recievers" ng-bind="item"></a>
+                        </td>
+                        <td>
+                            <a href="" ng-bind="item.Subject"></a>
+                        </td>
+                        <td ng-bind="item.Sender"></td >
+                        <td ng-bind="item.SendDate | date:'yyyy/MM/dd (EEE) HH:mm:ss'"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

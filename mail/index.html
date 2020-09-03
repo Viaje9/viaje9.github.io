@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.9/angular.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.8.0/angular-locale_zh-hant-tw.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js'></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        ul {
+            margin: 20px 0;
+            display: flex;
+            list-style-type: none;
+            margin-left: auto;
+        }
+
+        input {
+            width: 150px;
+        }
+
+        li {
+            margin: 0 5px;
+        }
+
+        .search {
+            width: 100%;
+            display: flex;
+        }
+
+        .Recievers {
+            padding: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>站內信</h1>
+        <hr>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#!/InboxMail" role="tab"
+                    aria-controls="home" aria-selected="true">收件匣</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#!/SentboxMail" role="tab"
+                    aria-controls="profile" aria-selected="false">寄件匣</a>
+            </li>
+        </ul>
+        <div ng-view></div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.21/dayjs.min.js'></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/locale/zh-cn.js"></script>
+    <script>
+        dayjs.locale('zh-cn')
+        var app = angular.module('app', ['ngRoute']);
+
+        app.config(['$routeProvider', function ($routeProvider) {
+            $routeProvider
+                .when('/', {
+                    templateUrl: 'InboxMail.html'
+                })
+                .when('/SentboxMail', {
+                    templateUrl: 'SentboxMail.html'
+                })
+                .when('/InboxMail', {
+                    templateUrl: 'InboxMail.html'
+                })
+                .otherwise({
+                    redirectTo: '/'
+                });
+        }])
+
+
+        app.controller('InboxMailController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+            let url = 'https://next.json-generator.com/api/json/get/VJ3-lwHa_';
+            $scope.searchObj = { "Sender": true, "Subject": true, "searchDate": true }
+            $scope.dateNum = [{
+                number: "1",
+                range: "全部"
+            }, {
+                number: "2",
+                range: "今天"
+            }, {
+                number: "3",
+                range: "昨天"
+            }, {
+                number: "4",
+                range: "近7日"
+            }, {
+                number: "5",
+                range: "近30日"
+            }]
+
+            $scope.searchDate = $scope.dateNum[0].number
+            $http.get(url).then((res) => {
+                $scope.origData = res.data.InboxMailList.map(el => {
+                    el.SendDate = +el.SendDate.slice(6, -2)
+                    return el
+                });
+                //為了不動到原始資料所以另外用data裝資料
+                $scope.data = $scope.origData
+                //判斷url使否帶參數
+                if (Object.keys($location.search()).length > 0) {
+                    //取的url的參數
+                    $scope.searchObj = $location.search()
+                    //篩選資料
+                    $scope.data = $scope.origData.filter((item) => {
+                        //將物件的vel轉為ary
+                        let searchAry = Object.values($scope.searchObj)
+                        //判斷是否為空字串
+                        searchAry = searchAry.map((item) => {
+                            if (item == undefined || item == "") item = true;
+                            return item;
+                        })
+                        //判斷是否符合條件
+                        searchAry[0] = function () {
+                            if (searchAry[0] == item.Sender) return true
+                            return searchAry[0]
+                        }()
+
+                        searchAry[1] = function () {
+                            if (searchAry[1] == item.Subject) return true
+                            return searchAry[1]
+                        }()
+
+                        searchAry[2] = function () {
+                            switch (searchAry[2]) {
+                                case "1":
+                                    return true
+                                    break;
+                                case "2": //修改為dayjs判斷日期
+                                    return dayjs().subtract(1, 'day').isBefore(item.SendDate)
+                                    break;
+                                case "3":
+                                    return dayjs().subtract(2, 'day').isBefore(item.SendDate)
+                                    break;
+                                case "4":
+                                    return dayjs().subtract(7, 'day').isBefore(item.SendDate)
+                                    break;
+                                case "5":
+                                    return dayjs().subtract(30, 'day').isBefore(item.SendDate)
+                                    break;
+                            }
+                            return searchAry[2]
+                        }()
+                        //every判斷是否皆===true
+                        return searchAry.every((item) => item === true)
+                    })
+                }
+            }), function (res) {
+                console.error("response error");
+            }
+
+            $scope.searchList = () => {
+                //件一個物件放搜索的參數
+                $scope.searchObj = { "Sender": $scope.Sender, "Subject": $scope.Subject, "searchDate": $scope.searchDate }
+                //防止location.search沒有key值
+                for (let i in $scope.searchObj) {
+                    if ($scope.searchObj[i] == undefined) $scope.searchObj[i] = "";
+                }
+                //搜索url
+                $location.search($scope.searchObj)
+            }
+        }])
+
+        app.controller('SentboxMailController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+            let url = 'https://next.json-generator.com/api/json/get/4y0gZPBTd';
+
+            $scope.dateNum = [{
+                number: "1",
+                range: "全部"
+            }, {
+                number: "2",
+                range: "今天"
+            }, {
+                number: "3",
+                range: "昨天"
+            }, {
+                number: "4",
+                range: "近7日"
+            }, {
+                number: "5",
+                range: "近30日"
+            }]
+
+            $scope.searchDate = $scope.dateNum[0].number
+
+            $http.get(url).then((res) => {
+                $scope.origData = res.data.SentboxMailList.map(el => {
+                    el.SendDate = +el.SendDate.slice(6, -2)
+                    el.date = dayjs(el.SendDate).format('YYYY/MM/DD (dd) HH:mm:ss')
+                    return el
+                });
+                $scope.data = $scope.origData
+                if (Object.keys($location.search()).length > 0) {
+                    $scope.searchObj = $location.search()
+                    $scope.data = $scope.origData.filter((item) => {
+                        let searchAry = Object.values($scope.searchObj)
+                        //判斷是否為空字串
+                        searchAry = searchAry.map((item) => {
+                            if (item == undefined || item == "") item = true;
+                            return item;
+                        })
+                        //判斷是否符合條件
+                        searchAry[0] = function () {
+                            if (searchAry[0]) {
+                                for (let i in item.Recievers) {
+                                    if (item.Recievers[i] == searchAry[0]) {
+                                        return true;
+                                        break;
+                                    }
+                                }
+                            }
+                            return searchAry[0]
+                        }()
+
+                        searchAry[1] = function () {
+                            if (searchAry[1] == item.Sender) return true
+                            return searchAry[1]
+                        }()
+
+                        searchAry[2] = function () {
+                            if (searchAry[2] == item.Subject) return true
+                            return searchAry[2]
+                        }()
+
+                        searchAry[3] = function () {
+                            if (searchAry[3]) {
+                                switch (searchAry[3]) {
+                                    case "1":
+                                        return true
+                                        break;
+                                    case "2":
+                                        return dayjs().subtract(1, 'day').isBefore(item.SendDate)
+                                        break;
+                                    case "3":
+                                        return dayjs().subtract(2, 'day').isBefore(item.SendDate)
+                                        break;
+                                    case "4":
+                                        return dayjs().subtract(7, 'day').isBefore(item.SendDate)
+                                        break;
+                                    case "5":
+                                        return dayjs().subtract(30, 'day').isBefore(item.SendDate)
+                                        break;
+                                }
+                            }
+                            return searchAry[3]
+                        }()
+                        //every判斷是否皆===true
+                        return searchAry.every((item) => item === true)
+                    })
+                }
+            }), function (res) {
+                console.error("response error");
+            }
+
+            $scope.search = () => {
+                $scope.searchObj = { "Recievers": $scope.Recievers, "Sender": $scope.Sender, "Subject": $scope.Subject, "searchDate": $scope.searchDate }
+                //防止沒有key值
+                for (let i in $scope.searchObj) {
+                    if ($scope.searchObj[i] == undefined) $scope.searchObj[i] = "";
+                }
+                $location.search($scope.searchObj)
+            }
+        }])
+
+    </script>
+</body>
+
+</html>
