@@ -142,7 +142,7 @@
         function start() {
             let rows = 8;
             let cols = 8;
-            let data = new Array;
+            let data = [];
             let bombs = 10;
             let clickCount = 0;
             let id = document.querySelectorAll('.box');
@@ -215,7 +215,7 @@
         }
 
         function getBom(rows, cols, qty, data, coord) {
-            let rand = new Array;
+            let rand = [];
             for (let i = -1; i <= 1; i++) {
                 for (let j = -1; j <= 1; j++) {
                     tempX = coord[0] + i;

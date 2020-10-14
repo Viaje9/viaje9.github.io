@@ -64,7 +64,6 @@
         .weather_temp {
             display: flex;
             flex-direction: column;
-            /* justify-content: space-around; */
             width: 50%;
             font-size: 20px;
         }
@@ -94,7 +93,7 @@
     <div class="box"></div>
 
     <script>
-        var box = document.querySelector('.container');
+        let box = document.querySelector('.container');
 
 
         fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-EF111722-411D-4F20-969D-EB9CDAEAA9B6')
@@ -104,14 +103,12 @@
             .then(result => {
                 let city = result.records.location;
 
-                //***************重組資料********************
                 city.forEach(element => {  
-                    var cityName = element.locationName
-                    var Wx = element.weatherElement[0].time[0].parameter.parameterName
-                    var Min = element.weatherElement[2].time[0].parameter.parameterName
-                    var Max = element.weatherElement[4].time[0].parameter.parameterName
-                    var WxVal = element.weatherElement[0].time[0].parameter.parameterValue
-
+                    let cityName = element.locationName
+                    let Wx = element.weatherElement[0].time[0].parameter.parameterName
+                    let Min = element.weatherElement[2].time[0].parameter.parameterName
+                    let Max = element.weatherElement[4].time[0].parameter.parameterName
+                    let WxVal = element.weatherElement[0].time[0].parameter.parameterValue
 
                     //判斷天氣圖片
                     if (WxVal == 1) {
@@ -127,8 +124,6 @@
                         WxVal = './img/weather_icon/4.png'
                     }
                     
-
-        
                     box.innerHTML +=
                         `<div class="weather_card">
                         <div class="city">${cityName}</div>
@@ -145,17 +140,12 @@
                             </div>
                         </div>`
 
-
-
                 });
 
             })
-        var time = document.querySelector('.time');
-        // var date = new Date();
-        // console.log(date)  標準時間
-        var date = new Date();
-        var Time = date.getFullYear() + '年' +(date.getMonth()+1) + '月' +date.getDate() + '日' +date.getHours() +':' +date.getMinutes();
-        console.log(Time)
+        let time = document.querySelector('.time');
+        let date = new Date();
+        let Time = date.getFullYear() + '年' +(date.getMonth()+1) + '月' +date.getDate() + '日' +date.getHours() +':' +date.getMinutes();
 
         time.innerHTML += `<h1>${Time}</h1>`
     </script>
