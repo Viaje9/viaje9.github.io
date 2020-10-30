@@ -13,19 +13,19 @@
 <body>
     <header>
         <h1>魔物資料</h1>
-        <nav>
+        <nav id="categoryBar">
             <ul>
-                <li data-item="race">種族</li>
-                <li data-item="nature">屬性</li>
-                <li data-item="size">體型</li>
-                <li data-item="type">類型</li>
-                <li data-item="sort">排序</li>
+                <li data-category="race">種族</li>
+                <li data-category="nature">屬性</li>
+                <li data-category="size">體型</li>
+                <li data-category="type">類型</li>
+                <li data-category="sort">排序</li>
             </ul>
         </nav>
-        <div class="wrap">
-            <div class="item" data-item="race">
+        <div id="category">
+            <div class="categoryContent" data-category="race">
                 <ul>
-                    <li data-all="99">不限</li>
+                    <li data-race="99">不限</li>
                     <li data-race="0">無形</li>
                     <li data-race="1">人形</li>
                     <li data-race="2">植物</li>
@@ -38,9 +38,9 @@
                     <li data-race="9">龍</li>
                 </ul>
             </div>
-            <div class="item" data-item="nature">
+            <div class="categoryContent" data-category="nature">
                 <ul>
-                    <li data-all="99">不限</li>
+                    <li data-nature="99">不限</li>
                     <li data-nature="0">無</li>
                     <li data-nature="1">地</li>
                     <li data-nature="2">風</li>
@@ -53,27 +53,26 @@
                     <li data-nature="9">毒</li>
                 </ul>
             </div>
-            <div class="item" data-item="size">
+            <div class="categoryContent" data-category="size">
                 <ul>
-                    <li data-all="99">不限</li>
+                    <li data-size="99">不限</li>
                     <li data-size="1">小型</li>
                     <li data-size="2">中型</li>
                     <li data-size="3">大型</li>
                 </ul>
             </div>
-            <div class="item" data-item="type">
+            <div class="categoryContent" data-category="type">
                 <ul>
-                    <li data-all="99">不限</li>
+                    <li data-type="99">不限</li>
                     <li data-type="0">普通魔物</li>
                     <li data-type="1">MINI Boss</li>
                     <li data-type="2">MVP Boss</li>
                 </ul>
             </div>
-            <div class="item" data-item="sort">
+            <div class="categoryContent" data-category="sort">
                 <ul>
-                    <li>默認排序</li>
-                    <li>等級低至高</li>
-                    <li>等級高至低</li>
+                    <li data-sort="0">等級低至高</li>
+                    <li data-sort="1">等級高至低</li>
                 </ul>
             </div>
         </div>
@@ -85,56 +84,129 @@
     </main>
 </body>
 <script>
-    const list = document.querySelectorAll('nav ul li');
-    const container = document.querySelector('.container');
-    const items = document.querySelectorAll('.wrap .item');
-    const options = document.querySelectorAll('.wrap .item li');
-    const mask = document.querySelector('.mask');
 
+    let filterParams = {
+        race: "99",
+        nature: "99",
+        size: "99",
+        type: "99",
+        sort: "0"
+    }
 
-    list.forEach(element => {
-        element.onclick = function () {
-            items.forEach(element => {
-                if (element.classList.contains('active') == false) {
-                    element.classList.remove('active');
-                    if (element.dataset.item == this.dataset.item) {
-                        element.classList.add('active');
-                        mask.classList.add('active');
-                    }
-                }
-                else {
-                    element.classList.remove('active');
-                    mask.classList.remove('active');
-                }
-            });
-        }
-    });
+    //將nodeList轉為陣列
+    const categoryList = [...document.querySelectorAll('#categoryBar ul li')]
+    const categoryContent = document.querySelectorAll('#category .categoryContent')
+    const categoryProperty = [...document.querySelectorAll('#category .categoryContent li')]
+    const container = document.querySelector('.container')
+    const mask = document.querySelector('.mask')
 
+    //下拉選單切換
+    categoryList.forEach(item => {
+        item.addEventListener("click", () => {
+            mask.classList.add("active")
+
+            //如果都沒有選取類別時(開啟視窗)
+            if (categoryList.every(item => item.classList.contains('active') === false)) {
+                item.classList.add("active")
+                document.querySelector(`#category [data-category=${item.dataset.category}]`).classList.add("active")
+                return
+            }
+
+            //如果有選取類別時(切換視窗)
+            if (categoryList.some(item => item.classList.contains('active') === true) && item.classList.contains('active') !== true) {
+                categoryList.forEach(item => { item.classList.remove("active") })
+                categoryContent.forEach(categoryContent => { categoryContent.classList.remove("active") })
+                item.classList.add("active")
+                document.querySelector(`#category [data-category=${item.dataset.category}]`).classList.add("active")
+                return
+            }
+
+            //如果類別已選取(關閉視窗)
+            if (item.classList.contains('active') === true) {
+                item.classList.remove('active')
+                document.querySelector(`#category [data-category=${item.dataset.category}]`).classList.remove("active")
+                mask.classList.remove("active")
+                return
+            }
+        })
+    })
 
     fetch('./js/json/monster.json')
         .then(function (response) {
             return response.json();
         })
         .then(result => {
-            const Checklist = result.data.list;
-            let temporarily;
+            const data = result.data.list;
 
-            function Filter(list, value) {
-                temporarily = Checklist.filter(item => {
-                    let ok
-                    if (list == "race" || "nature" || "size" || "type" || "all") {
-                        if (item[list] == value || list == "all")
-                            ok = true
-                    } 
+            //當類別的屬性被點選
+            categoryProperty.forEach(property => {
+                property.addEventListener("click", () => {
+                    propertyNodeList(property).forEach(item => { item.classList.remove("active") })
+                    property.classList.add("active")
+                    filterParams[getDataset(property)] = getPropertyValue(property)
+                    container.innerHTML = '';
+                    Template(sortData(filterData(data, filterParams)))
+                })
+            })
 
-                    return ok
+            Template(sortData(filterData(data, filterParams)))
+
+            function propertyNodeList(category) {
+                return [...document.querySelectorAll(`#category [data-category=${getDataset(category)}] li`)]
+            }
+
+            function getDataset(params) {
+                return Object.keys(params.dataset)[0]
+            }
+
+            function getPropertyValue(params) {
+                return params.dataset[getDataset(params)]
+            }
+            //篩選條件
+            function filterData(data, Params) {
+                return data.filter(item => {
+                    let result = [true, true, true, true]
+
+                    if (Params.race != 99) {
+                        result[0] = item.race == Params.race
+                    }
+
+                    if (Params.nature != 99) {
+                        result[1] = item.nature == Params.nature
+                    }
+
+                    if (Params.size != 99) {
+                        result[2] = item.size == Params.size
+                    }
+
+                    if (Params.type != 99) {
+                        result[3] = item.type == Params.type
+                    }
+
+                    return result.every(item => item === true)
                 })
             }
 
+            //排序
+            function sortData(data) {
+                return data.sort((a, b) => {
+
+                    if (filterParams.sort == 0) {
+                        return a.level - b.level
+                    }
+
+                    if (filterParams.sort == 1) {
+                        return b.level - a.level
+                    }
+                })
+            }
+            
+            //產生樣板
             function Template(temporarily) {
                 temporarily.forEach(item => {
 
                     let race = function (key) {
+
                         switch (key) {
                             case 0:
                                 return "無形";
@@ -217,57 +289,34 @@
 
                     container.innerHTML +=
                         `<div class="item">
-                    <div class="left">
-                        <div class="avatar">
-                            <img src="https://images.weserv.nl/?url=https://rostatic.zhaiwuyu.com/face/${item.avatar}.png"
-                                alt="">
-                            <div class="type_img ${type} ${isStar}"></div>
+                        <div class="left">
+                            <div class="avatar">
+                                <img src="https://images.weserv.nl/?url=https://rostatic.zhaiwuyu.com/face/${item.avatar}.png"
+                                    alt="">
+                                <div class="type_img ${type} ${isStar}"></div>
+                            </div>
+                            <div class="contnet">
+                                <div class="name">${item.name}</div>
+                                <span class="race">${race}</span>
+                                <span>/</span>
+                                <span class="nature">${nature}</span>
+                                <span>/</span>
+                                <span class="size">${size}</span>
+                            </div>
                         </div>
-                        <div class="contnet">
-                            <div class="name">${item.name}</div>
-                            <span class="race">${race}</span>
-                            <span>/</span>
-                            <span class="nature">${nature}</span>
-                            <span>/</span>
-                            <span class="size">${size}</span>
+                        <div class="right">
+                            <div class="lv">
+                                <span>Lv</span>
+                                <span>${item.level}</span>
+                            </div>
+                            <div class="hp">
+                                <span>HP</span>
+                                <span>${item.hp}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="right">
-                        <div class="lv">
-                            <span>Lv</span>
-                            <span>${item.level}</span>
-                        </div>
-                        <div class="hp">
-                            <span>HP</span>
-                            <span>${item.hp}</span>
-                        </div>
-                    </div>
-                </div>`
+                    </div>`
                 })
             }
-
-
-            options.forEach(option => {
-                option.onclick = function () {
-                    let item = Object.keys(option.dataset)[0]
-                    if (item == "race" || "nature" || "size" || "type" || "all") {
-                        if (item != "all") {
-                            let Lists = document.querySelectorAll(`.wrap [data-item="${item}"] li`);
-                            Lists.forEach(option => { option.classList.remove('active') })
-                            Filter(item, option.dataset[item])
-                        } else {
-                            options.forEach(option => { option.classList.remove('active') })
-                            Filter(item)
-                        }
-                    }
-
-                    option.classList.add('active');
-                    container.innerHTML = '';
-                    Template(temporarily)
-                }
-            })
-
-            Template(Checklist);
         })
 
 </script>

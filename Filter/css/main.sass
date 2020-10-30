@@ -1,4 +1,4 @@
-body 
+body
     margin: 0
     font-family: 'Noto Sans TC', sans-serif
     background-color: rgb(238, 238, 238)
@@ -7,7 +7,7 @@ body
         position: fixed
         width: 100%
         z-index: 1
-        h1 
+        h1
             text-align: center
             margin: 0
             font-size: 28px
@@ -16,15 +16,15 @@ body
             background-color: #4a89dc
             color: #fff
             padding: 16px
-            
-        nav
-            ul 
+
+        #categoryBar
+            ul
                 display: flex
                 justify-content: space-around
                 padding: 0
                 margin: 0
                 background-color: #fff
-                li 
+                li
                     list-style-type: none
                     font-size: 20px
                     line-height: 20px
@@ -32,17 +32,19 @@ body
                     padding: 10px
                     &::after
                         content: "\25BE"
-        .wrap
+                .active
+                    color: #4a89dc
+        #category
             background-color: rgb(238, 238, 238)
-            .item
+            .categoryContent
                 display: none
-                ul 
+                ul
                     padding: 0
                     margin: 0
                     display: flex
                     flex-wrap: wrap
                     background-color: rgb(238, 238, 238)
-                    li 
+                    li
                         background-color: #fff
                         margin-top: 2px
                         box-sizing: border-box
@@ -50,24 +52,24 @@ body
                         list-style-type: none
                         padding: 7px
                         font-size: 16px
-                    .active 
+                    .active
                         color: #4a89dc
             .active
                 display: block
-        .mask 
+        .mask
             width: 100%
             height: 100vh
         .mask.active
             background-color: #000000
             opacity: 0.6
-            
-    main 
-        padding-top: 100px    
-        .container 
-            display: flex 
+
+    main
+        padding-top: 100px
+        .container
+            display: flex
             flex-wrap: wrap
             background-color: rgb(238, 238, 238)
-            .item 
+            .item
                 margin-top: 3px
                 box-sizing: border-box
                 display: flex
@@ -77,14 +79,14 @@ body
                 background-color: #fff
                 @media ( max-width:768px)
                     width: 100%
-                .left 
+                .left
                     @media ( max-width:768px)
                         display: flex
                     .avatar
                         display: flex
                         width: 60px
                         border: solid 3px rgb(159,198,230)
-                        border-radius: 6px 
+                        border-radius: 6px
                         position: relative
                         background-color: rgb(220,231,241)
                         background-size: contain
@@ -97,7 +99,7 @@ body
                             left: 0
                             width: 23px
                             height: 27px
-                            background-image: url("https://rosc3.zhaiwuyu.com/m/img/monster-icon.png?version=20190619")
+                            background-image: url("https://rosc3.zhaiwuyu.com/m/img/monster-icon.png")
                             background-size: 150px
                         .type_img_A
                             background-position: top 0px right 0px
@@ -111,7 +113,7 @@ body
                             right: -2px
                             background-position: top -30px left 0px
 
-                .right 
+                .right
                     display: table
                     background-color: rgb(238, 238, 238)
                     border-radius: 8px
@@ -119,14 +121,12 @@ body
                     .lv
                         display: inline-block
                         span
-                            display: block 
+                            display: block
                             text-align: center
-                            padding: 5px 15px 3px 0px 
-                    .hp 
+                            padding: 5px 15px 3px 0px
+                    .hp
                         display: inline-block
                         span
-                            display: block 
+                            display: block
                             text-align: center
-                            padding: 3px 5px 5px 5px 
-
-                            
+                            padding: 3px 5px 5px 5px

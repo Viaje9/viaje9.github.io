@@ -21,7 +21,7 @@ body header h1 {
   padding: 16px;
 }
 
-body header nav ul {
+body header #categoryBar ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,7 +32,7 @@ body header nav ul {
   background-color: #fff;
 }
 
-body header nav ul li {
+body header #categoryBar ul li {
   list-style-type: none;
   font-size: 20px;
   line-height: 20px;
@@ -40,19 +40,23 @@ body header nav ul li {
   padding: 10px;
 }
 
-body header nav ul li::after {
+body header #categoryBar ul li::after {
   content: "\25BE";
 }
 
-body header .wrap {
+body header #categoryBar ul .active {
+  color: #4a89dc;
+}
+
+body header #category {
   background-color: #eeeeee;
 }
 
-body header .wrap .item {
+body header #category .categoryContent {
   display: none;
 }
 
-body header .wrap .item ul {
+body header #category .categoryContent ul {
   padding: 0;
   margin: 0;
   display: -webkit-box;
@@ -63,7 +67,7 @@ body header .wrap .item ul {
   background-color: #eeeeee;
 }
 
-body header .wrap .item ul li {
+body header #category .categoryContent ul li {
   background-color: #fff;
   margin-top: 2px;
   -webkit-box-sizing: border-box;
@@ -74,11 +78,11 @@ body header .wrap .item ul li {
   font-size: 16px;
 }
 
-body header .wrap .item ul .active {
+body header #category .categoryContent ul .active {
   color: #4a89dc;
 }
 
-body header .wrap .active {
+body header #category .active {
   display: block;
 }
 
@@ -157,7 +161,7 @@ body main .container .item .left .avatar .type_img {
   left: 0;
   width: 23px;
   height: 27px;
-  background-image: url("https://rosc3.zhaiwuyu.com/m/img/monster-icon.png?version=20190619");
+  background-image: url("https://rosc3.zhaiwuyu.com/m/img/monster-icon.png");
   background-size: 150px;
 }
 
