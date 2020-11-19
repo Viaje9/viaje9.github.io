@@ -22,6 +22,9 @@
         </div>
         <button id="next" @click="next()"></button>
       </div>
+      <div id="countdownArea">
+        倒數：{{time}}
+      </div>
       <div id="goodsArea">
         <div class="goods" v-for="goods in goodsList" @click="openPopup(goods)">
           <img :src="goods.img" alt="">

@@ -27,7 +27,10 @@ const app = new Vue({
       img: null,
       name: null
     },
-    search: null
+    search: null,
+    countdownTime: 86400,
+    time: null
+    
   },
   watch: {
     search() {
@@ -43,8 +46,19 @@ const app = new Vue({
     setInterval(() => {
       this.changeCarousel()
     }, 3000);
+
+    setInterval(() => {
+      this.countdown()
+    }, 1000);
   },
   methods: {
+    countdown() {
+      this.countdownTime -= 1
+      let hour = parseInt(this.countdownTime / 3600)
+      let minute = parseInt((this.countdownTime % 3600) / 60)
+      let second = parseInt((this.countdownTime%3600)%60)
+      this.time = `${hour}:${minute}:${second}`
+    },
     changeCarousel() {
       this.carousel.nowBanner++
       if (this.carousel.nowBanner > this.carousel.bannerList.length - 1) {
