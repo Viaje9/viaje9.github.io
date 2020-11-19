@@ -22,6 +22,7 @@ const app = new Vue({
     },
     rawGoodsList: goodsList,
     goodsList: goodsList,
+    goodsMenu: null,
     popupGoods: {
       toggle: false,
       img: null,
@@ -30,7 +31,7 @@ const app = new Vue({
     search: null,
     countdownTime: 86400,
     time: null
-    
+
   },
   watch: {
     search() {
@@ -43,6 +44,8 @@ const app = new Vue({
     }
   },
   mounted() {
+    const set = new Set();
+    this.goodsMenu = this.goodsList.filter(item => !set.has(item.type) ? set.add(item.type) : false).map(item => item.type)
     setInterval(() => {
       this.changeCarousel()
     }, 3000);
@@ -56,7 +59,7 @@ const app = new Vue({
       this.countdownTime -= 1
       let hour = parseInt(this.countdownTime / 3600)
       let minute = parseInt((this.countdownTime % 3600) / 60)
-      let second = parseInt((this.countdownTime%3600)%60)
+      let second = parseInt((this.countdownTime % 3600) % 60)
       this.time = `${hour}:${minute}:${second}`
     },
     changeCarousel() {
@@ -87,6 +90,12 @@ const app = new Vue({
       this.popupGoods.toggle = false
       this.popupGoods.img = null
       this.popupGoods.name = null
+    },
+    goodsType(item) {
+      this.goodsList = this.rawGoodsList.filter(e => e.type === item)
+    },
+    goTop() {
+      document.documentElement.scrollTop = 0
     }
   }
 

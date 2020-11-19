@@ -1,38 +1,49 @@
-#app {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-#app .container {
-  width: 1140px;
+body #app {
+  background-color: #ebebeb;
+  padding: 60px;
 }
 
-#app .container #carouselArea {
+body #app .container {
+  width: 1600px;
+}
+
+body #app .container #searchArea {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  padding: 15px;
+  background-color: #d0d0d2;
+}
+
+body #app .container #searchArea input {
+  width: 70%;
+  height: 24px;
+}
+
+body #app .container #carouselArea {
   width: 100%;
   height: 300px;
   position: relative;
 }
 
-#app .container #carouselArea .banner {
+body #app .container #carouselArea .banner {
   width: 100%;
   height: 100%;
 }
 
-#app .container #carouselArea .banner img {
+body #app .container #carouselArea .banner img {
   width: 100%;
   height: 100%;
 }
 
-#app .container #carouselArea #prev {
+body #app .container #carouselArea #prev {
   width: 50px;
   height: 50px;
   position: absolute;
@@ -40,7 +51,7 @@
   top: calc(50% - 25px);
 }
 
-#app .container #carouselArea #next {
+body #app .container #carouselArea #next {
   width: 50px;
   height: 50px;
   position: absolute;
@@ -48,8 +59,41 @@
   top: calc(50% - 25px);
 }
 
-#app .container #goodsArea {
+body #app .container #countdownArea {
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+body #app .container #goodsArea {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body #app .container #goodsArea .goodsMenu ul {
+  padding: 10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 60px;
+  left: 0;
+}
+
+body #app .container #goodsArea .goodsMenu ul li {
+  list-style-type: none;
+  padding: 5px;
+}
+
+body #app .container #goodsArea .goodsMenu ul li button {
+  background-color: #ffffff;
+  border: 1px solid black;
+}
+
+body #app .container #goodsArea .goodsContent {
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,17 +101,24 @@
       flex-wrap: wrap;
 }
 
-#app .container #goodsArea .goods {
+body #app .container #goodsArea .goodsContent .goods {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 15px 10px;
+  background-color: #ffffff;
+  border: 1px solid black;
   text-align: center;
-  width: 16%;
+  width: 15%;
+  height: 250px;
 }
 
-#app .container #goodsArea .goods span {
+body #app .container #goodsArea .goodsContent .goods span {
   display: block;
 }
 
-#app .container #popupGoods {
+body #app .container #popupGoods {
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   display: -webkit-box;
@@ -84,7 +135,7 @@
   height: 100%;
 }
 
-#app .container #popupGoods .goods {
+body #app .container #popupGoods .goods {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -102,5 +153,17 @@
   border: 1px solid black;
   width: 500px;
   height: 500px;
+}
+
+body #app .container #goTop {
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border: 1px solid black;
+  background-color: #e8f0fb;
 }
 /*# sourceMappingURL=style.css.map */

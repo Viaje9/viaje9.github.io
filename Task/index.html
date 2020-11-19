@@ -12,31 +12,42 @@
 <body>
   <div id="app">
     <div class="container">
-      <div id="search">
+      <div id="searchArea">
         <input type="text" v-model="search">
       </div>
       <div id="carouselArea">
-        <button id="prev" @click="prev()"></button>
+        <button id="prev" @click="prev"></button>
         <div class="banner" v-for="(item, index) in carousel.bannerList" v-show="carousel.nowBanner === index">
           <img :src="item" alt="">
         </div>
-        <button id="next" @click="next()"></button>
+        <button id="next" @click="next"></button>
       </div>
       <div id="countdownArea">
-        倒數：{{time}}
+        <span>倒數：{{time}}</span>
       </div>
       <div id="goodsArea">
-        <div class="goods" v-for="goods in goodsList" @click="openPopup(goods)">
-          <img :src="goods.img" alt="">
-          <span>{{goods.name}}</span>
+        <div class="goodsMenu">
+          <ul>
+            <li v-for="item in goodsMenu">
+              <button @click=goodsType(item)>產品類別{{item}}</button>
+            </li>
+          </ul>
         </div>
+        <div class="goodsContent">
+          <div class="goods" v-for="goods in goodsList" @click="openPopup(goods)">
+            <img :src="goods.img" alt="">
+            <span>{{goods.name}}</span>
+          </div>
+        </div>
+
       </div>
-      <div id="popupGoods" v-show="popupGoods.toggle" @click="closePopup()">
+      <div id="popupGoods" v-show="popupGoods.toggle" @click="closePopup">
         <div class="goods">
           <img :src="popupGoods.img" alt="">
           <span>{{popupGoods.name}}</span>
         </div>
       </div>
+      <div id="goTop" @click="goTop">GoTop</div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

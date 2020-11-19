@@ -98,5 +98,75 @@ const goodsList = [
     name: "c",
     img: "https://placehold.it/150x150",
     type: 1
+  },
+  {
+    name: "d",
+    img: "https://placehold.it/180x180",
+    type: 3
+  },
+  {
+    name: "d",
+    img: "https://placehold.it/180x180",
+    type: 3
+  },
+  {
+    name: "d",
+    img: "https://placehold.it/180x180",
+    type: 3
+  },
+  {
+    name: "d",
+    img: "https://placehold.it/180x180",
+    type: 3
+  },
+  {
+    name: "d",
+    img: "https://placehold.it/180x180",
+    type: 3
+  },
+  {
+    name: "d",
+    img: "https://placehold.it/180x180",
+    type: 3
+  },
+  {
+    name: "d",
+    img: "https://placehold.it/180x180",
+    type: 3
+  },
+  {
+    name: "d",
+    img: "https://placehold.it/180x180",
+    type: 3
+  },
+  {
+    name: "d",
+    img: "https://placehold.it/180x180",
+    type: 3
+  },
+  {
+    name: "d",
+    img: "https://placehold.it/180x180",
+    type: 3
+  },
+  {
+    name: "d",
+    img: "https://placehold.it/180x180",
+    type: 3
+  },
+  {
+    name: "d",
+    img: "https://placehold.it/180x180",
+    type: 3
+  },
+  {
+    name: "d",
+    img: "https://placehold.it/180x180",
+    type: 3
+  },
+  {
+    name: "d",
+    img: "https://placehold.it/180x180",
+    type: 3
   }
 ]
