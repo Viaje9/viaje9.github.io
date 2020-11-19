@@ -11,29 +11,30 @@
 
 <body>
   <div id="app">
-    <div id="search">
-      <input type="text" v-model="search">
-    </div>
-    <div id="carouselArea">
-      <button id="prev" @click="prev()"></button>
-      <div class="banner" v-for="(item, index) in carousel.bannerList" v-show="carousel.nowBanner === index">
-        <img :src="item" alt="">
+    <div class="container">
+      <div id="search">
+        <input type="text" v-model="search">
       </div>
-      <button id="next" @click="next()"></button>
-    </div>
-    <div id="goodsArea">
-      <div class="goods" v-for="goods in goodsList" @click="openPopup(goods)">
-        <img :src="goods.img" alt="">
-        <span>{{goods.name}}</span>
+      <div id="carouselArea">
+        <button id="prev" @click="prev()"></button>
+        <div class="banner" v-for="(item, index) in carousel.bannerList" v-show="carousel.nowBanner === index">
+          <img :src="item" alt="">
+        </div>
+        <button id="next" @click="next()"></button>
+      </div>
+      <div id="goodsArea">
+        <div class="goods" v-for="goods in goodsList" @click="openPopup(goods)">
+          <img :src="goods.img" alt="">
+          <span>{{goods.name}}</span>
+        </div>
+      </div>
+      <div id="popupGoods" v-show="popupGoods.toggle" @click="closePopup()">
+        <div class="goods">
+          <img :src="popupGoods.img" alt="">
+          <span>{{popupGoods.name}}</span>
+        </div>
       </div>
     </div>
-    <div id="popupGoods" v-show="popupGoods.toggle" @click="closePopup()">
-      <div class="goods">
-        <img :src="popupGoods.img" alt="">
-        <span>{{popupGoods.name}}</span>
-      </div>
-    </div>
-    
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script src="./data.js"></script>

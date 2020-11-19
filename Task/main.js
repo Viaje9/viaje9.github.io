@@ -39,7 +39,18 @@ const app = new Vue({
 
     }
   },
+  mounted() {
+    setInterval(() => {
+      this.changeCarousel()
+    }, 3000);
+  },
   methods: {
+    changeCarousel() {
+      this.carousel.nowBanner++
+      if (this.carousel.nowBanner > this.carousel.bannerList.length - 1) {
+        this.carousel.nowBanner = 0
+      }
+    },
     prev() {
       this.carousel.nowBanner--
       if (this.carousel.nowBanner < 0) {
