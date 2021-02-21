@@ -1828,6 +1828,7 @@ body #news .news_container .news_content .news_swiper .swiper-slide .news_card .
 @media (max-width: 570px) {
   body #news .news_container .news_content .news_swiper .swiper-slide .news_card .news_content .news_btm .news_readMore span {
     font-size: 13px;
+    padding: 8px 6px 8px;
   }
 }
 
@@ -1837,7 +1838,7 @@ body #news .news_container .news_content .news_swiper .swiper-button-next, body 
 
 @media (max-width: 570px) {
   body #news .news_container .news_content .news_swiper .swiper-button-next, body #news .news_container .news_content .news_swiper .swiper-button-prev {
-    width: 48px;
+    width: 38.4px;
   }
 }
 

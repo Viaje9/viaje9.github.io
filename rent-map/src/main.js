@@ -18,6 +18,9 @@ Vue.component("l-tooltip", LTooltip);
 
 
 import { Icon } from 'leaflet';
+import router from './router'
+import store from './store'
+
 
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
@@ -29,5 +32,7 @@ Icon.Default.mergeOptions({
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(App),
+  router,
+  store,
+  render: h => h(App)
 }).$mount('#app')
