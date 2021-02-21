@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.8ec374411985da7f5ecdd3e5e7a9ca97.js"
+  "/precache-manifest.09fac68f1cb135082c7d205654576a87.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "hatalk-front-end"});
