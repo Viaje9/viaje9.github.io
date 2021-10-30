@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="app">
+
 <head>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.9/angular.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.8.0/angular-locale_zh-hant-tw.min.js"></script>
@@ -88,7 +89,7 @@
 
 
         app.controller('InboxMailController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
-            let url = 'https://next.json-generator.com/api/json/get/VJ3-lwHa_';
+            const url = 'https://next.json-generator.com/api/json/get/VJ3-lwHa_';
             $scope.searchObj = { "Sender": true, "Subject": true, "searchDate": true }
             $scope.dateNum = [{
                 number: "1",
@@ -117,6 +118,7 @@
                 $scope.data = $scope.origData
                 //判斷url使否帶參數
                 if (Object.keys($location.search()).length > 0) {
+                    console.log($location.search());
                     //取的url的參數
                     $scope.searchObj = $location.search()
                     //篩選資料
